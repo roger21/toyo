@@ -1,0 +1,176 @@
+body{
+  margin:0;
+  padding:0;
+  background:#fff url("../img/redface.png") repeat;
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  color:#333;
+}
+
+input{
+  margin:0;
+  border:1px solid #333;
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size:100%;
+  padding:0 10px;
+  box-sizing:border-box;
+  color:#333;
+  text-align:center;
+  height:30px;
+}
+
+input[type="checkbox"]{
+  width:1em;
+  height:1em;
+  padding:0;
+}
+
+input[disabled="disabled"]{
+  background-color:#ccc;
+}
+
+input:invalid{
+  background-color:#fcc;
+}
+
+#input_area{
+  background:#fff;
+  border:1px dashed #333;
+  margin:15px auto;
+  padding:15px;
+}
+
+#input_area_div{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+#input_area_div > *{
+  display:block;
+  margin:0 10px 0 0;
+}
+
+#input_area_div > *:last-child{
+  margin:0;
+}
+
+#url_input{
+  width:400px;
+}
+
+#wait_upload_div{
+  display:none;
+  justify-content:center;
+  align-items:center;
+  margin:0 50px;
+}
+
+#wait_upload_div > *{
+  display:block;
+  margin:0 10px 0 0;
+}
+
+#wait_upload_div > *:last-child{
+  margin:0;
+}
+
+#image_area{
+  background:#fff;
+  border:1px dashed #333;
+  margin:15px auto;
+  padding:15px;
+  display:none;
+}
+
+#image{
+  display:block;
+  max-height:calc(100vh - 62px - 110px);
+  max-width:calc(100vw - 62px);
+  height:auto;
+  width:auto;
+  margin:0 auto;
+}
+
+#infos_area{
+  margin-top:15px;
+  height:95px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+#infos_area_div{
+  display:none;
+  padding:0 50px;
+}
+
+#wait_generate_div{
+  display:none;
+  justify-content:center;
+  align-items:center;
+  margin:0 50px;
+}
+
+#wait_generate_div > *{
+  display:block;
+  margin:0 10px 0 0;
+}
+
+#wait_generate_div > *:last-child{
+  margin:0;
+}
+
+#bbcode_input{
+  color:#777;
+  display:block;
+  margin:15px auto 0;
+  display:none;
+  width:750px;
+}
+
+#preview_area{
+  display:none;
+}
+
+#preview_area > div{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+#preview_area > div > *{
+  display:block;
+  margin:0 10px 0 0;
+}
+
+#preview_area > div > *:last-child{
+  margin:0;
+}
+
+#preview_area > div > #ratio_left{
+  margin:0 5px 0 0;
+}
+
+#preview_area > div > #ratio_left + p{
+  margin:0 5px 0 0;
+}
+
+#preview_area > div > label{
+  margin:0 10px 0 30px;
+}
+
+#preview_area > div > input[type="text"]{
+  width:2em;
+  padding:0 5px;
+}
+
+#image_preview{
+  width:70px;
+  height:50px;
+  background-image:url(../img/background.png);
+  object-fit:none;
+}
