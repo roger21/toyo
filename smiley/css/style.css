@@ -1,7 +1,7 @@
 body{
   margin:0;
   padding:0;
-  background:#fff url("../img/redface.png") repeat;
+  background:#fff center url("../img/redface.png") repeat;
   font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
   display:flex;
   justify-content:center;
