@@ -1,1 +1,1 @@
-#### les trucs de toyo (mis à jours)
+#### les trucs de toyo (mis à jour)
