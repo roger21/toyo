@@ -9,7 +9,6 @@ ini_set("html_errors", "0");
 ini_set("log_errors", "1");
 ini_set("log_errors_max_len", "0");
 
-//trigger_error("index.php ".$_SERVER["REMOTE_ADDR"]);
 //trigger_error("index.php ".var_export($_REQUEST, true));
 
 // Nettoyage des vieilles images de plus d'une heure

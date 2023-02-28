@@ -9,7 +9,6 @@ ini_set("html_errors", "0");
 ini_set("log_errors", "1");
 ini_set("log_errors_max_len", "0");
 
-//trigger_error("uploadImg.php ".$_SERVER["REMOTE_ADDR"]);
 //trigger_error("uploadImg.php ".var_export($_REQUEST, true));
 
 function image_upload($name, $path){
@@ -40,12 +39,16 @@ function image_upload($name, $path){
     return false;
   }
 
-  $img_types = array(IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG);
-  $exts = array(
-    IMAGETYPE_GIF   => "gif",
-    IMAGETYPE_JPEG  => "jpg",
-    IMAGETYPE_PNG   => "png"
-  );
+  $img_types = [IMAGETYPE_BMP,
+                IMAGETYPE_GIF,
+                IMAGETYPE_JPEG,
+                IMAGETYPE_PNG,
+                IMAGETYPE_WEBP];
+  $exts = [IMAGETYPE_BMP   => ".bmp",
+           IMAGETYPE_GIF   => ".gif",
+           IMAGETYPE_JPEG  => ".jpg",
+           IMAGETYPE_PNG   => ".png",
+           IMAGETYPE_WEBP   => ".webp"];
 
   if(!in_array($img_info[2], $img_types))  {
     @unlink($filepath);
@@ -53,7 +56,7 @@ function image_upload($name, $path){
     return false;
   }
 
-  $newpath = $filepath.".".$exts[$img_info[2]];
+  $newpath = $filepath.$exts[$img_info[2]];
   $result = rename($filepath, $newpath);
   if($result === false){
     @unlink($filepath);
