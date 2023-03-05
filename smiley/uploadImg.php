@@ -22,7 +22,7 @@ function image_upload($name, $path){
     return false;
   }
 
-  $filepath = $path.sha1(microtime(true));
+  $filepath=$path.sha1(microtime(true));
 
   @move_uploaded_file($_FILES[$name]["tmp_name"], $filepath);
 
@@ -31,7 +31,7 @@ function image_upload($name, $path){
     return false;
   }
 
-  $img_info = @getimagesize($filepath);
+  $img_info=@getimagesize($filepath);
 
   if($img_info === false)  {
     @unlink($filepath);
@@ -39,16 +39,16 @@ function image_upload($name, $path){
     return false;
   }
 
-  $img_types = [IMAGETYPE_BMP,
-                IMAGETYPE_GIF,
-                IMAGETYPE_JPEG,
-                IMAGETYPE_PNG,
-                IMAGETYPE_WEBP];
-  $exts = [IMAGETYPE_BMP   => ".bmp",
-           IMAGETYPE_GIF   => ".gif",
-           IMAGETYPE_JPEG  => ".jpg",
-           IMAGETYPE_PNG   => ".png",
-           IMAGETYPE_WEBP   => ".webp"];
+  $img_types=[IMAGETYPE_BMP,
+              IMAGETYPE_GIF,
+              IMAGETYPE_JPEG,
+              IMAGETYPE_PNG,
+              IMAGETYPE_WEBP];
+  $exts=[IMAGETYPE_BMP => ".bmp",
+         IMAGETYPE_GIF => ".gif",
+         IMAGETYPE_JPEG => ".jpg",
+         IMAGETYPE_PNG => ".png",
+         IMAGETYPE_WEBP => ".webp"];
 
   if(!in_array($img_info[2], $img_types))  {
     @unlink($filepath);
@@ -56,8 +56,8 @@ function image_upload($name, $path){
     return false;
   }
 
-  $newpath = $filepath.$exts[$img_info[2]];
-  $result = rename($filepath, $newpath);
+  $newpath=$filepath.$exts[$img_info[2]];
+  $result=rename($filepath, $newpath);
   if($result === false){
     @unlink($filepath);
     trigger_error("uploadImg.php false on rename");
@@ -67,6 +67,6 @@ function image_upload($name, $path){
   return $newpath;
 }
 
-echo ($path = image_upload("tmpImg", "./temp/")) ? $path : "";
+echo ($path=image_upload("tmpImg", "./temp/")) ? $path : "";
 
 ?>
