@@ -25,26 +25,40 @@ let generatePreview = function(selection) {
   } else {
     $("#image_preview").attr("src", "img/wait.gif");
   }
+  $("#size").text("");
+  $("#size").toggleClass("error", false);
   if(typeof currentFile["url"] !== "undefined")
     selection["url"] = currentFile["url"];
   if(typeof currentFile["fileName"] !== "undefined")
     selection["fileName"] = currentFile["fileName"];
+  if(sharpenEnabled()) selection["sharpen"] = "sharpen";
+  selection["type"] = fileType();
   $.ajax({
-    url: "generateAvatar.php" + (sharpenEnabled() ? "?sharpen=sharpen" : ""),
+    url: "generateAvatar.php",
     data: selection,
     complete: function(jqxhr) {
       $("#wait_generate_div").css("display", "none");
       let extra = "?foo=" + new Date().getTime();
-      let avatarFileName = jqxhr.responseText;
+      let data = jqxhr.responseText;
       let error = false;
-      if(avatarFileName === "") {
+      let avatarFileName = "";
+      let avatarSize = "";
+      if(data === "") {
         avatarFileName = "./img/error.png";
         error = true;
+      } else {
+        data = data.split(":");
+        avatarFileName = data[0];
+        avatarSize = data[1];
+        if(data.length > 2) {
+          $("#size").toggleClass("error", true);
+        }
       }
       $("#image_preview").attr("src", avatarFileName + extra);
       $("#image_preview").attr("title", error ? "error" : null);
       $("#preview_area").css("display", "block");
       $("#bbcode_input").css("display", "block");
+      $("#size").text(error ? "error" : avatarSize);
       // aurait.eu
       $("#bbcode_input").val(error ? "error" :
         "[img]https://hfr-rehost.aurait.eu/https://" +
@@ -74,6 +88,10 @@ let getRatio = function() {
 
 let sharpenEnabled = function() {
   return $("#sharpen").prop("checked");
+}
+
+let fileType = function() {
+  return $("#type_png").prop("checked") ? "png" : "jpg";
 }
 
 let updateRatio = function() {
@@ -114,13 +132,17 @@ $(document).ready(function() {
   $("#ratio_right").val("2");
   $("#ratio_left").attr("disabled", "disabled");
   $("#ratio_right").attr("disabled", "disabled");
+  $("#type_png").prop("checked", false);
+  $("#type_jpg").prop("checked", true);
+  $("#size").text("");
+  $("#size").toggleClass("error", false);
 
   let options = {
     "handles": true,
     "aspectRatio": getRatio(),
     "instance": true,
     "keys": true,
-    "onSelectChange": onSelectionChange
+    "onSelectEnd": onSelectionChange
   };
 
   $("#url_input").on("focus", function() {
@@ -131,7 +153,7 @@ $(document).ready(function() {
     this.select();
   });
 
-  $("#lock_ratio").on("click", function() {
+  $("#lock_ratio").on("change", function() {
     $("#ratio_left").attr("disabled", this.checked ? null : "disabled");
     $("#ratio_right").attr("disabled", this.checked ? null : "disabled");
     updateRatio();
@@ -145,7 +167,15 @@ $(document).ready(function() {
     updateRatio();
   });
 
-  $("#sharpen").on("click", function() {
+  $("#sharpen").on("change", function() {
+    generatePreview(ias.getSelection());
+  });
+
+  $("#type_png").on("change", function() {
+    generatePreview(ias.getSelection());
+  });
+
+  $("#type_jpg").on("change", function() {
     generatePreview(ias.getSelection());
   });
 

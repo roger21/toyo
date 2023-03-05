@@ -22,7 +22,7 @@ input{
   height:30px;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"], input[type="radio"]{
   width:1em;
   height:1em;
   padding:0;
@@ -38,8 +38,8 @@ input:invalid{
 
 #input_area{
   background:#fff;
-  border:1px dashed #333;
   margin:15px auto;
+  border:1px dashed #333;
   padding:15px;
 }
 
@@ -80,24 +80,24 @@ input:invalid{
 
 #image_area{
   background:#fff;
-  border:1px dashed #333;
   margin:15px auto;
+  border:1px dashed #333;
   padding:15px;
   display:none;
 }
 
 #image{
   display:block;
-  max-height:calc(100vh - 62px - 160px);
   max-width:calc(100vw - 62px);
-  height:auto;
+  max-height:calc(100vh - 62px - 205px);
   width:auto;
+  height:auto;
   margin:0 auto;
 }
 
 #infos_area{
   margin-top:15px;
-  height:145px;
+  height:190px;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -142,28 +142,30 @@ input:invalid{
   align-items:center;
 }
 
-#preview_area > div > *{
+#preview_area > div#preview_div > *{
   display:block;
+  margin:0;
+  padding:0;
+}
+
+#preview_area > div#preview_div > p:first-child{
   margin:0 10px 0 0;
 }
 
-#preview_area > div > *:last-child{
-  margin:0;
+#preview_area > div#preview_div > label{
+  margin:0 0 0 50px;
+  padding:0 10px 0 0;
 }
 
-#preview_area > div > #ratio_left{
-  margin:0 5px 0 0;
+#preview_area > div#preview_div > #ratio_left{
+  margin:0 5px 0 10px;
 }
 
-#preview_area > div > #ratio_left + p{
-  margin:0 5px 0 0;
+#preview_area > div#preview_div > #ratio_right{
+  margin:0 0 0 5px;
 }
 
-#preview_area > div > label{
-  margin:0 10px 0 30px;
-}
-
-#preview_area > div > input[type="text"]{
+#preview_area > div#preview_div > input[type="text"]{
   width:2em;
   padding:0 5px;
 }
@@ -173,4 +175,35 @@ input:invalid{
   height:100px;
   background-image:url(../img/background.png);
   object-fit:none;
+}
+
+#preview_area > div#type_div{
+  margin:15px 0 0 0;
+}
+
+#preview_area > div#type_div > *{
+  display:block;
+  margin:0;
+  padding:0;
+}
+
+#preview_area > div#type_div > label{
+  margin:0;
+  padding:0 10px 0 0;
+}
+
+#preview_area > div#type_div > input{
+  margin:0 50px 0 0;
+}
+
+#preview_area > div#type_div > span#size{
+  width:125px;
+  height:30px;
+  background:#eee;
+  text-align:center;
+  line-height:30px;
+}
+
+#preview_area > div#type_div > span#size.error{
+  background:#fdd;
 }

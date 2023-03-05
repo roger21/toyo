@@ -12,14 +12,14 @@ ini_set("log_errors_max_len", "0");
 //trigger_error("index.php ".var_export($_REQUEST, true));
 
 // Nettoyage des vieilles images de plus d'une heure
-$dir = "./temp/";
-if($dh = opendir($dir))
+$dir="./temp/";
+if($dh=opendir($dir))
 {
-  while(($file = readdir($dh)) !== false)
+  while(($file=readdir($dh)) !== false)
   {
     if($file !== "." && $file !== ".." && $file !== ".htaccess")
     {
-      $filepath = $dir.$file;
+      $filepath=$dir.$file;
       if((date("U") - date("U", filemtime($filepath))) > 3600){
         //trigger_error("nettoyage ".$filepath);
         @unlink($filepath);
@@ -70,16 +70,23 @@ closedir($dh);
           <img src="img/wait.gif" alt="wait" title="Génération en cours...">
         </div>
         <div id="preview_area">
-          <div>
+          <div id="preview_div">
             <p>Aperçu de l&apos;avatar</p>
             <img id="image_preview" src="" alt="preview">
-            <label id="lock_ratio_label" for="lock_ratio">Verrouiller le ratio</label>
+            <label for="lock_ratio">Verrouiller le ratio</label>
             <input id="lock_ratio" type="checkbox">
             <input id="ratio_left" type="text" maxlength="2" spellcheck="false" value="3" disabled="disabled" pattern="[1-9]([0-9])?" title="entre 1 et 99">
             <p>:</p>
             <input id="ratio_right" type="text" maxlength="2" spellcheck="false" value="2" disabled="disabled" pattern="[1-9]([0-9])?" title="entre 1 et 99">
-            <label id="sharpen_label" for="sharpen">Sharpen</label>
+            <label for="sharpen">Sharpen</label>
             <input id="sharpen" type="checkbox">
+          </div>
+          <div id="type_div">
+            <label for="type_png">png</label>
+            <input type="radio" name="type" id="type_png">
+            <label for="type_jpg">jpg</label>
+            <input type="radio" name="type" id="type_jpg">
+            <span id="size"></span>
           </div>
           <input id="bbcode_input" type="text" readonly="readonly">
         </div>
