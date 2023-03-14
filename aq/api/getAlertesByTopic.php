@@ -42,7 +42,7 @@ foreach($alertes as $alerte)
         $alerteNode->setAttribute("pseudoInitiateur", $rapporteur->getPseudo());
         $alerteNode->setAttribute("date", date("d-m-Y", strtotime($rapporteur->getDate())));
       }
-      $postsIds .= $rapporteur->getPostId().", ";
+      $postsIds .= $rapporteur->getPostId().",";
     }
   }
   $alerteNode->setAttribute("postsIds", substr($postsIds, 0, -1));
