@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>:: Les Générateurs@HFR by ToYonos ::</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-language" content="fr">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="Robots" content="index, follow">
+    <meta name="keywords" content="hfr toyonos generateur image smiley">
+    <meta name="description" content="Générateurs de smileys pour le Forum HFR">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./_css/style.css">
+    <script type="text/javascript" src="scripts.js"></script>
+  </head>
+  <body>
+    <div id="main">
+      <div id="menu">
+      </div>
+      <div class="generateur" id="alerte_div">
+        <div class="options">
+          <div>
+            <label for="alerte_t">Texte</label>
+            <input id="alerte_t" type="text">
+          </div>
+          <div>
+            <label for="alerte_s">Smiley</label>
+            <input id="alerte_s" type="checkbox">
+          </div>
+        </div>
+        <div class="bbcode">
+          <input id="alerte_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="alerte_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+      <div class="generateur" id="nazi_div">
+        <div class="options">
+          <div>
+            <label for="nazi_t">Texte</label>
+            <input id="nazi_t" type="text">
+          </div>
+        </div>
+        <div class="bbcode">
+          <input id="nazi_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="nazi_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+      <div class="generateur" id="fb_div">
+        <div class="options">
+          <div>
+            <label for="fb_sujet">Sujet</label>
+            <input id="fb_sujet" type="text">
+          </div>
+          <div>
+            <label for="fb_moi">Moi</label>
+            <input id="fb_moi" type="checkbox">
+          </div>
+          <div>
+            <label for="fb_pluriel">Pluriel</label>
+            <input id="fb_pluriel" type="checkbox">
+          </div>
+          <div>
+            <label for="fb_not">Négation</label>
+            <input id="fb_not" type="checkbox">
+          </div>
+        </div>
+        <div class="bbcode">
+          <input id="fb_bbcode" type="text" readonly="readonly">
+        </div >
+        <div id="fb_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+      <div class="generateur" id="seagal_div">
+        <div class="options">
+          <div>
+            <label for="seagal_t">Texte</label>
+            <input id="seagal_t" type="text">
+          </div>
+          <div>
+            <label for="seagal_s">Smiley</label>
+            <input id="seagal_s" type="checkbox">
+          </div>
+        </div>
+        <div class="bbcode">
+          <input id="seagal_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="seagal_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+      <div class="generateur" id="bulle_div">
+        <div class="options">
+          <div>
+            <label for="bulle_t">Texte</label>
+            <input id="bulle_t" type="text">
+          </div>
+          <div>
+            <label for="bulle_delta">Delta</label>
+            <input id="bulle_delta" type="text" maxlength="3" class="mini">
+          </div>
+          <div>
+            <label for="bulle_flip">Inverser</label>
+            <input id="bulle_flip" type="checkbox">
+          </div>
+          <div>
+            <label for="bulle_smiley">Smiley</label>
+            <input id="bulle_smiley" type="text" class="smiley">
+          </div>
+        </div>
+        <div class="bbcode">
+          <input id="bulle_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="bulle_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+      <div class="generateur" id="moitmoit_div">
+        <div class="options">
+          <div>
+            <label for="moitmoit_smiley1">Smiley 1</label>
+            <input id="moitmoit_smiley1" type="text" class="smiley">
+          </div>
+          <div>
+            <label for="moitmoit_smiley2">Smiley 2</label>
+            <input id="moitmoit_smiley2" type="text" class="smiley">
+          </div>
+          <div>
+            <label for="moitmoit_vertical">Vertical</label>
+            <input id="moitmoit_vertical" type="checkbox">
+          </div>
+          <input id="moitmoit_switch" type="button" value="Switch">
+          <input id="moitmoit_random" type="button" value="Random">
+        </div>
+        <div class="bbcode">
+          <input id="moitmoit_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="moitmoit_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+      <div class="generateur" id="seal_div">
+        <div class="options">
+          <div>
+            <label for="seal_t">Texte</label>
+            <input id="seal_t" type="text">
+          </div>
+          <div>
+            <label for="seal_s">Smiley</label>
+            <input id="seal_s" type="checkbox">
+          </div>
+        </div>
+        <div class="bbcode">
+          <input id="seal_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="seal_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+      <div class="generateur" id="ddr555_div">
+        <div class="options">
+          <div>
+            <label for="ddr555_smiley">Smiley</label>
+            <input id="ddr555_smiley" type="text" class="smiley">
+          </div>
+          <div>
+            <label id="ddr555_langle" for="ddr555_angle">Angle</label>
+            <select id="ddr555_angle">
+              <option value="315">45°</option>
+              <option value="270">90°</option>
+              <option value="225">135°</option>
+              <option value="180" selected="selected">180°</option>
+              <option value="135">225°</option>
+              <option value="90">270°</option>
+              <option value="45">315°</option>
+            </select>
+          </div>
+          <input id="ddr555_random" type="button" value="Random">
+        </div>
+        <div class="bbcode">
+          <input id="ddr555_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="ddr555_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+      <div class="generateur" id="note_div">
+        <div class="options">
+          <div>
+            <label id="note_lnumerateur" for="note_numerateur">Numérateur</label>
+            <input id="note_numerateur" type="range" min="0" max="99" step="1" value="0">
+            <label id="note_vnumerateur" class="after" for="note_numerateur">0</label>
+          </div>
+          <div>
+            <label id="note_ldenominateur" for="note_denominateur">Dénominateur</label>
+            <input id="note_denominateur" type="range" min="0" max="99" step="1" value="0">
+            <label id="note_vdenominateur" class="after" for="note_denominateur">0</label>
+          </div>
+          <input id="note_random" type="button" value="Random">
+        </div>
+        <div class="bbcode">
+          <input id="note_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="note_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+      <div class="generateur" id="rofl_div">
+        <div class="options">
+          <div>
+            <label for="rofl_smiley">Smiley</label>
+            <input id="rofl_smiley" type="text" class="smiley">
+          </div>
+          <div>
+            <label id="rofl_ltours" for="rofl_tours">Tours</label>
+            <input id="rofl_tours" type="range" min="1" max="10" step="1" value="2">
+            <label id="rofl_vtours" class="after" for="rofl_tours">2</label>
+          </div>
+          <div>
+            <label id="rofl_lmode" for="rofl_mode">Mode</label>
+            <select id="rofl_mode">
+              <option value="1">rond 1</option>
+              <option value="2">rond 2</option>
+              <option value="3" selected="selected">rond 3</option>
+              <option value="4">rond 4</option>
+              <option value="5">carré</option>
+            </select>
+          </div>
+          <div>
+            <label id="rofl_ldelta" for="rofl_delta">Delta</label>
+            <input id="rofl_delta" type="range" min="0" max="100" step="1" value="0">
+            <label id="rofl_vdelta" class="after" for="rofl_delta">0 px</label>
+          </div>
+          <div>
+            <label id="rofl_lvitesse" for="rofl_vitesse">Vitesse</label>
+            <input id="rofl_vitesse" type="range" min="1" max="10" step="1" value="6">
+            <label id="rofl_vvitesse" class="after" for="rofl_vitesse">6</label>
+          </div>
+          <input id="rofl_random" type="button" value="Random">
+        </div>
+        <div class="bbcode">
+          <input id="rofl_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="rofl_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+      <div class="generateur" id="boing_div">
+        <div class="options">
+          <div>
+            <label for="boing_smiley">Smiley</label>
+            <input id="boing_smiley" type="text" class="smiley">
+          </div>
+          <div>
+            <label id="boing_ldelta" for="boing_delta">Delta x</label>
+            <input id="boing_delta" type="range" min="0" max="100" step="1" value="10">
+            <label id="boing_vdelta" class="after" for="boing_delta">10 px</label>
+          </div>
+          <div>
+            <label id="boing_lfacteur" for="boing_facteur">Facteur y</label>
+            <input id="boing_facteur" type="range" min="1" max="10" step="1" value="2">
+            <label id="boing_vfacteur" class="after" for="boing_facteur">2</label>
+          </div>
+          <div>
+            <label for="boing_rofl">Rofl</label>
+            <input id="boing_rofl" type="checkbox">
+          </div>
+          <div>
+            <label id="boing_lvitesse" for="boing_vitesse">Vitesse</label>
+            <input id="boing_vitesse" type="range" min="1" max="10" step="1" value="6">
+            <label id="boing_vvitesse" class="after" for="boing_vitesse">6</label>
+          </div>
+          <input id="boing_random" type="button" value="Random">
+        </div>
+        <div class="bbcode">
+          <input id="boing_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="boing_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+      <div class="generateur" id="miroir_div">
+        <div class="options">
+          <div>
+            <label for="miroir_smiley">Smiley</label>
+            <input id="miroir_smiley" type="text" class="smiley">
+          </div>
+          <div>
+            <label id="miroir_lpart" for="miroir_part">Partie</label>
+            <select id="miroir_part">
+              <option value="left" selected="selected">de gauche</option>
+              <option value="right">de droite</option>
+              <option value="top">du haut</option>
+              <option value="bottom">du bas</option>
+            </select>
+          </div>
+          <input id="miroir_random" type="button" value="Random">
+        </div>
+        <div class="bbcode">
+          <input id="miroir_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="miroir_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+      <div class="generateur" id="southpark_div">
+        <div class="options">
+          <div>
+            <label for="southpark_smiley">Smiley</label>
+            <input id="southpark_smiley" type="text" class="smiley">
+          </div>
+          <div>
+            <label id="southpark_llim" for="southpark_lim">Limite de séparation</label>
+            <input id="southpark_lim" type="range" min="0" max="129" step="1" value="0">
+            <label id="southpark_vlim" class="after" for="southpark_lim">auto</label>
+          </div>
+          <input id="southpark_random" type="button" value="Random">
+        </div>
+        <div class="bbcode">
+          <input id="southpark_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="southpark_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+      <div class="generateur" id="modo_div">
+        <div class="options">
+          <div>
+            <label for="modo_t">Texte</label>
+            <input id="modo_t" type="text">
+          </div>
+          <div>
+            <label for="modo_smiley">Smiley</label>
+            <input id="modo_smiley" type="text" class="smiley">
+          </div>
+        </div>
+        <div class="bbcode">
+          <input id="modo_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="modo_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+      <div class="generateur" id="golden_div">
+        <div class="by">Par castormalin</div>
+        <div class="options">
+          <div>
+            <label for="golden_smiley">Smiley</label>
+            <input id="golden_smiley" type="text" class="smiley">
+          </div>
+          <div>
+            <label for="golden_stars">Nombre d'étoiles</label>
+            <input id="golden_stars" type="text" maxlength="3" class="mini">
+          </div>
+          <div>
+            <label for="golden_frames">Nombre de frames</label>
+            <input id="golden_frames" type="text" maxlength="3" class="mini">
+          </div>
+          <div>
+            <label id="golden_lposition" for="golden_position">Position</label>
+            <select id="golden_position">
+              <option value="NO">Nord-Ouest</option>
+              <option value="NE">Nord-Est</option>
+              <option value="SO" selected="selected">Sud-Ouest</option>
+              <option value="SE">Sud-Est</option>
+            </select>
+          </div>
+          <div>
+            <label for="golden_yellow">Taux de jaune</label>
+            <input id="golden_yellow" type="text" maxlength="3" class="mini">
+          </div>
+          <input id="golden_random" type="button" value="Random">
+        </div>
+        <div class="bbcode">
+          <input id="golden_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="golden_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+      <div class="generateur" id="ump_div">
+        <div class="options">
+          <div>
+            <label for="ump_t">Texte</label>
+            <input id="ump_t" type="text">
+          </div>
+          <div>
+            <label for="ump_s">Smiley</label>
+            <input id="ump_s" type="checkbox">
+          </div>
+        </div>
+        <div class="bbcode">
+          <input id="ump_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="ump_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+      <div class="generateur" id="bfmtv_div">
+        <div class="options">
+          <div>
+            <label for="bfmtv_text1">Ligne 1</label>
+            <input id="bfmtv_text1" type="text">
+          </div>
+          <div>
+            <label for="bfmtv_text2">Ligne 2</label>
+            <input id="bfmtv_text2" type="text">
+          </div>
+          <div>
+            <label for="bfmtv_s">Smiley</label>
+            <input id="bfmtv_s" type="checkbox">
+          </div>
+        </div>
+        <div class="bbcode">
+          <input id="bfmtv_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="bfmtv_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">generateurs.launch();</script>
+  </body>
+</html>
