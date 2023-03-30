@@ -1,0 +1,355 @@
+/* page */
+
+body{
+  margin:0;
+  padding:15px;
+  box-sizing:border-box;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  color:#333;
+  background:#fff center url("smiley.png") repeat;
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+#main{
+  background:#fff;
+  margin:max(calc((100vh - 450px) / 2), 0px) auto 0  auto;
+  border:1px dashed #333;
+  padding:15px;
+}
+
+div, label{
+  margin:0;
+  border:0;
+  padding:0;
+}
+
+/* menu */
+
+div#menu{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  max-width:calc(100vw - 62px);
+}
+
+div#menu > input[type="button"]{
+  display:block;
+}
+
+div#menu > input[type="button"].selected{
+  font-weight:bold;
+  background-color:#ccc;
+}
+
+/* generateurs */
+
+div.generateur{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  margin:15px 0 0 0;
+  max-width:calc(100vw - 62px);
+}
+
+div.generateur > div{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:15px 50px;
+  width:100%;
+}
+
+div.generateur > div.by{
+  justify-content:flex-start;
+  color:#999;
+  font-style:italic;
+}
+
+div.generateur > div.options{
+  flex-wrap:wrap;
+}
+
+div.generateur > div.bbcode{
+  order:1;
+}
+
+div.generateur > div > *{
+  display:block;
+}
+
+div.generateur > div.options > div{
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+}
+
+div.generateur > div.options > div > *{
+  display:block;
+}
+
+div.generateur > div.options > div > label{
+  padding:0 10px 0 0;
+}
+
+div.generateur > div.options > div > label.after{
+  padding:0 0 0 10px;
+  box-sizing:border-box;
+}
+
+div.generateur > div.options > div > label#note_vnumerateur{
+  width:2em;
+}
+
+div.generateur > div.options > div > label#note_vdenominateur{
+  width:2em;
+}
+
+div.generateur > div.options > div > label#rofl_vtours{
+  width:2em;
+}
+
+div.generateur > div.options > div > label#rofl_vdelta{
+  width:4em;
+}
+
+div.generateur > div.options > div > label#rofl_vvitesse{
+  width:2em;
+}
+
+div.generateur > div.options > div > label#boing_vfacteur{
+  width:2em;
+}
+
+div.generateur > div.options > div > label#boing_vdelta{
+  width:4em;
+}
+
+div.generateur > div.options > div > label#boing_vvitesse{
+  width:2em;
+}
+
+div.generateur > div.options > div > label#southpark_vlim{
+  width:4em;
+}
+
+div.generateur > div.bbcode > input{
+  width:100%;
+  color:#999;
+}
+
+div.generateur > div.preview > img{
+  max-width:100%;
+}
+
+/* controls */
+
+input{
+  margin:0;
+  border:1px solid #333;
+  padding:0 5px;
+  box-sizing:border-box;
+  height:30px;
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size:100%;
+  color:#333;
+  text-align:center;
+}
+
+input[disabled="disabled"]{
+  background-color:#f7f7f7;
+  color:#999;
+  border:1px solid #999;
+}
+
+input[type="button"]{
+  padding:0 10px;
+  background-color:#eee;
+}
+
+input[type="text"]{
+  width:400px;
+}
+
+input[type="text"].mini{
+  width:4em;
+}
+
+input[type="text"].smiley{
+  width:250px;
+  background:url("smiley.php") right 6px top 6px / 16px no-repeat;
+}
+
+input[type="text"]:invalid{
+  background-color:#fcc;
+}
+
+input[type="checkbox"]{
+  appearance:none;
+  width:20px;
+  height:20px;
+  padding:0;
+  position:relative;
+}
+
+input[type="checkbox"]::before{
+  content:"";
+  display:none;
+  position:absolute;
+  top:4px;
+  left:4px;
+  width:10px;
+  height:10px;
+  background-color:#333;
+}
+
+input[type="checkbox"]:checked::before{
+  display:block;
+}
+
+input[type="checkbox"][disabled="disabled"]::before{
+  background-color:#999;
+}
+
+input[type="range"]{
+  -webkit-appearance:none;
+  padding:0;
+  border:0;
+  margin:0;
+  background-color:#fff;
+}
+
+input[type="range"]#note_numerateur{
+  width:200px;
+}
+
+input[type="range"]#note_denominateur{
+  width:200px;
+}
+
+input[type="range"]#rofl_tours{
+  width:20px;
+}
+
+input[type="range"]#rofl_delta{
+  width:202px;
+}
+
+input[type="range"]#rofl_vitesse{
+  width:20px;
+}
+
+input[type="range"]#boing_facteur{
+  width:20px;
+}
+
+input[type="range"]#boing_delta{
+  width:202px;
+}
+
+input[type="range"]#boing_vitesse{
+  width:20px;
+}
+
+input[type="range"]#southpark_lim{
+  width:260px;
+}
+
+input[type="range"]:focus{
+  outline:none;
+}
+
+input[type="range"]::-moz-range-thumb{
+  box-sizing:border-box;
+  border:1px solid #333;
+  width:8px;
+  height:25px;
+  border-radius:0;
+  background-color:#eee;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  box-sizing:border-box;
+  border:1px solid #333;
+  width:8px;
+  height:25px;
+  border-radius:0;
+  background-color:#eee;
+  margin-top:-12px;
+}
+
+input[type="range"]::-moz-range-track{
+  height:1px;
+  border:0;
+  background:#333;
+}
+
+input[type="range"]::-webkit-slider-runnable-track{
+  height:1px;
+  border:0;
+  background:#333;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track{
+  background:#333;
+}
+
+select{
+  appearance:none;
+  margin:0;
+  border:1px solid #333;
+  padding:0 5px;
+  box-sizing:border-box;
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size:100%;
+  color:#333;
+  background-color:#fff;
+}
+
+select:not(.smiley_helper){
+  background:right 5px center url("arrow.png") no-repeat;
+  padding:0 20px 0 5px;
+  height:30px;
+}
+
+option{
+  appearance:none;
+  margin:0;
+  border:0;
+  padding:0 5px;
+  box-sizing:border-box;
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size:100%;
+  color:#333;
+  background-color:#fff;
+}
+
+/* smiley helper */
+
+div.smiley_helper{
+  display:none;
+  position:absolute;
+  justify-content:flex-start;
+  align-items:center;
+  background:transparent;
+}
+
+div.smiley_helper > select.smiley_helper{
+  display:block;
+  width:250px;
+}
+
+div.smiley_helper > img{
+  display:block;
+  margin:0 0 0 15px;
+  border:1px solid #333;
+  padding:15px;
+  background-color:#fff;
+}
