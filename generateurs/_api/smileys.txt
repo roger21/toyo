@@ -4410,6 +4410,9 @@ ca_va_peter:4
 ca_va_peter:5
 ca_va_peter:6
 ca_va_peter:7
+ca_va_peter:8
+ca_va_peter:9
+ca_va_peter:10
 caake
 cabecou
 cabiator
@@ -9481,6 +9484,7 @@ fabroo3:9
 fabroo3:10
 fabroo4
 fabroo4:1
+fabroo4:2
 fabs
 face de fesses
 face_de_pomme
@@ -24402,6 +24406,7 @@ rakacha
 rakacha:1
 rakacha:2
 rakacha:3
+rakame
 ralph-:1
 ralph14
 ralph14:1
