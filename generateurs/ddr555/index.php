@@ -14,7 +14,7 @@ $a=(isset($_GET["a"]) && in_array($_GET["a"], $angles, true)) ? $_GET["a"] : "18
 // images
 $smiley=get_smiley($s, $r);
 if($smiley === false){
-  //trigger_error(__DIR__."/index.php died on smiley === false");
+  //trigger_error(__DIR__."/index.php died on smiley === false $s $r");
   die();
 }
 $w=imagesx($smiley);

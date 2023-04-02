@@ -21,7 +21,7 @@ $dly=52 - (($v + 15) * 2); // de 20 à 2 (i.e. de 200ms à 20ms)
 // smiley
 $smiley=get_smiley($s, $r);
 if($smiley === false){
-  //trigger_error(__DIR__."/index.php died on smiley === false");
+  //trigger_error(__DIR__."/index.php died on smiley === false $s $r");
   die();
 }
 $ws=imagesx($smiley); // largeur du smiley

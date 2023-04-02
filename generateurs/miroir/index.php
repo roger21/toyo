@@ -19,12 +19,12 @@ if(!$left && !$right && !$top && !$bottom){
 // images
 $smiley=get_smiley($s, $r);
 if($smiley === false){
-  //trigger_error(__DIR__."/index.php died on smiley === false");
+  //trigger_error(__DIR__."/index.php died on smiley === false $s $r");
   die();
 }
 $sflip=get_smiley($s, $r);
 if($sflip === false){
-  trigger_error(__DIR__."/index.php died on sflip === false");
+  trigger_error(__DIR__."/index.php died on sflip === false $s $r");
   die();
 }
 if($left || $right){

@@ -15,12 +15,12 @@ $v=isset($_GET["v"]); // vertical
 // images
 $smiley1=get_smiley($s1, $r1);
 if($smiley1 === false){
-  //trigger_error(__DIR__."/index.php died on smiley1 === false");
+  //trigger_error(__DIR__."/index.php died on smiley1 === false $s1 $r1");
   die();
 }
 $smiley2=get_smiley($s2, $r2);
 if($smiley2 === false){
-  //trigger_error(__DIR__."/index.php died on smiley2 === false");
+  //trigger_error(__DIR__."/index.php died on smiley2 === false $s2 $r2");
   die();
 }
 $w1=imagesx($smiley1); // largeur du smiley 1

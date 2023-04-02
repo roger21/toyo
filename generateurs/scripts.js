@@ -80,7 +80,7 @@ function getOffsets(el) {
   var _x = 0;
   var _y = 0;
   while(el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
-    _x += el.offsetLeft - el.scrollLeft;
+    _x += el.offsetLeft /*- el.scrollLeft*/;
     _y += el.offsetTop - el.scrollTop;
     el = el.offsetParent;
   }
@@ -270,6 +270,9 @@ let generateurs = {
 
       addHandler: function(generateur) {
         generateurs.defaultAddHandler(generateur);
+        $(generateur.id + "_sujet").addEventListener("paste", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
         $(generateur.id + "_sujet").addEventListener("keyup", function() {
           generateurs.generateImgTimer(generateur);
         }, false);
@@ -971,7 +974,13 @@ let generateurs = {
 
       addHandler: function(generateur) {
         generateurs.defaultAddHandler(generateur);
+        $(generateur.id + "_text1").addEventListener("paste", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
         $(generateur.id + "_text1").addEventListener("keyup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_text2").addEventListener("paste", function() {
           generateurs.generateImgTimer(generateur);
         }, false);
         $(generateur.id + "_text2").addEventListener("keyup", function() {
@@ -1029,7 +1038,7 @@ let generateurs = {
     }
 
     let generatePreview = function() {
-      if(smiley.value !== select.value){
+      if(smiley.value !== select.value) {
         smiley.value = select.value;
         generateurs.generateImgTimer(generateur);
       }
@@ -1307,6 +1316,9 @@ let generateurs = {
   defaultAddHandler: function(generateur) {
     $(generateur.id + "_bbcode").addEventListener("focus", function() {
       this.select();
+    }, false);
+    $(generateur.id + "_t")?.addEventListener("paste", function() {
+      generateurs.generateImgTimer(generateur);
     }, false);
     $(generateur.id + "_t")?.addEventListener("keyup", function() {
       generateurs.generateImgTimer(generateur);

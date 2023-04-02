@@ -15,7 +15,7 @@ $l=isset($_GET["l"]) && (int)$_GET["l"] >=0 && (int)$_GET["l"] <= 129 ?
 // smiley
 $smiley=get_smiley($s, $r);
 if($smiley === false){
-  //trigger_error(__DIR__."/index.php died on smiley === false");
+  //trigger_error(__DIR__."/index.php died on smiley === false $s $r");
   die();
 }
 $ws=imagesx($smiley); // largeur du smiley
