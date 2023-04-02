@@ -323,15 +323,13 @@ let generateurs = {
           } else {
             let s1 = smiley1.split(":");
             url += "&s1=" + encodeURIComponent(s1[0]);
-            tsmiley1 = "[:" + smiley1;
             if(s1.length > 1) {
               let r1 = parseInt(s1[1], 10);
               if(!isNaN(r1) && r1 >= 1 && r1 <= 10) {
                 url += "&r1=" + r1;
-                tsmiley1 += ":" + r1;
               }
             }
-            tsmiley1 += "]";
+            tsmiley1 = "[:" + smiley1 + "]";
           }
         }
         if(smiley2 !== "") {
@@ -341,15 +339,13 @@ let generateurs = {
           } else {
             let s2 = smiley2.split(":");
             url += "&s2=" + encodeURIComponent(s2[0]);
-            tsmiley2 = "[:" + smiley2;
             if(s2.length > 1) {
               let r2 = parseInt(s2[1], 10);
               if(!isNaN(r2) && r2 >= 1 && r2 <= 10) {
                 url += "&r2=" + r2;
-                tsmiley2 += ":" + r2;
               }
             }
-            tsmiley2 += "]";
+            tsmiley2 = "[:" + smiley2 + "]";
           }
         }
         if(vertical) url += "&v";
@@ -424,15 +420,13 @@ let generateurs = {
           } else {
             let s = smiley.split(":");
             url += "&s=" + encodeURIComponent(s[0].trim());
-            tsmiley = "[:" + smiley;
             if(s.length > 1) {
               let r = parseInt(s[1].trim(), 10);
               if(!isNaN(r) && r >= 1 && r <= 10) {
                 url += "&r=" + r;
-                tsmiley += ":" + r;
               }
             }
-            tsmiley += "]";
+            tsmiley = "[:" + smiley + "]";
           }
         }
         let alt = "Ddr555 " + tsmiley + " @ " + tangle;
@@ -574,15 +568,13 @@ let generateurs = {
           } else {
             let s = smiley.split(":");
             url += "&s=" + encodeURIComponent(s[0].trim());
-            tsmiley = "[:" + smiley;
             if(s.length > 1) {
               let r = parseInt(s[1].trim(), 10);
               if(!isNaN(r) && r >= 1 && r <= 10) {
                 url += "&r=" + r;
-                tsmiley += ":" + r;
               }
             }
-            tsmiley += "]";
+            tsmiley = "[:" + smiley + "]";
           }
         }
         url += "&t=" + tours;
@@ -710,15 +702,13 @@ let generateurs = {
           } else {
             let s = smiley.split(":");
             url += "&s=" + encodeURIComponent(s[0].trim());
-            tsmiley = "[:" + smiley;
             if(s.length > 1) {
               let r = parseInt(s[1].trim(), 10);
               if(!isNaN(r) && r >= 1 && r <= 10) {
                 url += "&r=" + r;
-                tsmiley += ":" + r;
               }
             }
-            tsmiley += "]";
+            tsmiley = "[:" + smiley + "]";
           }
         }
         url += "&dx=" + dx;
@@ -830,15 +820,13 @@ let generateurs = {
           } else {
             let s = smiley.split(":");
             url += "&s=" + encodeURIComponent(s[0].trim());
-            tsmiley = "[:" + smiley;
             if(s.length > 1) {
               let r = parseInt(s[1].trim(), 10);
               if(!isNaN(r) && r >= 1 && r <= 10) {
                 url += "&r=" + r;
-                tsmiley += ":" + r;
               }
             }
-            tsmiley += "]";
+            tsmiley = "[:" + smiley + "]";
           }
         }
         let alt = "Miroir " + tpart + " de " + tsmiley;
@@ -902,15 +890,13 @@ let generateurs = {
           } else {
             let s = smiley.split(":");
             url += "&s=" + encodeURIComponent(s[0].trim());
-            tsmiley = "[:" + smiley;
             if(s.length > 1) {
               let r = parseInt(s[1].trim(), 10);
               if(!isNaN(r) && r >= 1 && r <= 10) {
                 url += "&r=" + r;
-                tsmiley += ":" + r;
               }
             }
-            tsmiley += "]";
+            tsmiley = "[:" + smiley + "]";
           }
         }
         let alt = "South Park " + tsmiley;
