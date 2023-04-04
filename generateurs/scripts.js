@@ -941,6 +941,59 @@ let generateurs = {
       }
     },
 
+    modo: {
+      id: "modo",
+      label: "Modération",
+      url: "modo/?t=",
+      alt: "",
+
+      timerImg: null,
+      lastCall: null,
+
+      generateImg: function(generateur) {
+        let input = $(generateur.id + "_t").value;
+        let value = $(generateur.id + "_smiley").value.trim();
+        let base = [":", ";"].includes(value.substring(0, 1));
+        let smiley = base ? value : value.replace(/^[\[:]+|[:\]]+$/g, "").trim();
+        let tsmiley = "";
+        let icons = $(generateur.id + "_icons").value;
+        let url = generateur.url + encodeURIComponent(input);
+        if(smiley !== "") {
+          if(base) {
+            url += "&s=" + encodeURIComponent(smiley);
+            tsmiley = smiley;
+          } else {
+            let s = smiley.split(":");
+            url += "&s=" + encodeURIComponent(s[0].trim());
+            if(s.length > 1) {
+              let r = parseInt(s[1].trim(), 10);
+              if(!isNaN(r) && r >= 1 && r <= 10) {
+                url += "&r=" + r;
+              }
+            }
+            tsmiley = "[:" + smiley + "]";
+          }
+        }
+        url += "&i=" + icons;
+        let alt = "La modération a dit : " + input + (tsmiley ? " " + tsmiley : "");
+        updateImg(generateur, url, alt);
+      },
+
+      addHandler: function(generateur) {
+        generateurs.defaultAddHandler(generateur);
+        $(generateur.id + "_icons").addEventListener("change", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_icons").addEventListener("wheel", function(event) {
+          wheelEvent(event, "select", this, generateur);
+        }, false);
+        $(generateur.id + "_licons").addEventListener("wheel", function(event) {
+          wheelEvent(event, "select", $(generateur.id + "_icons"), generateur);
+        }, false);
+        generateurs.addSmileyHelper(generateur.id + "_smiley", generateur);
+      }
+    },
+
     ump: {
       id: "ump",
       label: "UMP",

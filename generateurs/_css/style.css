@@ -301,6 +301,19 @@ input[type="range"]:focus::-webkit-slider-runnable-track{
   background:#333;
 }
 
+textarea{
+  margin:0;
+  border:1px solid #333;
+  padding:5px;
+  box-sizing:border-box;
+  width:400px;
+  height:90px;
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size:100%;
+  color:#333;
+  background-color:#fff;
+}
+
 select{
   appearance:none;
   margin:0;
