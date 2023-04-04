@@ -63,9 +63,13 @@ $yline=23 + $dyt; // position en y de le ligne au dessus du contenu
 $dl=5; // distance entre la ligne au dessus du contenu et les bords
 $x=$xline + $dl; // position du texte en x pour la date et le texte
 $yd=18 + $dyd; // position du texte en y pour la date
-$hc=(($nbl - 1) * $hl) + max($hs + ($lle ? 0 : $bsl), $hl); // hauteur du contenu
-// décallage verticale du texte en fonction du contenu
-$dyt2=$hc < $ht ? ceil(($ht - $hc) / 2) : 0;
+// hauteur de la dernière ligne
+// si le smiley est seul sur sa ligne, sans texte, il n'a pas de baseline
+// c'est comme ça sur le forum (et ça permet de faire des mosaïques de smileys)
+$hll=$smiley !== false ? ($lle ? max($hs, $hl - $bsl) : max($hs + $bsl, $hl)) : $hl;
+$hc=(($nbl - 1) * $hl) + $hll; // hauteur du contenu
+// décallage verticale du texte en fonction de la hauteur du contenu
+$dyt2=$hc < $ht ? floor(($ht - $hc) / 2) : 0;
 $h=max($ht, $hc) + $hf - $ht; // hauteur de l'image
 $yt=43 + $dyt + $dyt2; // position du texte en y pour le texte
 
@@ -213,7 +217,7 @@ foreach($lines as $j => $line){
 // smiley
 if($smiley !== false){
   $xs=$x + ($lle ? 0 : (($poss[$nbl - 1][4] - $poss[$nbl - 1][0]) + $dws));
-  $ys=$yt + (($nbl - 1) * $hl) - ($hl - $bsl);
+  $ys=$yt + (($nbl - 1) * $hl) - min($hs, $hl - $bsl);
   $r=imagecopyresampled($im, $smiley, $xs, $ys, 0, 0, $ws, $hs, $ws, $hs);
   if($r === false){
     trigger_error(__DIR__."/index.php died on imagecopyresampled smiley");
