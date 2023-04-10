@@ -13,7 +13,7 @@ $t=(isset($_GET["t"]) && (int)$_GET["t"] >= 1 && (int)$_GET["t"] <= 10) ?
   (int)$_GET["t"] : 2; // tours
 $m=(isset($_GET["m"]) && (int)$_GET["m"] >= 1 && (int)$_GET["m"] <= 5) ?
   (int)$_GET["m"] : 3; // mode
-$dx=(isset($_GET["dx"]) && (int)$_GET["dx"] >= 0 && (int)$_GET["dx"] <= 100) ?
+$dx=(isset($_GET["dx"]) && (int)$_GET["dx"] >= -100 && (int)$_GET["dx"] <= 100) ?
    (int)$_GET["dx"] : 0; // delta x
 $v=(isset($_GET["v"]) && (int)$_GET["v"] >= 1 && (int)$_GET["v"] <= 10) ?
   (int)$_GET["v"] : 6; // vitesse
@@ -133,26 +133,26 @@ case 5: // carré
 }
 if($m !== 5){ // rond
   $d=ceil((M_PI * $g) / 8); // delta
-  $w=$max + ($nbf * ($d + $dx)); // largeur du gif
+  $w=$max + max($nbf * ($d + $dx), 0); // largeur du gif
   // frames aller
   for($i=0; $i <= $nbf; ++$i){
-    add_frame(-$i * 45, $i * $d + $i * $dx);
+    add_frame(-$i * 45, max($i * $d + $i * $dx, 0));
   }
   // frames retour
   for($i=$nbf - 1; $i > 0; --$i){
-    add_frame(-$i * 45, $i * $d + $i * $dx);
+    add_frame(-$i * 45, max($i * $d + $i * $dx, 0));
   }
 }else{ // carré
-  $w=($t * ($ws + $hs) * 2) + $ws + ($nbf * $dx); // largeur du gif
+  $w=max(($t * ($ws + $hs) * 2) + $ws + ($nbf * $dx), $max); // largeur du gif
   // frames aller
   for($i=0; $i <= $nbf; ++$i){
     $dt=floor($i / 4) * ($ws + $hs);
-    add_frame(-$i * 45, $dt + $ds[$i % 4] + $i * $dx, false);
+    add_frame(-$i * 45, max($dt + $ds[$i % 4] + $i * $dx, 0), false);
   }
   // frames retour
   for($i=$nbf - 1; $i > 0; --$i){
     $dt=floor($i / 4) * ($ws + $hs);
-    add_frame(-$i * 45, $dt + $ds[$i % 4] + $i * $dx, false);
+    add_frame(-$i * 45, max($dt + $ds[$i % 4] + $i * $dx, 0), false);
   }
 }
 
