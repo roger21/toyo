@@ -188,6 +188,10 @@ $(document).ready(function() {
 
   $("#go_button").on("click", function() {
     let url = $("#url_input").val().trim();
+    if(url === "" || !document.getElementById("url_input").checkValidity()) {
+      alert("L'url n'est pas bonne !");
+      return false;
+    }
     $("#input_area").css("display", "none");
     $("#image_area").css("display", "block");
     currentFile = {
