@@ -80,7 +80,7 @@ function getOffsets(el) {
   var _x = 0;
   var _y = 0;
   while(el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
-    _x += el.offsetLeft /*- el.scrollLeft*/;
+    _x += el.offsetLeft /*- el.scrollLeft*/ ;
     _y += el.offsetTop - el.scrollTop;
     el = el.offsetParent;
   }
@@ -237,16 +237,16 @@ let generateurs = {
 
       initOptions: function(generateur) {
         if($(generateur.id + "_moi").checked) {
-          $(generateur.id + "_sujet").setAttribute("disabled", "disabled");
+          $(generateur.id + "_t").setAttribute("disabled", "disabled");
           $(generateur.id + "_pluriel").setAttribute("disabled", "disabled");
         } else {
-          $(generateur.id + "_sujet").removeAttribute("disabled");
+          $(generateur.id + "_t").removeAttribute("disabled");
           $(generateur.id + "_pluriel").removeAttribute("disabled");
         }
       },
 
       generateImg: function(generateur) {
-        let input = $(generateur.id + "_sujet").value;
+        let input = $(generateur.id + "_t").value;
         let moi = $(generateur.id + "_moi").checked;
         let pluriel = $(generateur.id + "_pluriel").checked;
         let not = $(generateur.id + "_not").checked;
@@ -258,10 +258,10 @@ let generateurs = {
           alt += not ? "Je n'aime pas ça" : "J'aime ça";
         } else {
           if(pluriel) {
-            url += not ? "not&pluriel&s=" + sujet : "pluriel&s=" + sujet;
+            url += not ? "not&pluriel&t=" + sujet : "pluriel&t=" + sujet;
             alt += not ? input + " n'aiment pas ça" : input + " aiment ça";
           } else {
-            url += not ? "not&s=" + sujet : "s=" + sujet;
+            url += not ? "not&t=" + sujet : "t=" + sujet;
             alt += not ? input + " n'aime pas ça" : input + " aime ça";
           }
         }
@@ -270,12 +270,6 @@ let generateurs = {
 
       addHandler: function(generateur) {
         generateurs.defaultAddHandler(generateur);
-        $(generateur.id + "_sujet").addEventListener("paste", function() {
-          generateurs.generateImgTimer(generateur);
-        }, false);
-        $(generateur.id + "_sujet").addEventListener("keyup", function() {
-          generateurs.generateImgTimer(generateur);
-        }, false);
         $(generateur.id + "_moi").addEventListener("click", function() {
           generateurs.initOptions(generateur);
           generateurs.generateImgTimer(generateur);
@@ -989,6 +983,204 @@ let generateurs = {
         }, false);
         $(generateur.id + "_licons").addEventListener("wheel", function(event) {
           wheelEvent(event, "select", $(generateur.id + "_icons"), generateur);
+        }, false);
+        generateurs.addSmileyHelper(generateur.id + "_smiley", generateur);
+      }
+    },
+
+    golden: {
+      id: "golden",
+      label: "Golden",
+      url: "golden/?v=",
+      alt: "",
+
+      timerImg: null,
+      lastCall: null,
+
+      initOptions: function(generateur) {
+        $(generateur.id + "_vstars").textContent =
+          $(generateur.id + "_stars").value;
+        $(generateur.id + "_vgolden").textContent =
+          $(generateur.id + "_golden").value + " %";
+        $(generateur.id + "_vframes").textContent =
+          $(generateur.id + "_frames").value;
+        $(generateur.id + "_vvitesse").textContent =
+          $(generateur.id + "_vitesse").value;
+      },
+
+      generateImg: function(generateur) {
+        let value = $(generateur.id + "_smiley").value.trim();
+        let base = [":", ";"].includes(value.substring(0, 1));
+        let smiley = base ? value : value.replace(/^[\[:]+|[:\]]+$/g, "").trim();
+        let tsmiley = "";
+        let stars = $(generateur.id + "_stars").value;
+        let golden = $(generateur.id + "_golden").value;
+        let position = $(generateur.id + "_position").value;
+        let taille = $(generateur.id + "_taille").value;
+        let frames = $(generateur.id + "_frames").value;
+        let vitesse = $(generateur.id + "_vitesse").value;
+        let url = generateur.url + vitesse;
+        if(smiley !== "") {
+          if(base) {
+            url += "&s=" + encodeURIComponent(smiley);
+            tsmiley = smiley;
+          } else {
+            let s = smiley.split(":");
+            url += "&s=" + encodeURIComponent(s[0].trim());
+            if(s.length > 1) {
+              let r = parseInt(s[1].trim(), 10);
+              if(!isNaN(r) && r >= 1 && r <= 10) {
+                url += "&r=" + r;
+              }
+            }
+            tsmiley = "[:" + smiley + "]";
+          }
+        }
+        url += "&stars=" + stars;
+        url += "&golden=" + golden;
+        switch(position) {
+          case "WO":
+            url += "&wo";
+            break;
+          case "HG":
+            url += "&av=H&ah=G";
+            break;
+          case "HD":
+            url += "&av=H&ah=D";
+            break;
+          case "BG":
+            url += "&av=B&ah=G";
+            break;
+          case "BD":
+            url += "&av=B&ah=D";
+            break;
+          case "VHG":
+            url += "&av=H&ah=G&vert";
+            break;
+          case "VHD":
+            url += "&av=H&ah=D&vert";
+            break;
+          case "VBG":
+            url += "&av=B&ah=G&vert";
+            break;
+          case "VBD":
+            url += "&av=B&ah=D&vert";
+            break;
+        }
+        url += "&taille=" + taille;
+        url += "&frames=" + frames;
+        let alt = "Golden " + tsmiley;
+        updateImg(generateur, url, alt);
+      },
+
+      addHandler: function(generateur) {
+        generateurs.defaultAddHandler(generateur);
+        $(generateur.id + "_stars").addEventListener("input", function() {
+          generateurs.initOptions(generateur);
+        }, false);
+        $(generateur.id + "_stars").addEventListener("mouseup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_stars").addEventListener("keyup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_stars").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", this, generateur);
+        }, false);
+        $(generateur.id + "_lstars").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_stars"), generateur);
+        }, false);
+        $(generateur.id + "_vstars").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_stars"), generateur);
+        }, false);
+        $(generateur.id + "_golden").addEventListener("input", function() {
+          generateurs.initOptions(generateur);
+        }, false);
+        $(generateur.id + "_golden").addEventListener("mouseup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_golden").addEventListener("keyup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_golden").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", this, generateur);
+        }, false);
+        $(generateur.id + "_lgolden").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_golden"), generateur);
+        }, false);
+        $(generateur.id + "_vgolden").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_golden"), generateur);
+        }, false);
+        $(generateur.id + "_position").addEventListener("change", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_position").addEventListener("wheel", function(event) {
+          wheelEvent(event, "select", this, generateur);
+        }, false);
+        $(generateur.id + "_lposition").addEventListener("wheel", function(event) {
+          wheelEvent(event, "select", $(generateur.id + "_position"), generateur);
+        }, false);
+        $(generateur.id + "_taille").addEventListener("change", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_taille").addEventListener("wheel", function(event) {
+          wheelEvent(event, "select", this, generateur);
+        }, false);
+        $(generateur.id + "_ltaille").addEventListener("wheel", function(event) {
+          wheelEvent(event, "select", $(generateur.id + "_taille"), generateur);
+        }, false);
+        $(generateur.id + "_frames").addEventListener("input", function() {
+          generateurs.initOptions(generateur);
+        }, false);
+        $(generateur.id + "_frames").addEventListener("mouseup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_frames").addEventListener("keyup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_frames").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", this, generateur);
+        }, false);
+        $(generateur.id + "_lframes").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_frames"), generateur);
+        }, false);
+        $(generateur.id + "_vframes").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_frames"), generateur);
+        }, false);
+        $(generateur.id + "_vitesse").addEventListener("input", function() {
+          generateurs.initOptions(generateur);
+        }, false);
+        $(generateur.id + "_vitesse").addEventListener("mouseup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_vitesse").addEventListener("keyup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_vitesse").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", this, generateur);
+        }, false);
+        $(generateur.id + "_lvitesse").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_vitesse"), generateur);
+        }, false);
+        $(generateur.id + "_vvitesse").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_vitesse"), generateur);
+        }, false);
+        $(generateur.id + "_random").addEventListener("click", function() {
+          generateurs.generateImgTimer(generateur, function(generateur) {
+            getSmileys(generateur, function(generateur, smileys, length) {
+              let i = Math.floor(Math.random() * length);
+              $(generateur.id + "_smiley").value = smileys[i];
+              $(generateur.id + "_stars").value = 5; // default
+              $(generateur.id + "_golden").value = 50; // default
+              // horizontal en bas à gauche default
+              $(generateur.id + "_position").selectedIndex = 3;
+              $(generateur.id + "_taille").selectedIndex = 0; // 1 default
+              $(generateur.id + "_frames").value = 20; // default
+              $(generateur.id + "_vitesse").value = 8; // default
+              generateurs.initOptions(generateur);
+              generateurs.generateImg(generateur);
+            });
+          });
         }, false);
         generateurs.addSmileyHelper(generateur.id + "_smiley", generateur);
       }

@@ -139,6 +139,22 @@ div.generateur > div.options > div > label#southpark_vlim{
   width:4em;
 }
 
+div.generateur > div.options > div > label#golden_vstars{
+  width:2.5em;
+}
+
+div.generateur > div.options > div > label#golden_vgolden{
+  width:3.5em;
+}
+
+div.generateur > div.options > div > label#golden_vframes{
+  width:2.5em;
+}
+
+div.generateur > div.options > div > label#golden_vvitesse{
+  width:2em;
+}
+
 div.generateur > div.bbcode > input{
   width:100%;
   color:#999;
@@ -259,6 +275,22 @@ input[type="range"]#boing_vitesse{
 
 input[type="range"]#southpark_lim{
   width:260px;
+}
+
+input[type="range"]#golden_stars{
+  width:202px;
+}
+
+input[type="range"]#golden_golden{
+  width:202px;
+}
+
+input[type="range"]#golden_frames{
+  width:200px;
+}
+
+input[type="range"]#golden_vitesse{
+  width:20px;
 }
 
 input[type="range"]:focus{

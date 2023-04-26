@@ -159,33 +159,33 @@ if($r === false){
   die();
 }
 $r=imageline($im, 0, 0, $w - 1, 0, $gris1); // bordure du haut
-if($r === -1){
+if($r === false){
   trigger_error(__DIR__."/index.php died on imageline bordure du haut");
   die();
 }
 $r=imageline($im, 0, 0, 0, $h - 1, $gris1); // bordure de gauche
-if($r === -1){
+if($r === false){
   trigger_error(__DIR__."/index.php died on imageline bordure de gauche");
   die();
 }
 $r=imageline($im, $xline, 0, $xline, $h - 1, $gris1); // ligne à gauche du contenu
-if($r === -1){
+if($r === false){
   trigger_error(__DIR__."/index.php died on imageline ligne à gauche du contenu");
   die();
 }
 $r=imageline($im, $w - 1, 0, $w - 1, $h - 1, $gris1); // bordure de droite
-if($r === -1){
+if($r === false){
   trigger_error(__DIR__."/index.php died on imageline bordure de droite");
   die();
 }
 $r=imageline($im, 0, $h - 1, $w - 1, $h - 1, $gris1); // bordure du bas
-if($r === -1){
+if($r === false){
   trigger_error(__DIR__."/index.php died on imageline bordure du bas");
   die();
 }
 // ligne au dessus du contenu
 $r=imageline($im, $xline + $dl, $yline, $w - 1 - $dl, $yline, $gris2);
-if($r === -1){
+if($r === false){
   trigger_error(__DIR__."/index.php died on imageline ligne au dessus du contenu");
   die();
 }

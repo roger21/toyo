@@ -33,7 +33,7 @@ if($rouge === false){
 
 // forme
 $r=imageline($fond, 9, 28, 39, 19, $rouge);
-if($r === -1){
+if($r === false){
   trigger_error(__DIR__."/index.php died on imageline rouge");
   die();
 }

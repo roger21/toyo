@@ -5,7 +5,7 @@ require_once "../_include/errors.php";
 //trigger_error(__DIR__."/index.php ".var_export($_REQUEST, true));
 
 // paramètres
-$sujet=isset($_GET["s"]) ? $_GET["s"] : "";
+$sujet=isset($_GET["t"]) ? $_GET["t"] : "";
 $moi=isset($_GET["moi"]);
 $pluriel=isset($_GET["pluriel"]);
 $not=isset($_GET["not"]);

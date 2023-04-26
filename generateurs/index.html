@@ -52,8 +52,8 @@
       <div class="generateur" id="fb_div">
         <div class="options">
           <div>
-            <label for="fb_sujet">Sujet</label>
-            <input id="fb_sujet" type="text">
+            <label for="fb_t">Sujet</label>
+            <input id="fb_t" type="text">
           </div>
           <div>
             <label for="fb_moi">Moi</label>
@@ -325,6 +325,64 @@
           <input id="modo_bbcode" type="text" readonly="readonly">
         </div>
         <div id="modo_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
+      <div class="generateur" id="golden_div">
+        <div class="by">Par castormalin</div>
+        <div class="options">
+          <div>
+            <label for="golden_smiley">Smiley</label>
+            <input id="golden_smiley" type="text" class="smiley">
+          </div>
+          <div>
+            <label id="golden_lstars" for="golden_stars">Nombre maximal d'étoiles</label>
+            <input id="golden_stars" type="range" min="0" max="100" step="1" value="5">
+            <label id="golden_vstars" class="after" for="golden_stars">5</label>
+          </div>
+          <div>
+            <label id="golden_lgolden" for="golden_golden">Taux de doré</label>
+            <input id="golden_golden" type="range" min="0" max="100" step="1" value="50">
+            <label id="golden_vgolden" class="after" for="golden_golden">50 %</label>
+          </div>
+          <div>
+            <label id="golden_lposition" for="golden_position">Position du texte</label>
+            <select id="golden_position">
+              <option value="WO">sans texte</option>
+              <option value="HG">horizontal en haut à gauche</option>
+              <option value="HD">horizontal en haut à droite</option>
+              <option value="BG" selected="selected">horizontal en bas à gauche</option>
+              <option value="BD">horizontal en bas à droite</option>
+              <option value="VHG">vertical en haut à gauche</option>
+              <option value="VHD">vertical en haut à droite</option>
+              <option value="VBG">vertical en bas à gauche</option>
+              <option value="VBD">vertical en bas à droite</option>
+            </select>
+          </div>
+          <div>
+            <label id="golden_ltaille" for="golden_taille">Taille du texte</label>
+            <select id="golden_taille">
+              <option value="1" selected="selected">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+          <div>
+            <label id="golden_lframes" for="golden_frames">Nombre de frames</label>
+            <input id="golden_frames" type="range" min="1" max="100" step="1" value="20">
+            <label id="golden_vframes" class="after" for="golden_frames">20</label>
+          </div>
+          <div>
+            <label id="golden_lvitesse" for="golden_vitesse">Vitesse</label>
+            <input id="golden_vitesse" type="range" min="1" max="10" step="1" value="8">
+            <label id="golden_vvitesse" class="after" for="golden_vitesse">8</label>
+          </div>
+          <input id="golden_random" type="button" value="Random">
+        </div>
+        <div class="bbcode">
+          <input id="golden_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="golden_preview" class="preview">
           <img src="" alt="" title="">
         </div>
       </div>

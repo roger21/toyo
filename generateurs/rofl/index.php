@@ -17,7 +17,7 @@ $dx=(isset($_GET["dx"]) && (int)$_GET["dx"] >= -100 && (int)$_GET["dx"] <= 100) 
    (int)$_GET["dx"] : 0; // delta x
 $v=(isset($_GET["v"]) && (int)$_GET["v"] >= 1 && (int)$_GET["v"] <= 10) ?
   (int)$_GET["v"] : 6; // vitesse
-$dly=52 - (($v + 15) * 2); // de 20 à 2 (i.e. de 200ms à 20ms)
+$dly=52 - (($v + 15) * 2); // de 20 à 2 par pas de 2 (i.e. de 200ms à 20ms)
 
 // smiley
 $smiley=get_smiley($s, $r);
