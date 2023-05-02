@@ -103,6 +103,10 @@ div.generateur > div.options > div > label.after{
   box-sizing:border-box;
 }
 
+div.generateur > div.options > div > label#bulle_vdelta{
+  width:4em;
+}
+
 div.generateur > div.options > div > label#note_vnumerateur{
   width:2em;
 }
@@ -123,12 +127,12 @@ div.generateur > div.options > div > label#rofl_vvitesse{
   width:2em;
 }
 
-div.generateur > div.options > div > label#boing_vfacteur{
-  width:2em;
-}
-
 div.generateur > div.options > div > label#boing_vdelta{
   width:4em;
+}
+
+div.generateur > div.options > div > label#boing_vfacteur{
+  width:2em;
 }
 
 div.generateur > div.options > div > label#boing_vvitesse{
@@ -241,6 +245,10 @@ input[type="range"]{
   background-color:#fff;
 }
 
+input[type="range"]#bulle_delta{
+  width:202px;
+}
+
 input[type="range"]#note_numerateur{
   width:200px;
 }
@@ -261,12 +269,12 @@ input[type="range"]#rofl_vitesse{
   width:20px;
 }
 
-input[type="range"]#boing_facteur{
-  width:20px;
-}
-
 input[type="range"]#boing_delta{
   width:202px;
+}
+
+input[type="range"]#boing_facteur{
+  width:20px;
 }
 
 input[type="range"]#boing_vitesse{

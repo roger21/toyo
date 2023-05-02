@@ -293,6 +293,100 @@ let generateurs = {
       lastCall: null
     },
 
+    bulle: {
+      id: "bulle",
+      label: "Bulle",
+      url: "bulle/?t=",
+      alt: "",
+
+      timerImg: null,
+      lastCall: null,
+
+      initOptions: function(generateur) {
+        $(generateur.id + "_vdelta").textContent =
+          $(generateur.id + "_delta").value + " px";
+      },
+
+      generateImg: function(generateur) {
+        let input = $(generateur.id + "_t").value;
+        let delta = $(generateur.id + "_delta").value;
+        let flip = $(generateur.id + "_flip").checked;
+        let police = $(generateur.id + "_police").value;
+        let taille = $(generateur.id + "_taille").value;
+        let value = $(generateur.id + "_smiley").value.trim();
+        let base = [":", ";"].includes(value.substring(0, 1));
+        let smiley = base ? value : value.replace(/^[\[:]+|[:\]]+$/g, "").trim();
+        let tsmiley = "";
+        let url = generateur.url + encodeURIComponent(input);
+        url += "&delta=" + delta;
+        if(smiley !== "") {
+          if(base) {
+            url += "&s=" + encodeURIComponent(smiley);
+            tsmiley = smiley;
+          } else {
+            let s = smiley.split(":");
+            url += "&s=" + encodeURIComponent(s[0].trim());
+            if(s.length > 1) {
+              let r = parseInt(s[1].trim(), 10);
+              if(!isNaN(r) && r >= 1 && r <= 10) {
+                url += "&r=" + r;
+              }
+            }
+            tsmiley = "[:" + smiley + "]";
+          }
+        }
+        url += "&police=" + police;
+        url += "&taille=" + taille;
+        if(flip) url += "&flip";
+        let alt = "Bulle " + (tsmiley !== "" ? tsmiley + " " : "") + input;
+        updateImg(generateur, url, alt);
+      },
+
+      addHandler: function(generateur) {
+        generateurs.defaultAddHandler(generateur);
+        $(generateur.id + "_delta").addEventListener("input", function() {
+          generateurs.initOptions(generateur);
+        }, false);
+        $(generateur.id + "_delta").addEventListener("mouseup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_delta").addEventListener("keyup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_delta").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", this, generateur);
+        }, false);
+        $(generateur.id + "_ldelta").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_delta"), generateur);
+        }, false);
+        $(generateur.id + "_vdelta").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_delta"), generateur);
+        }, false);
+        $(generateur.id + "_flip").addEventListener("click", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_police").addEventListener("change", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_police").addEventListener("wheel", function(event) {
+          wheelEvent(event, "select", this, generateur);
+        }, false);
+        $(generateur.id + "_lpolice").addEventListener("wheel", function(event) {
+          wheelEvent(event, "select", $(generateur.id + "_police"), generateur);
+        }, false);
+        $(generateur.id + "_taille").addEventListener("change", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_taille").addEventListener("wheel", function(event) {
+          wheelEvent(event, "select", this, generateur);
+        }, false);
+        $(generateur.id + "_ltaille").addEventListener("wheel", function(event) {
+          wheelEvent(event, "select", $(generateur.id + "_taille"), generateur);
+        }, false);
+        generateurs.addSmileyHelper(generateur.id + "_smiley", generateur);
+      }
+    },
+
     moitmoit: {
       id: "moitmoit",
       label: "Moit-Moit",
