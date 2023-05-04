@@ -236,7 +236,7 @@ header("Content-type: image/png");
 
 $r=imagepng($bulle, null, 9);
 if($r === false){
-  trigger_error(__DIR__."/index.php died on imagepng");
+  trigger_error(__DIR__."/index.php died on imagepng bulle");
   die();
 }
 

@@ -6,6 +6,7 @@ require_once "../_include/errors.php";
 
 // paramètres
 $text=isset($_GET["t"]) ? $_GET["t"] : ""; // texte
+$smiley=isset($_GET["s"]); // smiley
 
 $wi=101; // largeur de la tête
 $hi=135; // hauteur de la tête
@@ -112,9 +113,38 @@ if($text !== ""){
 // sortie
 header("Content-type: image/png");
 
-$r=imagepng($im, null, 9);
-if($r === false){
-  trigger_error(__DIR__."/index.php died on imagepng im");
-  die();
+if($smiley){
+
+  $ws=70;
+  $hs=50;
+  if($w / $h < 1.4){
+    $ws=floor($w * 50 / $h);
+  }else{
+    $hs=floor($h * 70 / $w);
+  }
+  $s=imagecreatetruecolor($ws, $hs);
+  if($s === false){
+    trigger_error(__DIR__."/index.php died on imagecreatetruecolor s");
+    die();
+  }
+  $r=imagecopyresampled($s, $im, 0, 0, 0, 0, $ws, $hs, $w, $h);
+  if($r === false){
+    trigger_error(__DIR__."/index.php died on imagecopyresampled s im");
+    die();
+  }
+  $r=imagepng($s, null, 9);
+  if($r === false){
+    trigger_error(__DIR__."/index.php died on imagepng s");
+    die();
+  }
+
+}else{
+
+  $r=imagepng($im, null, 9);
+  if($r === false){
+    trigger_error(__DIR__."/index.php died on imagepng im");
+    die();
+  }
+
 }
 

@@ -250,6 +250,7 @@ let generateurs = {
         let moi = $(generateur.id + "_moi").checked;
         let pluriel = $(generateur.id + "_pluriel").checked;
         let not = $(generateur.id + "_not").checked;
+        let smiley = $(generateur.id + "_s").checked;
         let sujet = encodeURIComponent(input);
         let url = generateur.url;
         let alt = "";
@@ -265,6 +266,7 @@ let generateurs = {
             alt += not ? input + " n'aime pas ça" : input + " aime ça";
           }
         }
+        if(smiley) url += "&s";
         updateImg(generateur, url, alt);
       },
 
