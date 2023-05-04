@@ -120,6 +120,7 @@ if($r === false){
   trigger_error(__DIR__."/index.php died on imagefill bulle trans");
   die();
 }
+
 // coins de la bulle
 $tl=imagecreatefrompng("./tl.png"); // top left
 if($tl === false){
@@ -161,39 +162,39 @@ if($r === false){
   trigger_error(__DIR__."/index.php died on imagecopyresampled bulle bl");
   die();
 }
-if($text !== ""){
-  // bordures
-  $r=imageline($bulle, $dx + 7, 0, $wf - 5, 0, $noir); // bordure du haut
-  if($r === false){
-    trigger_error(__DIR__."/index.php died on imageline bulle noir bordure du haut");
-    die();
-  }
-  $r=imageline($bulle, $wf - 1, 4, $wf - 1, $hb - 7, $noir); // bordure de droite
-  if($r === false){
-    trigger_error(__DIR__."/index.php died on imageline bulle noir bordure de droite");
-    die();
-  }
-  $r=imageline($bulle, $dx + 7, $hb - 3, $wf - 5, $hb - 3, $noir); // bordure du bas
-  if($r === false){
-    trigger_error(__DIR__."/index.php died on imageline bulle noir bordure du bas");
-    die();
-  }
-  $r=imageline($bulle, $dx + 3, 4, $dx + 3, $hb - 7, $noir); // bordure de gauche
-  if($r === false){
-    trigger_error(__DIR__."/index.php died on imageline bulle noir bordure de gauche");
-    die();
-  }
-  // fond blanc
-  $r=imagefilledrectangle($bulle, $dx + 7, 1, $wf - 5, $hb - 4, $blanc);
-  if($r === false){
-    trigger_error(__DIR__."/index.php died on imagefilledrectangle bulle blanc 1");
-    die();
-  }
-  $r=imagefilledrectangle($bulle, $dx + 4, 4, $wf - 2, $hb - 7, $blanc);
-  if($r === false){
-    trigger_error(__DIR__."/index.php died on imagefilledrectangle bulle blanc 1");
-    die();
-  }
+
+// bordures
+$r=imageline($bulle, $dx + 7, 0, $wf - 5, 0, $noir); // bordure du haut
+if($r === false){
+  trigger_error(__DIR__."/index.php died on imageline bulle noir bordure du haut");
+  die();
+}
+$r=imageline($bulle, $wf - 1, 4, $wf - 1, $hb - 7, $noir); // bordure de droite
+if($r === false){
+  trigger_error(__DIR__."/index.php died on imageline bulle noir bordure de droite");
+  die();
+}
+$r=imageline($bulle, $dx + 7, $hb - 3, $wf - 5, $hb - 3, $noir); // bordure du bas
+if($r === false){
+  trigger_error(__DIR__."/index.php died on imageline bulle noir bordure du bas");
+  die();
+}
+$r=imageline($bulle, $dx + 3, 4, $dx + 3, $hb - 7, $noir); // bordure de gauche
+if($r === false){
+  trigger_error(__DIR__."/index.php died on imageline bulle noir bordure de gauche");
+  die();
+}
+
+// fond blanc
+$r=imagefilledrectangle($bulle, $dx + 7, 1, $wf - 5, $hb - 4, $blanc);
+if($r === false){
+  trigger_error(__DIR__."/index.php died on imagefilledrectangle bulle blanc 1");
+  die();
+}
+$r=imagefilledrectangle($bulle, $dx + 4, 4, $wf - 2, $hb - 7, $blanc);
+if($r === false){
+  trigger_error(__DIR__."/index.php died on imagefilledrectangle bulle blanc 1");
+  die();
 }
 
 // inversion

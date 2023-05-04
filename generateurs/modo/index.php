@@ -25,6 +25,13 @@ if($i !== 1){
   }
 }
 
+// normalise
+$t=normalizer_normalize($t, Normalizer::NFKC);
+if($t === false){
+  trigger_error(__DIR__."/index.php died on normalizer_normalize $t");
+  die();
+}
+
 $lines=preg_split("/\r?\n/", $t); // lingnes du texte
 if($lines === false){
   trigger_error(__DIR__."/index.php died on preg_split $t");

@@ -1326,6 +1326,54 @@ let generateurs = {
           generateurs.generateImgTimer(generateur);
         }, false);
       }
+    },
+
+    demot: {
+      id: "demot",
+      label: "Démotivator",
+      url: "demot/?o",
+      alt: "",
+
+      timerImg: null,
+      lastCall: null,
+
+      generateImg: function(generateur) {
+        let pseudal = $(generateur.id + "_p").value.trim();
+        let titre = $(generateur.id + "_t").value;
+        let texte = $(generateur.id + "_c").value;
+        let url = generateur.url;
+        if(pseudal !== "") url += "&p=" + encodeURIComponent(pseudal);
+        if(titre !== "") url += "&t=" + encodeURIComponent(titre);
+        if(texte !== "") url += "&c=" + encodeURIComponent(texte);
+        let alt = "Démotivator " + pseudal;
+        updateImg(generateur, url, alt);
+      },
+
+      addHandler: function(generateur) {
+        generateurs.defaultAddHandler(generateur);
+        $(generateur.id + "_p").addEventListener("paste", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_p").addEventListener("keyup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_c").addEventListener("paste", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_c").addEventListener("keyup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+      }
+    },
+
+    giuseppe: {
+      id: "giuseppe",
+      label: "Giuseppe",
+      url: "giuseppe/?t=",
+      alt: "Giuseppe {$1}",
+
+      timerImg: null,
+      lastCall: null,
     }
   },
 
@@ -1685,11 +1733,11 @@ let generateurs = {
   },
 
   defaultGenerateImg: function(generateur) {
-    let input = $(generateur.id + "_t").value;
+    let text = $(generateur.id + "_t").value;
     let smiley = $(generateur.id + "_s")?.checked;
-    let url = generateur.url + encodeURIComponent(input);
+    let url = generateur.url + encodeURIComponent(text);
     if(smiley) url += "&s";
-    let alt = generateur.alt.replace("{$1}", input);
+    let alt = generateur.alt.replace("{$1}", text);
     updateImg(generateur, url, alt);
   },
 

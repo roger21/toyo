@@ -206,6 +206,10 @@ input[type="text"].smiley{
   background:url("smiley.php") right 6px top 6px / 16px no-repeat;
 }
 
+input[type="text"].pseudal{
+  width:250px;
+}
+
 input[type="text"]:invalid{
   background-color:#fcc;
 }
