@@ -219,18 +219,20 @@ if($forced_center){
   }
 }
 
-trigger_error(var_export(["mode" => $mode,
-                          "rayonx" => $rayonx,
-                          "rayony" => $rayony,
-                          "angle" => $angle,
-                          "asteps" => $asteps,
-                          "rsteps" => $rsteps,
-                          "branches" => $branches,
-                          "rofl" => $rofl,
-                          "fixe" => $fixe,
-                          "center" => $center,
-                          "forced_center" => $forced_center,
-                          "n" => $n], true));
+/*
+  trigger_error(var_export(["mode" => $mode,
+  "rayonx" => $rayonx,
+  "rayony" => $rayony,
+  "angle" => $angle,
+  "asteps" => $asteps,
+  "rsteps" => $rsteps,
+  "branches" => $branches,
+  "rofl" => $rofl,
+  "fixe" => $fixe,
+  "center" => $center,
+  "forced_center" => $forced_center,
+  "n" => $n], true));
+*/
 
 for($i=0; $i < $n; ++$i){
   $iasteps=$asteps === 0 ? -$angle : -$angle - round($i * 360 / $asteps);
