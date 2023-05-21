@@ -190,12 +190,47 @@ function wheelEvent(event, type, target, generateur, step = 1) {
     event.preventDefault();
     event.stopPropagation();
     if(target.selectedIndex !== before) {
+      generateurs.initOptions(generateur);
+      generateurs.generateImgTimer(generateur);
+    }
+  }
+  if(type === "number") {
+    let before = target.valueAsNumber;
+    target.valueAsNumber = (event.deltaY < 0) ?
+      Math.min(parseInt(target.getAttribute("max"), 10), target.valueAsNumber + step) :
+      Math.max(parseInt(target.getAttribute("min"), 10), target.valueAsNumber - step);
+    event.preventDefault();
+    event.stopPropagation();
+    if(target.valueAsNumber !== before) {
+      generateurs.initOptions(generateur);
       generateurs.generateImgTimer(generateur);
     }
   }
 }
 
+function minmax(target) {
+  if(target.hasAttribute("min")) {
+    target.valueAsNumber = Math.max(parseInt(target.getAttribute("min"), 10),
+      target.valueAsNumber);
+  }
+  if(target.hasAttribute("max")) {
+    target.valueAsNumber = Math.min(parseInt(target.getAttribute("max"), 10),
+      target.valueAsNumber);
+  }
+}
+
 window.addEventListener("resize", updateTopMargin, false);
+
+function ppcm(a, b, c) {
+  let n = a * b * c;
+  for(let i = Math.max(a, b, c); i <= n; ++i) {
+    if(i % a === 0 && i % b === 0 && i % c === 0) {
+      n = i;
+      break;
+    }
+  }
+  return n;
+}
 
 let generateurs = {
   generateurObjs: {
@@ -1376,6 +1411,314 @@ let generateurs = {
 
       timerImg: null,
       lastCall: null,
+    },
+
+    spin: {
+      id: "spin",
+      label: "Spin",
+      url: "spin/?v=",
+      alt: "",
+
+      timerImg: null,
+      lastCall: null,
+
+      initOptions: function(generateur) {
+        $(generateur.id + "_vasteps").textContent =
+          $(generateur.id + "_asteps").value;
+        $(generateur.id + "_vrsteps").textContent =
+          $(generateur.id + "_rsteps").value;
+        $(generateur.id + "_vbranches").textContent =
+          $(generateur.id + "_branches").value;
+        $(generateur.id + "_vvitesse").textContent =
+          $(generateur.id + "_vitesse").value;
+        let mode = parseInt($(generateur.id + "_mode").value, 10);
+        let rayonx = parseInt($(generateur.id + "_rayonx").value, 10);
+        let rayony = parseInt($(generateur.id + "_rayony").value, 10);
+        let asteps = parseInt($(generateur.id + "_asteps").value, 10);
+        let rsteps = parseInt($(generateur.id + "_rsteps").value, 10);
+        let branches = parseInt($(generateur.id + "_branches").value, 10);
+        let rofl = $(generateur.id + "_rofl").checked;
+        let fixe = $(generateur.id + "_fixe").checked;
+        let forced_center = false;
+        if(rayonx === 0 || rayony === 0 || asteps === 0 || branches === 0 ||
+          (mode === 1 && rsteps === 0)) {
+          forced_center = true;
+        }
+        let frames = 1;
+        if(forced_center) {
+          frames = rofl ? 8 : (asteps === 0 ? 1 : (fixe ? 1 : asteps));
+        } else {
+          if(mode === 0) {
+            frames = ppcm(asteps, 1, rofl ? 8 : 1);
+          }
+          if(mode === 1) {
+            frames = ppcm(asteps, rsteps * 2, rofl ? 8 : 1);
+          }
+        }
+        $(generateur.id + "_infos").textContent =
+          "" + frames + (frames > 1 ? " frames" : " frame");
+      },
+
+      generateImg: function(generateur) {
+        let value = $(generateur.id + "_smiley").value.trim();
+        let base = [":", ";"].includes(value.substring(0, 1));
+        let smiley = base ? value : value.replace(/^[\[:]+|[:\]]+$/g, "").trim();
+        let tsmiley = "";
+        let mode = $(generateur.id + "_mode").value;
+        let rayonx = $(generateur.id + "_rayonx").value;
+        let rayony = $(generateur.id + "_rayony").value;
+        let angle = $(generateur.id + "_angle").value;
+        let asteps = $(generateur.id + "_asteps").value;
+        let rsteps = $(generateur.id + "_rsteps").value;
+        let branches = $(generateur.id + "_branches").value;
+        let rofl = $(generateur.id + "_rofl").checked;
+        let fixe = $(generateur.id + "_fixe").checked;
+        let center = $(generateur.id + "_center").checked;
+        let vitesse = $(generateur.id + "_vitesse").value;
+        let url = generateur.url + vitesse;
+        if(smiley !== "") {
+          if(base) {
+            url += "&s=" + encodeURIComponent(smiley);
+            tsmiley = smiley;
+          } else {
+            let s = smiley.split(":");
+            url += "&s=" + encodeURIComponent(s[0].trim());
+            if(s.length > 1) {
+              let r = parseInt(s[1].trim(), 10);
+              if(!isNaN(r) && r >= 1 && r <= 10) {
+                url += "&r=" + r;
+              }
+            }
+            tsmiley = "[:" + smiley + "]";
+          }
+        }
+        url += "&mode=" + mode;
+        url += "&rayonx=" + rayonx;
+        url += "&rayony=" + rayony;
+        url += "&angle=" + angle;
+        url += "&asteps=" + asteps;
+        url += "&rsteps=" + rsteps;
+        url += "&branches=" + branches;
+        if(rofl) url += "&rofl";
+        if(fixe) url += "&fixe";
+        if(center) url += "&center";
+        let alt = "Spin " + tsmiley;
+        updateImg(generateur, url, alt);
+      },
+
+      addHandler: function(generateur) {
+        generateurs.defaultAddHandler(generateur);
+        $(generateur.id + "_mode").addEventListener("change", function() {
+          generateurs.initOptions(generateur);
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_mode").addEventListener("wheel", function(event) {
+          wheelEvent(event, "select", this, generateur);
+        }, false);
+        $(generateur.id + "_lmode").addEventListener("wheel", function(event) {
+          wheelEvent(event, "select", $(generateur.id + "_mode"), generateur);
+        }, false);
+        $(generateur.id + "_rayonx").addEventListener("input", function() {
+          minmax(this);
+          generateurs.initOptions(generateur);
+        }, false);
+        $(generateur.id + "_rayonx").addEventListener("paste", function() {
+          minmax(this);
+          generateurs.initOptions(generateur);
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_rayonx").addEventListener("mouseup", function() {
+          minmax(this);
+          generateurs.initOptions(generateur);
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_rayonx").addEventListener("keyup", function() {
+          minmax(this);
+          generateurs.initOptions(generateur);
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_rayonx").addEventListener("wheel", function(event) {
+          minmax(this);
+          wheelEvent(event, "number", this, generateur);
+        }, false);
+        $(generateur.id + "_lrayonx").addEventListener("wheel", function(event) {
+          minmax($(generateur.id + "_rayonx"));
+          wheelEvent(event, "number", $(generateur.id + "_rayonx"), generateur);
+        }, false);
+        $(generateur.id + "_vrayonx").addEventListener("wheel", function(event) {
+          minmax($(generateur.id + "_rayonx"));
+          wheelEvent(event, "number", $(generateur.id + "_rayonx"), generateur);
+        }, false);
+        $(generateur.id + "_rayony").addEventListener("input", function() {
+          minmax(this);
+          generateurs.initOptions(generateur);
+        }, false);
+        $(generateur.id + "_rayony").addEventListener("paste", function() {
+          minmax(this);
+          generateurs.initOptions(generateur);
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_rayony").addEventListener("mouseup", function() {
+          minmax(this);
+          generateurs.initOptions(generateur);
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_rayony").addEventListener("keyup", function() {
+          minmax(this);
+          generateurs.initOptions(generateur);
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_rayony").addEventListener("wheel", function(event) {
+          minmax(this);
+          wheelEvent(event, "number", this, generateur);
+        }, false);
+        $(generateur.id + "_lrayony").addEventListener("wheel", function(event) {
+          minmax($(generateur.id + "_rayony"));
+          wheelEvent(event, "number", $(generateur.id + "_rayony"), generateur);
+        }, false);
+        $(generateur.id + "_vrayony").addEventListener("wheel", function(event) {
+          minmax($(generateur.id + "_rayony"));
+          wheelEvent(event, "number", $(generateur.id + "_rayony"), generateur);
+        }, false);
+        $(generateur.id + "_angle").addEventListener("input", function() {
+          minmax(this);
+          generateurs.initOptions(generateur);
+        }, false);
+        $(generateur.id + "_angle").addEventListener("paste", function() {
+          minmax(this);
+          generateurs.initOptions(generateur);
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_angle").addEventListener("mouseup", function() {
+          minmax(this);
+          generateurs.initOptions(generateur);
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_angle").addEventListener("keyup", function() {
+          minmax(this);
+          generateurs.initOptions(generateur);
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_angle").addEventListener("wheel", function(event) {
+          minmax(this);
+          wheelEvent(event, "number", this, generateur);
+        }, false);
+        $(generateur.id + "_langle").addEventListener("wheel", function(event) {
+          minmax($(generateur.id + "_angle"));
+          wheelEvent(event, "number", $(generateur.id + "_angle"), generateur);
+        }, false);
+        $(generateur.id + "_vangle").addEventListener("wheel", function(event) {
+          minmax($(generateur.id + "_angle"));
+          wheelEvent(event, "number", $(generateur.id + "_angle"), generateur);
+        }, false);
+        $(generateur.id + "_asteps").addEventListener("input", function() {
+          generateurs.initOptions(generateur);
+        }, false);
+        $(generateur.id + "_asteps").addEventListener("mouseup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_asteps").addEventListener("keyup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_asteps").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", this, generateur);
+        }, false);
+        $(generateur.id + "_lasteps").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_asteps"), generateur);
+        }, false);
+        $(generateur.id + "_vasteps").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_asteps"), generateur);
+        }, false);
+        $(generateur.id + "_rsteps").addEventListener("input", function() {
+          generateurs.initOptions(generateur);
+        }, false);
+        $(generateur.id + "_rsteps").addEventListener("mouseup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_rsteps").addEventListener("keyup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_rsteps").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", this, generateur);
+        }, false);
+        $(generateur.id + "_lrsteps").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_rsteps"), generateur);
+        }, false);
+        $(generateur.id + "_vrsteps").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_rsteps"), generateur);
+        }, false);
+        $(generateur.id + "_branches").addEventListener("input", function() {
+          generateurs.initOptions(generateur);
+        }, false);
+        $(generateur.id + "_branches").addEventListener("mouseup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_branches").addEventListener("keyup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_branches").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", this, generateur);
+        }, false);
+        $(generateur.id + "_lbranches").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_branches"), generateur);
+        }, false);
+        $(generateur.id + "_vbranches").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_branches"), generateur);
+        }, false);
+        $(generateur.id + "_rofl").addEventListener("click", function() {
+          $(generateur.id + "_fixe").checked = false;
+          generateurs.initOptions(generateur);
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_fixe").addEventListener("click", function() {
+          $(generateur.id + "_rofl").checked = false;
+          generateurs.initOptions(generateur);
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_center").addEventListener("click", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_vitesse").addEventListener("input", function() {
+          generateurs.initOptions(generateur);
+        }, false);
+        $(generateur.id + "_vitesse").addEventListener("mouseup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_vitesse").addEventListener("keyup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_vitesse").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", this, generateur);
+        }, false);
+        $(generateur.id + "_lvitesse").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_vitesse"), generateur);
+        }, false);
+        $(generateur.id + "_vvitesse").addEventListener("wheel", function(event) {
+          wheelEvent(event, "range", $(generateur.id + "_vitesse"), generateur);
+        }, false);
+        $(generateur.id + "_random").addEventListener("click", function() {
+          generateurs.generateImgTimer(generateur, function(generateur) {
+            getSmileys(generateur, function(generateur, smileys, length) {
+              let i = Math.floor(Math.random() * length);
+              $(generateur.id + "_smiley").value = smileys[i];
+              $(generateur.id + "_mode").selectedIndex = 0; // simple default
+              $(generateur.id + "_rayonx").value = 120; // default
+              $(generateur.id + "_rayony").value = 120; // default
+              $(generateur.id + "_angle").value = 0; // default
+              $(generateur.id + "_asteps").value = 24; // default
+              $(generateur.id + "_rsteps").value = 10; // default
+              $(generateur.id + "_branches").value = 8; // default
+              $(generateur.id + "_rofl").checked = false; // default
+              $(generateur.id + "_fixe").checked = false; // default
+              $(generateur.id + "_center").checked = false; // default
+              $(generateur.id + "_vitesse").value = 6; // default
+              generateurs.initOptions(generateur);
+              generateurs.generateImg(generateur);
+            });
+          });
+        }, false);
+        generateurs.addSmileyHelper(generateur.id + "_smiley", generateur);
+      }
     }
   },
 

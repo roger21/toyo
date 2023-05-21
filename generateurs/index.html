@@ -513,6 +513,76 @@
           <img src="" alt="" title="">
         </div>
       </div>
+      <div class="generateur" id="spin_div">
+        <div class="options">
+          <div>
+            <label for="spin_smiley">Smiley</label>
+            <input id="spin_smiley" type="text" class="smiley">
+          </div>
+          <div>
+            <label id="spin_lmode" for="spin_mode">Mode</label>
+            <select id="spin_mode">
+              <option value="0" selected="selected">simple</option>
+              <option value="1">spirale</option>
+            </select>
+          </div>
+          <div title="de 0px à 1000px">
+            <label id="spin_lrayonx" for="spin_rayonx">Rayon X</label>
+            <input id="spin_rayonx" type="number" min="0" max="1000" step="1" value="120">
+            <label id="spin_vrayonx" class="after" for="spin_rayonx">px</label>
+          </div>
+          <div title="de 0px à 1000px">
+            <label id="spin_lrayony" for="spin_rayon">Rayon Y</label>
+            <input id="spin_rayony" type="number" min="0" max="1000" step="1" value="120">
+            <label id="spin_vrayony" class="after" for="spin_rayony">px</label>
+          </div>
+          <div>
+            <label id="spin_lasteps" for="spin_asteps">Steps rotation</label>
+            <input id="spin_asteps" type="range" min="0" max="100" step="1" value="24">
+            <label id="spin_vasteps" class="after" for="spin_asteps">24</label>
+          </div>
+          <div>
+            <label id="spin_lrsteps" for="spin_rsteps">Steps spirale</label>
+            <input id="spin_rsteps" type="range" min="0" max="100" step="1" value="10">
+            <label id="spin_vrsteps" class="after" for="spin_rsteps">10</label>
+          </div>
+          <div>
+            <label id="spin_lbranches" for="spin_branches">Branches</label>
+            <input id="spin_branches" type="range" min="0" max="100" step="1" value="8">
+            <label id="spin_vbranches" class="after" for="spin_branches">8</label>
+          </div>
+          <div title="de 0° à 359°">
+            <label id="spin_langle" for="spin_angle">Angle</label>
+            <input id="spin_angle" type="number" min="0" max="359" step="1" value="0">
+            <label id="spin_vangle" class="after close" for="spin_angle">°</label>
+          </div>
+          <div>
+            <label for="spin_rofl">Rofl</label>
+            <input id="spin_rofl" type="checkbox">
+          </div>
+          <div>
+            <label for="spin_fixe">Fixe</label>
+            <input id="spin_fixe" type="checkbox">
+          </div>
+          <div>
+            <label for="spin_center">Centré</label>
+            <input id="spin_center" type="checkbox">
+          </div>
+          <div>
+            <label id="spin_lvitesse" for="spin_vitesse">Vitesse</label>
+            <input id="spin_vitesse" type="range" min="1" max="10" step="1" value="6">
+            <label id="spin_vvitesse" class="after" for="spin_vitesse">6</label>
+          </div>
+          <label id="spin_infos" class="infos"></label>
+          <input id="spin_random" type="button" value="Random">
+        </div>
+        <div class="bbcode">
+          <input id="spin_bbcode" type="text" readonly="readonly">
+        </div>
+        <div id="spin_preview" class="preview">
+          <img src="" alt="" title="">
+        </div>
+      </div>
     </div>
     <script type="text/javascript">generateurs.launch();</script>
   </body>

@@ -103,6 +103,10 @@ div.generateur > div.options > div > label.after{
   box-sizing:border-box;
 }
 
+div.generateur > div.options > div > label.after.close{
+  padding:0 0 0 5px;
+}
+
 div.generateur > div.options > div > label#bulle_vdelta{
   width:4em;
 }
@@ -159,6 +163,28 @@ div.generateur > div.options > div > label#golden_vvitesse{
   width:2em;
 }
 
+div.generateur > div.options > div > label#spin_vasteps{
+  width:2.5em;
+}
+
+div.generateur > div.options > div > label#spin_vrsteps{
+  width:2.5em;
+}
+
+div.generateur > div.options > div > label#spin_vbranches{
+  width:2.5em;
+}
+
+div.generateur > div.options > div > label#spin_vvitesse{
+  width:2em;
+}
+
+div.generateur > div.options > label.infos{
+  width:10em;
+  background-color:#f7f7f7;
+  text-align:center;
+}
+
 div.generateur > div.bbcode > input{
   width:100%;
   color:#999;
@@ -210,7 +236,11 @@ input[type="text"].pseudal{
   width:250px;
 }
 
-input[type="text"]:invalid{
+input[type="number"]{
+  width:100px;
+}
+
+input:invalid{
   background-color:#fcc;
 }
 
@@ -302,6 +332,34 @@ input[type="range"]#golden_frames{
 }
 
 input[type="range"]#golden_vitesse{
+  width:20px;
+}
+
+input[type="number"]#spin_rayonx{
+  width:5em;
+}
+
+input[type="number"]#spin_rayony{
+  width:5em;
+}
+
+input[type="number"]#spin_angle{
+  width:5em;
+}
+
+input[type="range"]#spin_asteps{
+  width:202px;
+}
+
+input[type="range"]#spin_rsteps{
+  width:202px;
+}
+
+input[type="range"]#spin_branches{
+  width:202px;
+}
+
+input[type="range"]#spin_vitesse{
   width:20px;
 }
 
