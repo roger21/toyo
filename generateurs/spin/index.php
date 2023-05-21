@@ -67,7 +67,7 @@ $imgs=[];
 $dlys=[];
 function add_frame($asmiley, $iasteps, $irayonx, $irayony){
   global $imgs, $dlys, $smiley, $ws, $hs, $maxx, $maxy, $dly,
-    $branches, $fixe, $center, $forced_center;
+    $branches, $rofl, $fixe, $center, $forced_center;
   // frame
   $frame=imagecreatetruecolor($maxx, $maxy);
   if($frame === false){
@@ -117,8 +117,8 @@ function add_frame($asmiley, $iasteps, $irayonx, $irayony){
       $wr=$ws;
       $hr=$hs;
       $abranche=round($i * 360 / $branches);
-      if(($asmiley - ($fixe ? 0 : $abranche)) % 360){
-        $im=imagerotate($im, $asmiley - $abranche, $fond);
+      if(($asmiley - ($fixe /*|| $rofl*/ ? 0 : $abranche)) % 360){
+        $im=imagerotate($im, $asmiley - ($fixe /*|| $rofl*/ ? 0 : $abranche), $fond);
         if($im === false){
           trigger_error(__DIR__."/index.php died on imagerotate im ".
                         "$asmiley $iasteps $irayonx $irayony");
