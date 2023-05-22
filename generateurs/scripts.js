@@ -1666,12 +1666,10 @@ let generateurs = {
           wheelEvent(event, "range", $(generateur.id + "_branches"), generateur);
         }, false);
         $(generateur.id + "_rofl").addEventListener("click", function() {
-          $(generateur.id + "_fixe").checked = false;
           generateurs.initOptions(generateur);
           generateurs.generateImgTimer(generateur);
         }, false);
         $(generateur.id + "_fixe").addEventListener("click", function() {
-          $(generateur.id + "_rofl").checked = false;
           generateurs.initOptions(generateur);
           generateurs.generateImgTimer(generateur);
         }, false);

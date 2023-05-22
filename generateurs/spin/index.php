@@ -25,9 +25,6 @@ $branches=(isset($_GET["branches"]) && (int)$_GET["branches"] >= 0 &&
            (int)$_GET["branches"] <= 100) ? (int)$_GET["branches"] : 8; // branches
 $rofl=isset($_GET["rofl"]); // rofl
 $fixe=isset($_GET["fixe"]); // fixe
-if($rofl && $fixe){
-  $fixe=false;
-}
 $center=isset($_GET["center"]); // centré
 $forced_center=false;
 if($rayonx === 0 || $rayony === 0 || $asteps === 0 || $branches === 0 ||
@@ -67,7 +64,7 @@ $imgs=[];
 $dlys=[];
 function add_frame($asmiley, $iasteps, $irayonx, $irayony){
   global $imgs, $dlys, $smiley, $ws, $hs, $maxx, $maxy, $dly,
-    $branches, $rofl, $fixe, $center, $forced_center;
+    $branches, $fixe, $center, $forced_center;
   // frame
   $frame=imagecreatetruecolor($maxx, $maxy);
   if($frame === false){
@@ -117,8 +114,8 @@ function add_frame($asmiley, $iasteps, $irayonx, $irayony){
       $wr=$ws;
       $hr=$hs;
       $abranche=round($i * 360 / $branches);
-      if(($asmiley - ($fixe /*|| $rofl*/ ? 0 : $abranche)) % 360){
-        $im=imagerotate($im, $asmiley - ($fixe /*|| $rofl*/ ? 0 : $abranche), $fond);
+      if(($asmiley - ($fixe ? 0 : $abranche)) % 360){
+        $im=imagerotate($im, $asmiley - ($fixe ? 0 : $abranche), $fond);
         if($im === false){
           trigger_error(__DIR__."/index.php died on imagerotate im ".
                         "$asmiley $iasteps $irayonx $irayony");
@@ -236,7 +233,7 @@ if($forced_center){
 
 for($i=0; $i < $n; ++$i){
   $iasteps=$asteps === 0 ? -$angle : -$angle - round($i * 360 / $asteps);
-  $asmiley=$rofl ? -$i * 45 : ($fixe ? -$angle : $iasteps);
+  $asmiley=$rofl ? -$i * 45 : ($fixe ? -$angle : $iasteps - $angle);
   $irayonx=$rayonx;
   $irayony=$rayony;
   if($mode === 1 && $rsteps !== 0){
