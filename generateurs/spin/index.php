@@ -64,7 +64,7 @@ $imgs=[];
 $dlys=[];
 function add_frame($asmiley, $iasteps, $irayonx, $irayony){
   global $imgs, $dlys, $smiley, $ws, $hs, $maxx, $maxy, $dly,
-    $branches, $fixe, $center, $forced_center;
+    $angle, $branches, $rofl, $fixe, $center, $forced_center;
   // frame
   $frame=imagecreatetruecolor($maxx, $maxy);
   if($frame === false){
@@ -111,19 +111,19 @@ function add_frame($asmiley, $iasteps, $irayonx, $irayony){
                       "$asmiley $iasteps $irayonx $irayony");
         die();
       }
-      $wr=$ws;
-      $hr=$hs;
       $abranche=round($i * 360 / $branches);
-      if(($asmiley - ($fixe ? 0 : $abranche)) % 360){
-        $im=imagerotate($im, $asmiley - ($fixe ? 0 : $abranche), $fond);
-        if($im === false){
-          trigger_error(__DIR__."/index.php died on imagerotate im ".
-                        "$asmiley $iasteps $irayonx $irayony");
-          die();
-        }
-        $wr=imagesx($im);
-        $hr=imagesy($im);
+      $apos=$rofl ? $iasteps - $abranche : $asmiley - $abranche;
+      $arot=round(rad2deg(atan2(sin(deg2rad($apos)) * $irayony,
+                                cos(deg2rad($apos)) * $irayonx)));
+      $a=$fixe ? $asmiley : ($rofl ? $arot + $asmiley : $arot - $angle);
+      $im=imagerotate($im, $a, $fond);
+      if($im === false){
+        trigger_error(__DIR__."/index.php died on imagerotate im ".
+                      "$asmiley $iasteps $irayonx $irayony");
+        die();
       }
+      $wr=imagesx($im);
+      $hr=imagesy($im);
       $x=round(($maxx - $wr) / 2);
       $y=round(($maxy - $hr) / 2);
       $dx=round($irayonx * sin(deg2rad($iasteps - $abranche)));
@@ -162,18 +162,14 @@ function add_frame($asmiley, $iasteps, $irayonx, $irayony){
                     "$asmiley $iasteps $irayonx $irayony");
       die();
     }
-    $wr=$ws;
-    $hr=$hs;
-    if($asmiley % 360){
-      $im=imagerotate($im, $asmiley, $fond);
-      if($im === false){
-        trigger_error(__DIR__."/index.php died on imagerotate im center ".
-                      "$asmiley $iasteps $irayonx $irayony");
-        die();
-      }
-      $wr=imagesx($im);
-      $hr=imagesy($im);
+    $im=imagerotate($im, $asmiley, $fond);
+    if($im === false){
+      trigger_error(__DIR__."/index.php died on imagerotate im center ".
+                    "$asmiley $iasteps $irayonx $irayony");
+      die();
     }
+    $wr=imagesx($im);
+    $hr=imagesy($im);
     $x=round(($maxx - $wr) / 2);
     $y=round(($maxy - $hr) / 2);
     $r=imagecopyresampled($frame, $im, $x, $y, 0, 0, $wr, $hr, $wr, $hr);
@@ -233,7 +229,7 @@ if($forced_center){
 
 for($i=0; $i < $n; ++$i){
   $iasteps=$asteps === 0 ? -$angle : -$angle - round($i * 360 / $asteps);
-  $asmiley=$rofl ? -$i * 45 : ($fixe ? -$angle : $iasteps - $angle);
+  $asmiley=$rofl ? -$i * 45 : ($fixe ? -$angle : $iasteps);
   $irayonx=$rayonx;
   $irayony=$rayony;
   if($mode === 1 && $rsteps !== 0){
