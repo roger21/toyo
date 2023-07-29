@@ -69,7 +69,7 @@ let generatePreview = function(selection) {
         encodeURIComponent($("#image_preview").prop('src')) + "[/img]");
       // reho.st
       $("#bbcode_input").val(error ? "error" :
-        "[img]https://reho.st/https://" +
+        "[img]https://reho.st/" +
         $("#image_preview").prop('src') + "[/img]");
     }
   });
