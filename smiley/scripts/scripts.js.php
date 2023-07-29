@@ -59,34 +59,18 @@ let generatePreview = function(selection) {
       $("#preview_area").css("display", "block");
       $("#bbcode_input").css("display", "block");
       $("#size").text(error ? "error" : smileySize);
-      let serverName = "<?= $_SERVER['SERVER_NAME'] ?>";
-<?php
-
-$dir_self=explode('/', $_SERVER['PHP_SELF'], -2);
-array_shift($dir_self);
-if(count($dir_self) !== 0){
-  $dir_self='/'.implode('/', $dir_self);
-}else{
-  $dir_self='';
-}
-
-?>
-      let serverDir = "<?= $dir_self ?>";
       // aurait.eu
       $("#bbcode_input").val(error ? "error" :
-        "[img]https://hfr-rehost.aurait.eu/https://" +
-        serverName + serverDir +
-        smileyFileName.substring(1) + extra + "[/img]");
+        "[img]https://hfr-rehost.aurait.eu/" +
+        $("#image_preview").prop('src') + "[/img]");
       // diberie.com
       $("#bbcode_input").val(error ? "error" :
         "[img]https://rehost.diberie.com/Rehost?url=" +
-        encodeURIComponent("https://" + serverName + serverDir +
-          smileyFileName.substring(1) + extra) + "[/img]");
+        encodeURIComponent($("#image_preview").prop('src')) + "[/img]");
       // reho.st
       $("#bbcode_input").val(error ? "error" :
         "[img]https://reho.st/https://" +
-        serverName + serverDir +
-        smileyFileName.substring(1) + extra + "[/img]");
+        $("#image_preview").prop('src') + "[/img]");
     }
   });
 }
