@@ -20,20 +20,17 @@
 
 .imgareaselect-border1, .imgareaselect-border2,
 .imgareaselect-border3, .imgareaselect-border4 {
-  filter: alpha(opacity=50);
   opacity: 0.5;
 }
 
 .imgareaselect-handle {
   background-color: #fff;
   border: solid 1px #000;
-  filter: alpha(opacity=50);
   opacity: 0.5;
 }
 
 .imgareaselect-outer {
   border-color: #000;
-  filter: alpha(opacity=50);
   opacity: 0.5;
 }
 

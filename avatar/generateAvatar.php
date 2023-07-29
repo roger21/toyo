@@ -2,7 +2,7 @@
 
 ini_set("display_errors", "0");
 ini_set("display_startup_errors", "0");
-ini_set("error_log", "errors/errors.log");
+ini_set("error_log", "./errors/errors.log");
 ini_set("error_log_mode", 0600);
 ini_set("error_reporting", "-1");
 ini_set("html_errors", "0");
@@ -58,7 +58,7 @@ if(isset($_GET["fileName"])){
     $header="User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) ".
            "Gecko/20100101 Firefox/102.0\r\n".
            "Accept: text/html,application/xhtml+xml,application/xml,".
-           "image/gif,image/jpeg,image/png,image/bmp,image/webp,*/*\r\n".
+           "image/gif,image/jpeg,image/png,image/bmp,image/webp,image/avif,*/*\r\n".
            "Accept-Language: fr-FR,fr,en-US,en\r\n".
            "Accept-Encoding: gzip, deflate, br\r\n".
            "Connection: close\r\n".
@@ -122,6 +122,13 @@ case IMAGETYPE_WEBP:
   $img=imagecreatefromwebp($fileName);
   if($img === false){
     trigger_error("generateAvatar.php died on imagecreatefromwebp");
+    die();
+  }
+  break;
+case IMAGETYPE_AVIF:
+  $img=imagecreatefromavif($fileName);
+  if($img === false){
+    trigger_error("generateAvatar.php died on imagecreatefromavif");
     die();
   }
   break;
