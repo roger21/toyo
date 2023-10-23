@@ -12934,6 +12934,7 @@ humanrage:5
 humanrage:6
 humanrage:7
 humanrage:8
+humanrage:9
 humanrage_2
 humferier
 humman66
@@ -18428,6 +18429,8 @@ malarki
 malarki:1
 malbranque kers
 malbranque kers:1
+malcom_parhasard
+malcom_parhasard:1
 maldoror
 maliaure
 malicia
@@ -21435,6 +21438,14 @@ nick_too
 nicki
 nicki7
 nicki7:1
+nicko
+nicko:1
+nicko:2
+nicko:3
+nicko:4
+nicko:5
+nicko:6
+nicko:7
 nicko500
 nicky66
 nicky66:1
@@ -29646,6 +29657,9 @@ theorie du ko
 theorie du ko:1
 theorie du ko:2
 theorie du ko:3
+theorie du ko:4
+theorie du ko:5
+theorie du ko:6
 theorie du nerdz
 theorie du nerdz:1
 theorie du nerdz:2
