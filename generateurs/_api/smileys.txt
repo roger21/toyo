@@ -2228,6 +2228,8 @@ asspilee:5
 asspilee:6
 asspilee:7
 asspilee:8
+asspilee:9
+asspilee:10
 asterios polyp
 asterios polyp:1
 asterix
@@ -2739,6 +2741,7 @@ bahamut22:3
 bahamut22:4
 bahamut22:5
 bahamut22:6
+bahamut22:7
 bahamut49
 bahamut49:1
 bahamut49:2
@@ -5416,6 +5419,7 @@ cheesecake:1
 cheesecake:2
 cheesecake:3
 cheesecake:4
+cheesecake:5
 cheevass
 chefdeprojet
 cheika
@@ -8794,6 +8798,7 @@ elbarto:2
 elbarto:3
 elbarto:4
 elbarto:5
+elbay
 elbibi
 elbinoe
 elcantara
@@ -12934,6 +12939,7 @@ humanrage:5
 humanrage:6
 humanrage:7
 humanrage:8
+humanrage:9
 humanrage_2
 humferier
 humman66
@@ -17926,6 +17932,7 @@ luckan:5
 luckan:6
 luckan:7
 luckan:8
+luckan:9
 luckynick
 luckynick:1
 luckynick:2
@@ -18428,6 +18435,13 @@ malarki
 malarki:1
 malbranque kers
 malbranque kers:1
+malcom_parhasard
+malcom_parhasard:1
+malcom_parhasard:2
+malcom_parhasard:3
+malcom_parhasard:4
+malcom_parhasard:5
+malcom_parhasard:6
 maldoror
 maliaure
 malicia
@@ -21435,6 +21449,14 @@ nick_too
 nicki
 nicki7
 nicki7:1
+nicko
+nicko:1
+nicko:2
+nicko:3
+nicko:4
+nicko:5
+nicko:6
+nicko:7
 nicko500
 nicky66
 nicky66:1
@@ -21656,6 +21678,7 @@ nobrain23:3
 nobrain23:4
 nobrain23:5
 nobru31
+nocturne25
 noda
 noel le graet
 noel le graet:1
@@ -26497,6 +26520,7 @@ shadowblade
 shadowdim
 shadowknight
 shadows and dusts
+shaft_d0
 shafter
 shakaal
 shakagnom
@@ -27480,6 +27504,16 @@ so-saugrenu28:5
 so-saugrenu28:6
 so-saugrenu28:7
 so-saugrenu28:8
+so-saugrenu28:9
+so-saugrenu28:10
+so-saugrenu29
+so-saugrenu29:1
+so-saugrenu29:2
+so-saugrenu29:3
+so-saugrenu29:4
+so-saugrenu29:5
+so-saugrenu29:6
+so-saugrenu29:7
 so-saugrenu3
 so-saugrenu3:1
 so-saugrenu3:2
@@ -29646,6 +29680,9 @@ theorie du ko
 theorie du ko:1
 theorie du ko:2
 theorie du ko:3
+theorie du ko:4
+theorie du ko:5
+theorie du ko:6
 theorie du nerdz
 theorie du nerdz:1
 theorie du nerdz:2
@@ -31861,6 +31898,8 @@ xauhaus
 xav80
 xavier gateux
 xavier gateux:1
+xavier gateux:6
+xavier gateux:7
 xavier gateux:8
 xavier gateux:9
 xavier gateux:10
