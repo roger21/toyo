@@ -1,6 +1,6 @@
 <?php
 
-// this file contains 2 files from worpress:
+// this file contains 2 files from wordpress:
 // from line 8 to 8524 src/wp-includes/functions.php
 // from line 8525 to 14710 src/wp-includes/formatting.php
 // it is used for the function remove_accents
