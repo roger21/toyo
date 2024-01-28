@@ -788,6 +788,7 @@ absolumentpasbultom:3
 absolumentpasbultom:4
 absolumentpasbultom:5
 absolumentpasbultom:6
+absolumentpasbultom:7
 absolut_limon
 absolutelykaveh
 abstro
@@ -2593,6 +2594,7 @@ b0wh
 b0wh:1
 b0wh:2
 b0wh:3
+b2g
 b4x
 b4x:1
 b4x:2
@@ -6537,6 +6539,7 @@ cuirmoustache:5
 cuisse
 cuistot
 cuistot du commensal
+cuistot du commensal:1
 cultcut
 culv
 cumstorm
@@ -7417,6 +7420,8 @@ denisvignes
 densaga
 dents
 denzel wash in town
+denzel wash in town:1
+denzel wash in town:2
 deouss
 deouss:1
 deouss:2
@@ -11364,6 +11369,7 @@ glaurung
 glaurungf
 glbrt
 gle
+gle:1
 glenda
 glenda:1
 glenda:2
@@ -18990,6 +18996,7 @@ masterroshi:5
 mastersam
 mastersam:1
 mastersam:2
+mastersam:3
 mastertrolllesquen
 mastertrolllesquen:1
 mastertrolllesquen:2
