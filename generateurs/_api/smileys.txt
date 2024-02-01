@@ -176,6 +176,11 @@ $remi$
 0nick_aj:9
 0nick_aj:10
 0nizuka
+0tenpourell
+0tenpourell:1
+0tenpourell:2
+0tenpourell:3
+0tenpourell:4
 0x90
 10-david
 10-david:1
@@ -1379,6 +1384,7 @@ alien64:2
 alien64:3
 alien64:4
 alien64:5
+alien64:6
 alien_
 alienmaster02
 aligatour
@@ -4456,6 +4462,7 @@ buzvolio
 buzzmoon
 bvampire
 bvr
+bweezy
 bweissach
 by-porsche
 byloo
