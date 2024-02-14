@@ -1,0 +1,239 @@
+[img]https://reho.st/https://generateurs.super-h.fr/bulle/?t=Salut%20les%20gens&delta=0&s=cloud_&police=cartoon&taille=1[/img]
+
+
+[b]Le Topic des Générateurs de Smileys par ToYonos[/b] [:shay]
+
+https://generateurs.super-h.fr/
+
+
+
+
+[b]Alerte[/b] [img]https://reho.st/https://generateurs.super-h.fr/alerte/?t=G%C3%A9n%C3%A9rateurs&s[/img]
+[b]Paramètres :[/b]
+[*]t : le texte de l'alerte
+[*]s (sans valeur) : met l'image en taille smiley
+
+
+
+[b]Nazi[/b] [img]https://reho.st/https://generateurs.super-h.fr/nazi/?t=G%C3%89N%C3%89RATOR[/img]
+[b]Paramètres :[/b]
+[*]t : le texte avant le "nazi"
+
+
+
+[b]Facebook[/b] [img]https://reho.st/https://generateurs.super-h.fr/fb/?t=Les%20g%C3%A9n%C3%A9rateurs%2C%20on[/img]
+[b]Paramètres :[/b]
+[*]t : le sujet du "aime ça"
+[*]moi (sans valeur) : met "je" comme sujet et annule l'effet des paramètres t et pluriel
+[*]pluriel (sans valeur) : met le verbe au pluriel
+[*]not (sans valeur) : met le verbe au négatif
+[*]s (sans valeur) : met l'image en taille smiley
+
+
+
+[b]Steven Seagal[/b] [img]https://reho.st/https://generateurs.super-h.fr/seagal/?t=Happy[/img]
+[b]Paramètres :[/b]
+[*]t : l'émotion de Steven :o
+[*]s (sans valeur) : met l'image en taille smiley
+
+
+
+[b]Bulle[/b] [img]https://reho.st/https://generateurs.super-h.fr/bulle/?t=Vive%20les%20g%C3%A9n%C3%A9rateurs&delta=0&s=wkatepebaboune&police=carter&taille=1[/img]
+[b]Paramètres :[/b]
+[*]t : le contenu de la bulle
+[*]delta : le décalage vertical de la bulle en pixels (de 0 à 100)
+[*]flip (sans valeur) : met la bulle de l'autre côté
+[*]police : la police d’écriture (cartoon, carter ou tintin)
+[*]taille : la taille de la police (de 1 à 3)
+[*]s (facultatif) : le code du smiley, annule l'effet du paramètre delta
+[*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
+
+
+
+[b]Moit-Moit[/b] [img]https://reho.st/https://generateurs.super-h.fr/moitmoit/?o&s1=%3Alol%3A&s2=dawa[/img]
+[b]Paramètres :[/b]
+[*]s1 : le code du premier smiley
+[*]r1 (facultatif) : le rang du premier smiley si nécessaire (de 0 à 10)
+[*]s2 : le code du deuxième smiley
+[*]r1 (facultatif) : le rang du deuxième smiley si nécessaire (de 0 à 10)
+[*]v (sans valeur) : découpe les smileys verticalement
+[b]Boutons :[/b]
+[*]switch : inverse les deux smileys
+[*]random : choisit deux smileys au hazard et remet les autres paramètres par défaut
+
+
+
+[b]Seal of Quality[/b] [img]https://reho.st/https://generateurs.super-h.fr/seal/?t=G%C3%A9n%C3%A9rateurs[/img]
+[b]Paramètres :[/b]
+[*]t : le texte du "Seal of Quality"
+[*]s (sans valeur) : met l'image en taille smiley
+
+
+
+[b]Ddr555[/b] [img]https://reho.st/https://generateurs.super-h.fr/ddr555/?a=180&s=hahaguy[/img]
+[b]Paramètres :[/b]
+[*]s : le code du smiley
+[*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
+[*]a : l'angle en degrés (45, 90, 135, 180, 225, 270 ou 315)
+[b]Bouton :[/b]
+[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+
+
+
+[b]Note[/b] [img]https://reho.st/https://generateurs.super-h.fr/note/?n=5&d=20[/img]
+[b]Paramètres :[/b]
+[*]n : le numérateur (de 0 à 99)
+[*]d : le dénominateur (de 0 à 99)
+[b]Bouton :[/b]
+[*]random : choisit une note au hazard (le numérateur sera inférieur ou égal au dénominateur)
+
+
+
+[b]Rofl[/b] [img]https://reho.st/https://generateurs.super-h.fr/rofl/?v=8&s=shay&t=2&m=3&dx=0[/img]
+[b]Paramètres :[/b]
+[*]s : le code du smiley
+[*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
+[*]t : le nombre de tours de rotations dans chaque sens (de 1 à 10)
+[*]m : le mode de rotation (rond de 1 à 4 ou carré 5)
+[*]dx : le décalage horizontal en pixels que prend le smiley à chaque frame (de -100 à 100), s'ajoute au mode
+[*]v : la vitesse (de 1 à 10)
+[b]Bouton :[/b]
+[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+
+
+
+[b]Boing[/b] [img]https://reho.st/https://generateurs.super-h.fr/boing/?v=5&s=raztapeaupoulos&dx=20&fy=3[/img]
+[b]Paramètres :[/b]
+[*]s : le code du smiley
+[*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
+[*]dx : le décalage horizontal en pixels que prend le smiley à chaque frame (de 0 à 100)
+[*]fy : le facteur de multiplication du décalage vertical du smiley (de 1 à 10)
+[*]v : la vitesse (de 1 à 10)
+[*]rofl (sans valeur) : fait "rofler" le smiley en même temps :D
+[b]Bouton :[/b]
+[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+
+
+
+[b]Miroir[/b] [img]https://reho.st/https://generateurs.super-h.fr/miroir/?right&s=julm3[/img]
+[b]Paramètres :[/b]
+[*]s : le code du smiley
+[*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
+[*]left, right, top ou bottom (sans valeur) : la partie du smiley à refléter (gauche, droite, haute ou basse)
+[b]Bouton :[/b]
+[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+
+
+
+[b]South Park[/b] [img]https://reho.st/https://generateurs.super-h.fr/southpark/?l=16&s=kleia[/img]
+[b]Paramètres :[/b]
+[*]s : le code du smiley
+[*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
+[*]l : la limite de découpage en partant du bas (de 0 à 129, 0 = auto, la moitié du smiley)
+[b]Bouton :[/b]
+[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+
+
+
+[b]Modération[/b] [img]https://reho.st/https://generateurs.super-h.fr/modo/?t=Next%20pliz%20&s=pikitfleur&r=4&i=5[/img]
+[b]Paramètres :[/b]
+[*]t : le texte du post
+[*]s (facultatif) : le code du smiley à la fin du texte
+[*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
+[*]i : le jeu d'icônes (de 1 à 5, Forum, CrystalXP, Défaut, Old Fashioned ou Silk)
+[*]ts (facultatif) : la date sous la forme d'un timestamp unix (epoch)
+
+
+
+[b]Golden[/b] [i]par castormalin[/i] [img]https://reho.st/https://generateurs.super-h.fr/golden/?v=8&s=castormalin&r=4&stars=5&golden=40&av=B&ah=G&vert&taille=3&frames=20[/img]
+[b]Paramètres :[/b]
+[*]s : le code du smiley
+[*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
+[*]stars : le nombre maximal d'étoiles (de 0 à 100)
+[*]golden : le taux de doré en % (de 0 à 100)
+[*]wo (sans valeur) : ne met pas le texte "GOLDEN"
+[*]av : l'alignement vertical du texte (H, haut ou B, bas)
+[*]ah : l'alignement horizontal du texte (G, gauche ou D, droite)
+[*]vert (sans valeur) : met le texte à la verticale
+[*]taille : la taille du texte (de 1 à 3)
+[*]frames : le nombre de frames avant que la sequence d'étoiles ne reboucle (de 1 à 100)
+[*]v : la vitesse (de 1 à 10)
+[b]Bouton :[/b]
+[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+
+
+
+[b]UMP[/b] [img]https://reho.st/https://generateurs.super-h.fr/ump/?t=Travail%20Forc%C3%A9[/img]
+[b]Paramètres :[/b]
+[*]t : le texte sous le logo
+[*]s (sans valeur) : met l'image en taille smiley
+
+
+
+[b]BFMTV[/b] [img]https://reho.st/https://generateurs.super-h.fr/bfmtv/?o&t1=Demain%20faites%20gaffe%2C%20&t2=il%20va%20faire%20froid.[/img]
+[b]Paramètres :[/b]
+[*]t1 : le texte de la première ligne
+[*]t2 : le texte de la deuxième ligne
+[*]s (sans valeur) : met l'image en taille smiley
+
+
+
+[b]Démotivator[/b] [img]https://reho.st/https://generateurs.super-h.fr/demot/?o&p=sgt-d&t=Sgt-D&c=Je%20nettoyais%20mon%20155%20quand%20PAF%20![/img]
+[b]Paramètres :[/b]
+[*]p : le pseudo (qui doit avoir un avatar)
+[*]t : le titre
+[*]c (facultatif) : le texte
+
+
+
+[b]Giuseppe[/b] [img]https://reho.st/https://generateurs.super-h.fr/giuseppe/?t=encore%20un%0Ag%C3%A9n%C3%A9rateur[/img]
+[b]Paramètres :[/b]
+[*]t : le texte
+[*]s (sans valeur) : met l'image en taille smiley
+
+
+
+[b]Spin[/b] [i]par roger21[/i] (sur la [url=https://toyogen.000webhostapp.com/generateurs/]version de test[/url] uniquement) [img]https://reho.st/https://toyogens.000webhostapp.com/generateurs/spin/?v=8&s=roger21&r=3&mode=0&rayonx=200&rayony=100&angle=0&asteps=100&rsteps=10&branches=8&fixe[/img]
+[b]Paramètres :[/b]
+[*]s : le code du smiley
+[*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
+[*]mode : le mode de rotation (0, simple ou 1, en spirale)
+[*]rayonx : le rayon horizontal en pixels (de 0 à 1000)
+[*]rayony : le rayon vertical en pixels (de 0 à 1000)
+[*]angle : l'angle initial du smiley et de sa position en degrés (de 0 à 359)
+[*]asteps : le nombre de positions intermédiaires dans la rotation (de 0 à 100)
+[*]rsteps : le nombre de positions intermédiaires dans la spirale (de 0 à 100)
+[*]branches : le nombre de branches (de 0 à 100)
+[*]rofl (sans valeur) : fait tourner les smileys sur eux-mêmes
+[*]fixe (sans valeur) : garde les smileys fixes au lieu de suivre l'angle de rotation
+[*]center (sans valeur) : rajoute un smiley au centre
+[*]v : la vitesse (de 1 à 10)
+[b]Bouton :[/b]
+[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+
+
+
+[b]EPIC 1er Avril 2010 was EPIC §§§[/b]
+[*]Screenshot 1 : https://reho.st/http://roger21.free.fr/test/screenshot1.png
+[*]Screenshot 2 : https://reho.st/http://roger21.free.fr/test/screenshot2.png
+
+
+
+[b]Les autres outils :[/b]
+[*]L'AvatarHelper : https://avatar.super-h.fr/ pour créer un avatar depuis une image
+[*]Le SmileyHelper : https://smiley.super-h.fr/ pour créer un smiley depuis une image
+[*]Le topic des scripts : https://forum.hardware.fr/hfr/Discussions/Viepratique/scripts-infos-news-sujet_116015_1.htm pour d'autres outils pour les smileys
+
+
+
+[b]L'hébergement des outils est fait par LibreArbitre :[/b] https://forum.hardware.fr/hfr/reseauxpersosoho/Hebergement/services-proposes-super-sujet_36784_1.htm
+
+
+
+[b]Le site de test et de backup :[/b] https://toyogen.000webhostapp.com/
+
+
+
+[b]Le code source :[/b]
+[*]roger21 (version actuelle) : https://github.com/roger21/toyo
+[*]ToYonos (version originale) : https://github.com/ToYonos/HFR-stuff
