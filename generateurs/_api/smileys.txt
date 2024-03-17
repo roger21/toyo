@@ -2156,6 +2156,7 @@ arwenalia
 arya lvl 99
 arya lvl 99:1
 arya lvl 99:2
+arya lvl 99:3
 arylol
 arylol:1
 arylol:2
@@ -7187,6 +7188,7 @@ dd_005
 ddcdani
 dde
 ddlabraguette
+ddlabraguette:1
 ddlagrenouille:4
 ddlagrenouille:5
 ddpforman
@@ -7307,6 +7309,7 @@ deep turn:6
 deep turn:7
 deep turn:8
 deep turn:9
+deep turn:10
 deepack
 deff
 defi54
@@ -7453,6 +7456,7 @@ dents
 denzel wash in town
 denzel wash in town:1
 denzel wash in town:2
+denzel wash in town:3
 deouss
 deouss:1
 deouss:2
@@ -23614,6 +23618,7 @@ pflicht
 pflicht:1
 pflicht:2
 pgase
+pgase:1
 pgasus
 pgaz
 pgazze
@@ -27718,6 +27723,9 @@ so-saugrenu30:10
 so-saugrenu31
 so-saugrenu31:1
 so-saugrenu31:2
+so-saugrenu31:3
+so-saugrenu31:4
+so-saugrenu31:5
 so-saugrenu4
 so-saugrenu4:1
 so-saugrenu4:2
