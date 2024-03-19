@@ -193,7 +193,7 @@ https://generateurs.super-h.fr/
 
 
 
-[b]Spin[/b] [i]par roger21[/i] (sur la [url=https://toyogen.000webhostapp.com/generateurs/]version de test[/url] uniquement) [img]https://reho.st/https://toyogens.000webhostapp.com/generateurs/spin/?v=8&s=roger21&r=3&mode=0&rayonx=200&rayony=100&angle=0&asteps=100&rsteps=10&branches=8&fixe[/img]
+[b]Spin[/b] [i]par roger21[/i] [img]https://reho.st/https://generateurs.super-h.fr/spin/?v=8&s=roger21&r=3&mode=0&rayonx=200&rayony=100&angle=0&asteps=100&rsteps=10&branches=8&fixe[/img]
 [b]Paramètres :[/b]
 [*]s : le code du smiley
 [*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
@@ -227,10 +227,6 @@ https://generateurs.super-h.fr/
 
 
 [b]L'hébergement des outils est fait par LibreArbitre :[/b] https://forum.hardware.fr/hfr/reseauxpersosoho/Hebergement/services-proposes-super-sujet_36784_1.htm
-
-
-
-[b]Le site de test et de backup :[/b] https://toyogen.000webhostapp.com/
 
 
 
