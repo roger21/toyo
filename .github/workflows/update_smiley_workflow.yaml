@@ -1,0 +1,8 @@
+name: update_smiley_workflow
+
+on:
+  workflow_dispatch
+  schedule:
+    - cron:  "43 14 * * 0"
+
+      
