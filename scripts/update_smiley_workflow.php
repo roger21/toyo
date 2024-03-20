@@ -36,7 +36,7 @@ if($this_is_a_test_sth){
 
     $cookies_test=$_SERVER["HFR_COOKIES_TEST"];
 
-    trigger_error("cookies test ok ".strlen($cookies_test), E_USER_NOTICE);
+    trigger_error("cookies test ok ".strlen($cookies_test), E_USER_NOTICE); // 71
 
   }else{
 
@@ -50,7 +50,7 @@ if($this_is_a_test_sth){
 
     $cookies=$_SERVER["HFR_COOKIES"];
 
-    trigger_error("cookies ok ".strlen($cookies), E_USER_NOTICE);
+    trigger_error("cookies ok ".strlen($cookies), E_USER_NOTICE); // 58
 
   }else{
 

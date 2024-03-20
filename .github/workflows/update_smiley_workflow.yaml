@@ -31,5 +31,7 @@ jobs:
           php-version: "8.3"
 
       - name: let's go
-        run: ./update_smiley_workflow.php
+        run: |
+          git checkout main
+          ./update_smiley_workflow.php
 
