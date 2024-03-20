@@ -92,7 +92,7 @@ trigger_error("message\n$message", E_USER_NOTICE);
 
 // les changements dans les smileys
 
-$command="git diff -U0 --no-color HEAD^ -- ../generateurs/_api/smileys.txt".
+$command="git diff -U0 --no-color --all HEAD^ -- ../generateurs/_api/smileys.txt".
         " | grep -v \"^@@\" | tail -n +5";
 
 $smileys=exec_command($command);
