@@ -1,6 +1,6 @@
-name: update-smiley-workflow
+name: update_smiley_workflow
 
-run-name: ${{ github.run_number }} ${{ github.event_name }}
+run-name: run \#${{ github.run_number }} on ${{ github.event_name }}
 
 on:
   workflow_dispatch:
@@ -13,7 +13,7 @@ env:
   HFR_COOKIES_TEST: ${{ secrets.HFR_COOKIES_TEST }}
 
 jobs:
-  php-script:
+  do_the_shit:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -24,3 +24,7 @@ jobs:
 
       - name: pwd
         run: pwd
+
+      - name: echo
+        run: echo $THIS_IS_A_TEST_STH
+
