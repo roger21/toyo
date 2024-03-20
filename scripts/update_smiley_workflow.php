@@ -5,6 +5,9 @@
 require_once("include.php");
 
 
+$DARK_BACKGROUND=true;
+
+
 $message="Changement dans les smileys persos entre ";
 
 
@@ -31,9 +34,9 @@ if($this_is_a_test_sth){
 
   if(isset($_SERVER["HFR_COOKIES_TEST"]) && $_SERVER["HFR_COOKIES_TEST"] !== ""){
 
-    $cookies=$_SERVER["HFR_COOKIES_TEST"];
+    $cookies_test=$_SERVER["HFR_COOKIES_TEST"];
 
-    trigger_error("cookies test ok", E_USER_NOTICE);
+    trigger_error("cookies test ok ".strlen($cookies_test), E_USER_NOTICE);
 
   }else{
 
@@ -47,7 +50,7 @@ if($this_is_a_test_sth){
 
     $cookies=$_SERVER["HFR_COOKIES"];
 
-    trigger_error("cookies ok", E_USER_NOTICE);
+    trigger_error("cookies ok ".strlen($cookies), E_USER_NOTICE);
 
   }else{
 
@@ -89,7 +92,7 @@ trigger_error("message\n$message", E_USER_NOTICE);
 
 // les changements dans les smileys
 
-$command="git diff -U0 --no-color HEAD^ ../generateurs/_api/smileys.txt".
+$command="git diff -U0 --no-color HEAD^ -- ../generateurs/_api/smileys.txt".
         " | grep -v \"^@@\" | tail -n +5";
 
 $smileys=exec_command($command);
