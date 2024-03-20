@@ -16,6 +16,12 @@ if(isset($_SERVER["THIS_IS_A_TEST_STH"]) && $_SERVER["THIS_IS_A_TEST_STH"] === "
 
   $this_is_a_test_sth=true;
 
+  trigger_error("this is a test", E_USER_NOTICE);
+
+}else{
+
+  trigger_error("this is NOT a test", E_USER_NOTICE);
+
 }
 
 
@@ -54,7 +60,7 @@ if($this_is_a_test_sth){
 
 // get_all
 
-get_all();
+//get_all();
 
 trigger_error("get_all ok", E_USER_NOTICE);
 

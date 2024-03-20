@@ -20,20 +20,14 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      - name: php
+      - name: get php 8.3
         uses: shivammathur/setup-php@v2
         with:
           php-version: "8.3"
 
-      - name: echo
-        run: echo lol
+      - name: cd scripts
+        run: cd scripts
 
-      - name: pwd
-        run: pwd
-
-      - name: echo
-        run: echo $THIS_IS_A_TEST_STH
-
-      - name: echo
-        run: echo $TOTO
+      - name: let's go
+        run: ./update_smiley_workflow.php
 
