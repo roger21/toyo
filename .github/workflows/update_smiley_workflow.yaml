@@ -30,5 +30,8 @@ jobs:
         with:
           php-version: "8.3"
 
+      - name: php version
+        run: php -v
+
       - name: let's go
         run: ./update_smiley_workflow.php
