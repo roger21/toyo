@@ -1,8 +1,19 @@
-name: update_smiley_workflow
+name: update-smiley-workflow
+
+run-name: ${{ github.run_number }} ${{ github.event_name }}
 
 on:
-  workflow_dispatch:
-  schedule:
-    - cron:  "43 14 * * 0"
+  - workflow_dispatch
+  - schedule:
+      cron:  "43 14 * * 0"
 
-      
+env:
+  THIS_IS_A_TEST_STH: "TRUE"
+  HFR_COOKIES: ${{ secrets.HFR_COOKIES }}
+  HFR_COOKIES_TEST: ${{ secrets.HFR_COOKIES_TEST }}
+
+jobs:
+  php-script:
+    runs-on: ubuntu-latest
+    steps:
+      uses: actions/checkout@v4
