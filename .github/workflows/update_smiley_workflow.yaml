@@ -13,8 +13,14 @@ env:
   HFR_COOKIES: ${{ secrets.HFR_COOKIES }}
   HFR_COOKIES_TEST: ${{ secrets.HFR_COOKIES_TEST }}
 
+defaults:
+  run:
+    shell: bash
+    working-directory: ./scripts
+
 jobs:
   do_the_shit:
+    environment: robot21
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -24,9 +30,6 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: "8.3"
-
-      - name: cd scripts
-        run: cd scripts
 
       - name: let's go
         run: ./update_smiley_workflow.php
