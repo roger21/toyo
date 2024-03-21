@@ -40,7 +40,7 @@ jobs:
         run: ./update_smileys_workflow.php
 
       - name: git push
-        if: ${{ ! ( env.THIS_IS_A_TEST_STH == 'TRUE' ) }}
+        if: ${{ ! ( env.THIS_IS_A_TEST_STH_CACA == 'TRUE' ) }}
         run: |
           echo if lolilol
 #          git config user.name robot21
