@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron:  '43 14 * * 0'
+    - cron:  '55 3 * * 4'
 
 env:
   THIS_IS_A_TEST_STH: 'TRUE'
@@ -40,9 +41,8 @@ jobs:
         run: ./update_smileys_workflow.php
 
       - name: git push
-        if: ${{ ! ( env.THIS_IS_A_TEST_STH_CACA == 'TRUE' ) }}
+        if: ${{ ! ( env.THIS_IS_A_TEST_STH == 'TRUE' ) }}
         run: |
-          echo " " >> ../README.md
           git config user.name robot21
           git config user.email robot21@github.com
           git commit -am 'bot' || true
