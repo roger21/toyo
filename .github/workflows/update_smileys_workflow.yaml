@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron:  '43 14 * * 0'
-    - cron:  '0 3 * * 4'
+    - cron:  '10 4 * * 4'
 
 env:
   THIS_IS_A_TEST_STH: 'TRUE'
