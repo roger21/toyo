@@ -34,4 +34,4 @@ jobs:
         run: php -v
 
       - name: let's go
-        run: ./update_smiley_workflow.php
+        run: ./update_smileys_workflow.php
