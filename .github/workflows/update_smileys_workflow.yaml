@@ -38,3 +38,12 @@ jobs:
 
       - name: let's go
         run: ./update_smileys_workflow.php
+
+      - name: git push
+        if: ${{ env.THIS_IS_A_TEST_STH != "TRUE" }}
+        run: |
+          echo if lolilol
+#          git config user.name robot21
+#          git config user.email robot21@github.com
+#          git commit -am "bot"
+#          git push
