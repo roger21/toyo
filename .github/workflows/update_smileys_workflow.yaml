@@ -42,8 +42,7 @@ jobs:
       - name: git push
         if: ${{ ! ( env.THIS_IS_A_TEST_STH_CACA == 'TRUE' ) }}
         run: |
-          echo if lolilol
-#          git config user.name robot21
-#          git config user.email robot21@github.com
-#          git commit -am "bot"
-#          git push
+          git config user.name robot21
+          git config user.email robot21@github.com
+          git commit -am "bot"
+          git push
