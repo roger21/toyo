@@ -44,5 +44,5 @@ jobs:
         run: |
           git config user.name robot21
           git config user.email robot21@github.com
-          #git commit -am 'bot'
+          git commit -am 'bot' || true
           git push
