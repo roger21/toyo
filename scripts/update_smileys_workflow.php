@@ -70,7 +70,7 @@ trigger_error("get_all ok", E_USER_NOTICE);
 
 // les dates
 
-$command="git log -1 --format=%aI ../generateurs/_api/smileys.txt";
+$command="git log -1 --all --format=%aI -- ../generateurs/_api/smileys.txt";
 
 $date=exec_command($command);
 
@@ -92,7 +92,7 @@ trigger_error("message\n$message", E_USER_NOTICE);
 
 // les changements dans les smileys
 
-$command="git diff -U0 --no-color --all HEAD^ -- ../generateurs/_api/smileys.txt".
+$command="git diff -U0 --no-color -- ../generateurs/_api/smileys.txt".
         " | grep -v \"^@@\" | tail -n +5";
 
 $smileys=exec_command($command);
