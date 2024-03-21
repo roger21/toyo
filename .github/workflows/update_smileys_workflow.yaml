@@ -1,13 +1,13 @@
 name: update_smileys_workflow
 
-run-name: 'run #${{ github.run_number }} on ${{ github.event_name }}'
+run-name: 'run #${{ github.run_number }} on ${{ github.event_name }} ${{ github.event.schedule }}'
 
 on:
   workflow_dispatch:
   schedule:
     - cron:  '43 14 * * 0'
-    - cron:  '15 3 * * 4'
-    - cron:  '15 4 * * 4'
+    - cron:  '32 3 * * 4'
+    - cron:  '32 4 * * 4'
 
 env:
   THIS_IS_A_TEST_STH: 'TRUE'
