@@ -40,8 +40,9 @@ jobs:
         run: ./update_smileys_workflow.php
 
       - name: git push
-        if: ${{ ! ( env.THIS_IS_A_TEST_STH == 'TRUE' ) }}
+        if: ${{ ! ( env.THIS_IS_A_TEST_STH_CACA == 'TRUE' ) }}
         run: |
+          echo " " >> ../README.md
           git config user.name robot21
           git config user.email robot21@github.com
           git commit -am 'bot' || true

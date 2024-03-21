@@ -63,7 +63,7 @@ if($this_is_a_test_sth){
 
 // get_all
 
-get_all();
+//get_all();
 
 trigger_error("get_all ok", E_USER_NOTICE);
 
@@ -182,6 +182,6 @@ if($this_is_a_test_sth){
 
 }
 
-//trigger_error("result\n$result", E_USER_NOTICE);
+trigger_error("result\n$result", E_USER_NOTICE);
 
 
