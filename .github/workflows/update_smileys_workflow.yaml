@@ -45,8 +45,12 @@ jobs:
           git config user.name robot21
           git config user.email robot21@github.com
           git status
+          echo -e
           git commit -am 'bot' || true
+          echo -e
           git status
+          echo -e
           git push
+          echo -e
           git status
 
