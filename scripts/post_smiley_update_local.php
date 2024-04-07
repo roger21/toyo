@@ -21,7 +21,7 @@ trigger_error("changes\n".var_export($changes, true), E_USER_NOTICE);
 
 // les dates
 
-$command="git log -2 --all --format=%aI -- ../generateurs/_api/smileys.txt";
+$command="git log -2 --format=%aI -- ../generateurs/_api/smileys.txt";
 $dates=exec_command($command);
 
 trigger_error("dates\n".print_r($dates, true), E_USER_NOTICE);

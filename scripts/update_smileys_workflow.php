@@ -70,7 +70,7 @@ trigger_error("get_all ok", E_USER_NOTICE);
 
 // les dates
 
-$command="git log -1 --all --format=%aI -- ../generateurs/_api/smileys.txt";
+$command="git log -1 --format=%aI -- ../generateurs/_api/smileys.txt";
 
 $date=exec_command($command);
 
