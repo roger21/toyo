@@ -20,6 +20,8 @@ function exec_command($command){
 function french_date_from_iso($date){
   global $date_translation;
   $date=date_create_from_format(DATE_RFC3339, $date);
+  $tz=timezone_open("Europe/Paris");
+  date_timezone_set($date, $tz);
   $date=strtr(date_format($date, "l j F Y à H:i:s"), $date_translation);
 
   //trigger_error("date\n".print_r($date, true), E_USER_NOTICE);
