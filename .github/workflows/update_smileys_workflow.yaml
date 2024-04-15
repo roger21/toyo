@@ -45,15 +45,16 @@ jobs:
           git config user.name robot21
           git config user.email robot21@github.com
           git config pull.rebase false
+          echo -e '\n --- git status\n'
           git status
-          echo -e
+          echo -e '\n --- git pull\n'
           git pull
-          echo -e
+          echo -e '\n --- git commit\n'
           git commit -am 'bot' || true
-          echo -e
+          echo -e '\n --- git status\n'
           git status
-          echo -e
+          echo -e '\n --- git push\n'
           git push
-          echo -e
+          echo -e '\n --- git status\n'
           git status
 
