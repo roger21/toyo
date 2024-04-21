@@ -5,7 +5,7 @@ run-name: 'run #${{ github.run_number }} on ${{ github.event_name }}'
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '43 2 * * 0' # UTC
+    - cron:  '43 7 * * 0' # UTC
 
 env:
   THIS_IS_A_TEST_STH: 'FALSE'
