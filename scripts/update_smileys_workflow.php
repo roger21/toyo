@@ -122,6 +122,7 @@ if($changes){
       $add[$smiley]=$detail_url.rawurlencode($smiley);
     }
   }
+  $max_line=5;
   $nbsup=count($sup);
   $nbadd=count($add);
   if($nbsup > 0){
@@ -130,9 +131,14 @@ if($changes){
     }else{
       $message.="1 smiley supprimé :\n\n";
     }
+    $cpt=0;
     foreach($sup as $s => $u){
-      $message.="$s\n";
+      $message.="$s        ";
+      if((++$cpt % $max_line) === 0){
+        $message=trim($message)."\n";
+      }
     }
+    $message=trim($message)."\n";
   }
   if($nbsup > 0 && $nbadd > 0){
     $message.="\n";
@@ -143,9 +149,14 @@ if($changes){
     }else{
       $message.="1 nouveau smiley :\n\n";
     }
+    $cpt=0;
     foreach($add as $s => $u){
-      $message.="$s [url=$u]details[/url]\n";
+      $message.="$s [url=$u]details[/url]        ";
+      if((++$cpt % $max_line) === 0){
+        $message=trim($message)."\n";
+      }
     }
+    $message=trim($message)."\n";
   }
 
 }else{
