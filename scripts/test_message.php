@@ -5,95 +5,36 @@
 require_once("include.php");
 
 
-$DARK_BACKGROUND=true;
+//$DARK_BACKGROUND=true;
 
 
 $message="Changement dans les smileys persos entre ";
 
 
-// is this a test ?
-
-$this_is_a_test_sth=false;
-
-if(isset($_SERVER["THIS_IS_A_TEST_STH"]) && $_SERVER["THIS_IS_A_TEST_STH"] === "TRUE"){
-
-  $this_is_a_test_sth=true;
-
-  trigger_error("this is a test", E_USER_NOTICE);
-
-}else{
-
-  trigger_error("this is NOT a test", E_USER_NOTICE);
-
-}
-
-
-// les cookies
-
-if($this_is_a_test_sth){
-
-  if(isset($_SERVER["HFR_COOKIES_TEST"]) && $_SERVER["HFR_COOKIES_TEST"] !== ""){
-
-    $cookies_test=$_SERVER["HFR_COOKIES_TEST"];
-
-    trigger_error("cookies test ok ".strlen($cookies_test), E_USER_NOTICE); // 71
-
-  }else{
-
-    trigger_error("NO TEST COOKIES", E_USER_ERROR);
-
-  }
-
-}else{
-
-  if(isset($_SERVER["HFR_COOKIES"]) && $_SERVER["HFR_COOKIES"] !== ""){
-
-    $cookies=$_SERVER["HFR_COOKIES"];
-
-    trigger_error("cookies ok ".strlen($cookies), E_USER_NOTICE); // 58
-
-  }else{
-
-    trigger_error("NO COOKIES", E_USER_ERROR);
-
-  }
-
-}
-
-
-// get_all
-
-get_all();
-
-trigger_error("get_all ok", E_USER_NOTICE);
-
-
 // les dates
 
-$command="git log -1 --format=%aI -- ../generateurs/_api/smileys.txt";
+$command="git log -2 --format=%aI -- ../generateurs/_api/smileys.txt";
 
-$date=exec_command($command);
+$dates=exec_command($command);
 
-trigger_error("date\n".print_r($date, true), E_USER_NOTICE);
+trigger_error("date\n".print_r($dates, true), E_USER_NOTICE);
 
-$last_date=french_date_from_iso($date[0]);
+$last_date=french_date_from_iso($dates[0]);
 
 trigger_error("last_date\n$last_date", E_USER_NOTICE);
 
-$now_date=strtr(date_format(date_create_immutable(), "l j F Y à H:i:s"),
-                $date_translation);
+$past_date=french_date_from_iso($dates[1]);
 
-trigger_error("now_date\n$now_date", E_USER_NOTICE);
+trigger_error("past_date\n$past_date", E_USER_NOTICE);
 
-$message.="le $last_date et le $now_date\n\n";
+$message.="le $past_date et le $last_date\n\n";
 
 trigger_error("message\n$message", E_USER_NOTICE);
 
 
 // les changements dans les smileys
 
-$command="git diff -U0 --no-color -- ../generateurs/_api/smileys.txt".
-        " | grep -v \"^@@\" | tail -n +5";
+$command="git log --format=\"\" -p -1 -U0 --no-color -- ../generateurs/_api/smileys.txt | grep -v \"^@@\" | tail -n +5";
 
 $smileys=exec_command($command);
 
@@ -180,19 +121,6 @@ $message.=number_format($nbsmileys, 0, ",", "\u{2009}")." smileys persos au tota
 
 trigger_error("message\n$message", E_USER_NOTICE);
 
-
-// postage du message
-
-if($this_is_a_test_sth){
-
-  $result=post_message($message, $cookies_test, $cat_test, $topic_test, $post_test);
-
-}else{
-
-  $result=post_message($message, $cookies, $cat, $topic);
-
-}
-
-trigger_error("result\n$result", E_USER_NOTICE);
+echo "\n".$message."\n\n\n\n";
 
 
