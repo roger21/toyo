@@ -55,10 +55,9 @@ if(isset($_GET["fileName"])){
 }elseif(isset($_GET["url"])){
   $fileName="./temp/".sha1($_GET["url"]);
   if(!file_exists($fileName)){
-    $header="User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) ".
-           "Gecko/20100101 Firefox/102.0\r\n".
-           "Accept: text/html,application/xhtml+xml,application/xml,".
-           "image/gif,image/jpeg,image/png,image/bmp,image/webp,image/avif,*/*\r\n".
+    $header="User-Agent: Mozilla/5.0 (Linux x86_64; rv:115.0) ".
+           "Gecko/20100101 Firefox/115.0\r\n".
+           "Accept: image/gif,image/jpeg,image/png,image/bmp,image/webp,image/avif\r\n".
            "Accept-Language: fr-FR,fr,en-US,en\r\n".
            "Accept-Encoding: gzip, deflate, br\r\n".
            "Connection: close\r\n".
