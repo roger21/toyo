@@ -2189,6 +2189,9 @@ asfixsci:4
 asfixsci:5
 asfixsci:6
 asfixsci:7
+asfixsci:8
+asfixsci:9
+asfixsci:10
 ash ray cure
 ash ray cure:1
 ash ray cure:2
@@ -17221,6 +17224,7 @@ lebauf
 lebeaunathan
 lebeaunathan:1
 lebeaunathan:2
+lebeaunathan:3
 lebeeun
 lebef
 lebeun
