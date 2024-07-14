@@ -9775,6 +9775,7 @@ fabroo4:2
 fabroo4:3
 fabroo4:4
 fabroo4:5
+fabroo4:6
 fabs
 face de fesses
 face_de_pomme
@@ -31328,6 +31329,7 @@ valsou:3
 valsou:4
 valsou:5
 valsou:6
+valsou:7
 valvendeur
 vampire haha
 vampirx
