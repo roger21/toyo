@@ -151,7 +151,7 @@ if($changes){
     }
     $cpt=0;
     foreach($add as $s => $u){
-      $message.="$s [url=$u]details[/url]        ";
+      $message.="$s [url=$u]détails[/url]        ";
       if((++$cpt % $max_line) === 0){
         $message=trim($message)."\n\n";
       }
