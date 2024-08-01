@@ -106,7 +106,7 @@ if($changes){
       $message.="1 nouveau smiley :\n\n";
     }
     foreach($add as $s => $u){
-      $message.="$s [url=$u]details[/url]\n";
+      $message.="$s [url=$u]Détail[/url]\n";
     }
   }
 
