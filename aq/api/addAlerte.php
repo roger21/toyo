@@ -48,7 +48,7 @@ if(in_array($ip, $blackList))
 {
   trigger_error("[AQ] Nouvelle tentative ip : ".$ip.$from);
   mail(MAIL_ADDRESS, "[AQ] Nouvelle tentative ip",
-       "ip : ".safe($ip).$from_mail);
+       "ip : ".safe($ip).$from_mail.MAIL_LINKS);
   header("HTTP/1.1 403 Forbidden");
   header("Content-Length: 0");
   return;
@@ -68,7 +68,7 @@ if(count($alertes) >= 3)
   }
   trigger_error("[AQ] Nouveau blocage ip : ".$ip.$from);
   mail(MAIL_ADDRESS, "[AQ] Nouveau blocage ip",
-       "ip : ".safe($ip).$from_mail);
+       "ip : ".safe($ip).$from_mail.MAIL_LINKS);
   $blackList[count($blackList)] = $ip;
   $filename = "../config/blackList.config.php";
   $file = fopen($filename, "w");
