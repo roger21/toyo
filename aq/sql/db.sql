@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mer. 08 fév. 2023 à 12:52
--- Version du serveur :  10.5.16-MariaDB
--- Version de PHP : 7.3.32
+-- Généré le : sam. 10 août 2024 à 18:26
+-- Version du serveur : 10.6.19-MariaDB
+-- Version de PHP : 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -35,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `alerte_qualitay` (
   `topic_id` int(11) NOT NULL,
   `topic_titre` varchar(512) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Déchargement des données de la table `alerte_qualitay`
@@ -1497,7 +1496,30 @@ INSERT INTO `alerte_qualitay` (`id`, `nom`, `topic_id`, `topic_titre`) VALUES
 (13548, 'Vassilii l\'oracle du football', 119463, '[Football] Coupe du Monde - Qatar 2022™ // La France en 1/8e'),
 (13549, 'Olympia et l\'oeuvre de Fred', 6747, 'Bodybuilding | 2022 année complète sans confinements'),
 (13555, 'Merci Toyo', 116015, '[ • Pimp my HFR • Topic des user scripts • Infos et news en FP • ]'),
-(13571, 'Mise à jour AQ', 116015, '[ • Pimp my HFR • Topic des user scripts • Infos et news en FP • ]');
+(13571, 'Mise à jour AQ', 116015, '[ • Pimp my HFR • Topic des user scripts • Infos et news en FP • ]'),
+(13572, 'Voyons cela', 116015, '[ • Pimp my HFR • Topic des user scripts • Infos et news en FP • ]'),
+(13573, 'Le bot Twitter va-t-il enfin refonctionner ?', 116015, '[ • Pimp my HFR • Topic des user scripts • Infos et news en FP • ]'),
+(13574, 'Messi, pauvre petite bête', 61179, '[Football] Ballon Rond - /!\\1er post/!\\'),
+(13575, 'merci pour l\'info', 1711, '[TU] HFR+ | ❄️ 2.1.20 ❄️'),
+(13576, 'RIP Twitter', 116015, '[ • Pimp my HFR • Topic des user scripts • Nouveau sondage • ]'),
+(13577, 'passage des alertes sur Mastodon ?', 116015, '[ • Pimp my HFR • Topic des user scripts • Nouveau sondage • ]'),
+(13578, 'Filtrage de l\'huile de friture', 94733, 'Manger ou faire soi-même de bonnes frites'),
+(13579, 'D.ieu plussoie', 1711, '[TU] HFR+ | ❄️ 2.1.20 ❄️'),
+(13580, 'passage de flambeau', 78204, 'GSNALF : rencontres et portes'),
+(13581, 'Achat nouvel iPhone', 8621, '[TU]  iPhone 15 Pro/15 Pro Max - Usb C welcome'),
+(13582, 'des histoires incroyables ', 79550, 'L\'événement le plus incroyable dont vous avez été témoin'),
+(13583, 'le chat main', 117304, 'Vivre en mer, voiliers, voiles,  transat et petits lagons'),
+(13584, 'galette de pisse spirit ', 78667, 'Le topic des images étonnantes [faites pas les cons]'),
+(13585, 'Attention aux escrocs', 25005, 'Je viens de me faire aborder par un escroc...'),
+(13586, 'identifier un numero', 25005, 'Je viens de me faire aborder par un escroc...'),
+(13587, 'booster pas cher', 110842, '[Cigarette électronique] Liquides - Le Do it Yourself'),
+(13588, 'avion gelés ', 90227, 'Voyages aériens: conseils compagnies, trip reports'),
+(13589, 'C\'est partit tout seul !', 26369, 'Topic du forum - NEW : multismiley, le nouveau jocebug'),
+(13590, 'Vous pouvez lui faire confiance', 76038, '[SFBA] Supers Faux Bons Achats et bonnes affaires du moment!'),
+(13591, 'Charger Tesla avec surplus production P', 113483, '[TU] Tesla HFR Club: SuC, Efficience et plaisir de conduire'),
+(13592, 'Golden CR', 21633, '◄ HFR Running Club ! ► Élite auto proclamée'),
+(13593, 'petg', 2144, '[TU] Bambu Labs, The King Is Back !'),
+(13594, 'HFR n\'oublie jamais', 8680, 'Topic Hontes - \"La vraie honte c\'est...\" = sanction');
 
 -- --------------------------------------------------------
 
@@ -1519,7 +1541,7 @@ CREATE TABLE IF NOT EXISTS `rapporteur` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `alerte_qualitay_id` (`alerte_qualitay_id`,`pseudo`),
   UNIQUE KEY `pseudo` (`pseudo`,`post_url`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Déchargement des données de la table `rapporteur`
@@ -3699,7 +3721,32 @@ INSERT INTO `rapporteur` (`id`, `alerte_qualitay_id`, `pseudo`, `post_id`, `post
 (14224, 13555, 'sisyphus the hamster', 67767522, 'https://forum.hardware.fr/hfr/Discussions/Viepratique/scripts-infos-news-sujet_116015_238.htm#t67767522', '2023-02-04 20:56:55', 0, '[:toyonos:4]', '2a01:e0a:93f:ad90:819a:6cd0:720c:667c'),
 (14228, 13555, 'омg ԝтf ввq ²¹', 67767522, 'https://forum.hardware.fr/hfr/Discussions/Viepratique/scripts-infos-news-sujet_116015_238.htm#t67767522', '2023-02-04 21:15:56', 0, '[:toyonos:3]', '2a01:e0a:93f:ad90:819a:6cd0:720c:667c'),
 (14229, 13555, 'омg ԝтf ввԛ ②①', 67767522, 'https://forum.hardware.fr/hfr/Discussions/Viepratique/scripts-infos-news-sujet_116015_238.htm#t67767522', '2023-02-04 21:18:57', 0, '[:toyonos:1]', '2a01:e0a:93f:ad90:819a:6cd0:720c:667c'),
-(14243, 13571, 'PetitJean', 67789705, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=116015&page=238&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t67789705', '2023-02-07 23:06:38', 1, 'merci roger', '2a01:e0a:d0:6eb0:c09e:e8b0:c9a3:7b3');
+(14243, 13571, 'PetitJean', 67789705, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=116015&page=238&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t67789705', '2023-02-07 23:06:38', 1, 'merci roger', '2a01:e0a:d0:6eb0:c09e:e8b0:c9a3:7b3'),
+(14244, 13571, 'roger21', 67789705, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=116015&page=238&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t67789705', '2023-02-09 09:46:48', 0, 'Merci LibreArbitre', '82.65.238.179'),
+(14246, 13572, 'PetitJean', 67804808, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=116015&page=238&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t67804808', '2023-02-09 14:07:55', 1, 'post de roger21', '82.64.54.91'),
+(14247, 13573, 'PetitJean', 68006155, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=116015&page=242&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t68006155', '2023-03-13 06:15:54', 1, 'post de PetitJean', '82.64.54.91'),
+(14248, 13574, 'PetitJean', 68183192, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=430&post=61179&page=68856&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t68183192', '2023-04-06 19:01:08', 1, 'post de _Pouvoir', '82.64.54.91'),
+(14249, 13575, 'ezzz', 835448, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=25&post=1711&page=463&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t835448', '2023-04-12 19:23:31', 1, 'post de WirIpse', '83.202.143.156'),
+(14251, 13572, 'roger21', 67804808, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=116015&page=238&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t67804808', '2023-04-19 11:32:32', 0, 'test aq', '82.65.238.179'),
+(14252, 13576, 'PetitJean', 68263041, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=116015&page=245&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t68263041', '2023-04-20 10:47:02', 1, 'post de PetitJean', '82.64.54.91'),
+(14253, 13577, 'PetitJean', 68265063, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=116015&page=245&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t68265063', '2023-04-20 12:40:33', 1, 'post de Poly', '82.64.54.91'),
+(14254, 13578, 'ezzz', 68338159, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=433&post=94733&page=133&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t68338159', '2023-05-04 05:53:24', 1, 'post de N-Mi', '83.202.143.156'),
+(14255, 13579, 'ezzz', 840449, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=25&post=1711&page=466&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t840449', '2023-07-21 10:43:55', 1, 'post de Marc', '92.184.96.40'),
+(14256, 13580, 'colonelle', 69004786, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=423&post=78204&page=53921&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t69004786', '2023-08-15 21:02:51', 1, 'post de CyrilleTel​mer', '92.184.96.121'),
+(14257, 13581, 'pascal_974', 844144, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=25&subcat=525&post=8621&page=21&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t844144', '2023-09-18 08:35:28', 1, 'post de racingman1​1', '93.10.108.93'),
+(14258, 13582, 'ezzz', 69213918, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=434&post=79550&page=58&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t69213918', '2023-09-19 16:50:07', 1, 'post de Ink87', '92.184.106.49'),
+(14259, 13583, 'hexillia', 68776568, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=557&post=117304&page=13&p=1&sondage=0&owntopic=2&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t68776568', '2023-09-20 00:06:33', 1, 'post de otobox', '194.230.146.72'),
+(14260, 13584, 'clovis86', 69213558, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=434&post=78667&page=15231&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t69213558', '2023-09-25 21:15:53', 1, 'post de houckaye', '84.97.97.7'),
+(14261, 13585, 'ezzz', 69285205, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=423&post=25005&page=950&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t69285205', '2023-09-27 14:58:55', 1, 'post de Vini', '92.184.116.181'),
+(14262, 13586, 'ezzz', 69636590, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=423&post=25005&page=958&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t69636590', '2023-11-21 09:00:24', 1, 'post de Cuistot', '92.184.99.215'),
+(14263, 13587, 'gaston lagaffe22', 69426183, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=429&post=110842&page=177&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t69426183', '2023-11-30 17:14:39', 1, 'post de billmaudit', '92.157.110.93'),
+(14264, 13588, 'shinjo', 69717756, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=557&post=90227&page=2024&p=1&sondage=0&owntopic=2&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t69717756', '2024-01-07 20:13:48', 1, 'post de zesheriff', '92.184.112.71'),
+(14265, 13589, 'hfrspaceprogram', 70015450, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=422&post=26369&page=2855&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t70015450', '2024-01-31 02:37:57', 1, 'post de Sgt-D', '172.15.176.252'),
+(14266, 13590, 'roger21', 70234127, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=76038&page=10003&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t70234127', '2024-03-08 00:32:50', 1, 'post de Umi', '82.65.238.179'),
+(14267, 13591, 'pascal_974', 70379853, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=431&post=113483&page=1727&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t70379853', '2024-04-03 00:12:09', 1, 'post de arylol', '93.10.108.93'),
+(14268, 13592, 'eviltyler', 70500819, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=430&post=21633&page=9728&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t70500819', '2024-04-23 12:56:34', 1, 'post de M300A', '37.66.230.82'),
+(14269, 13593, 'lapeno93', 441366, 'https://forum.hardware.fr/hfr/electroniquedomotiquediy/imprimantes3D/bambu-labs-king-sujet_2144_112.htm#t441366', '2024-05-27 12:11:40', 1, 'post de epsiloncen​taury', '102.117.110.46'),
+(14270, 13594, 'oufwid', 70958090, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=434&post=8680&page=4011&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t70958090', '2024-07-01 22:08:46', 1, 'post de Bear\'sBear​d', '51.154.56.9');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
