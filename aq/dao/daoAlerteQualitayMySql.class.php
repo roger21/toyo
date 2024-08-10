@@ -9,6 +9,7 @@ class DaoAlerteQualitayMySql implements DaoAlerteQualitay
 
   public function connect()
   {
+    mysqli_report(MYSQLI_REPORT_OFF);
     $this->link = mysqli_connect("host", "user", 'passwd')
                 or die("Impossible de se connecter : " . mysqli_error());
     mysqli_select_db($this->link, "db")
