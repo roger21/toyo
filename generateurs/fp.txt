@@ -233,3 +233,19 @@ https://generateurs.super-h.fr/
 [b]Le code source :[/b]
 [*]roger21 (version actuelle) : https://github.com/roger21/toyo
 [*]ToYonos (version originale) : https://github.com/ToYonos/HFR-stuff
+
+
+
+[b]Changelog :[/b]
+[*]10/08/2024 : correction du code de gestion des erreurs mysql des aq pour le passage à php 8.1
+[*]16/06/2024 : correction des entêtes de récupération des images pour Avatar Helper et Smiley Helper pour éviter que imgur (ou autre) ne serve une page web plutôt qu'une image
+[*]15/04/2024 : utilisation de la MAJ hebdomadaire de [url=https://github.com/roger21/toyo]github[/url] pour l'API smiley helper
+[*]25/02/2024 : ajout du support pour le format avif (non supportée par la version de php en place) et améliorations/corrections du code pour Avatar Helper et Smiley Helper et ajout d'un nouveau générateur de smiley
+[*]05/05/2023 : mise en ligne du deuxième lot au complet des générateurs de smileys
+[*]11/04/2023 : correction du problème d'IP bloquée et MAJ des générateurs avec un générateur en plus et mise en place de l'API smiley helper et de sa MAJ hebdomadaire
+[*]30/03/2023 : mise en ligne d'un premier lots de générateurs de smileys avec un problème d'IP bloquée
+[*]14/03/2023 : correction d'une erreur sur le format de sortie de getAlertesByTopic pour les Alertes Qualitaÿ
+[*]06/03/2023 : amélioration du code, de l'interface et du support de la transparence pour Avatar Helper et Smiley Helper
+[*]01/03/2023 : amélioration de l'accès aux images pour Avatar Helper et Smiley Helper et ajout du support pour les formats webp et bmp
+[*]13/02/2023 : mise en ligne des outils Avatar Helper et Smiley Helper
+[*]08/02/2023 : mise en ligne des Alertes Qualitaÿ et de son API
