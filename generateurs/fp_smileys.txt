@@ -1,0 +1,54 @@
+[:wark0] [b]Topic [ information, recherche, création ] x [ smileys, avatars, images ][/b] [:wark0]
+
+
+[b]Informations sur les smileys et les avatars du forum :[/b]
+[*]vous pouvez modifier votre avatar et ajouter 11 smileys persos depuis votre [url=https://forum.hardware.fr/user/editprofil.php?config=hardwarefr.inc]Profil[/url] -> [url=https://forum.hardware.fr/user/editprofil.php?config=hfr.inc&page=5]Gestion des images[/url]
+[*]les smileys sont limités à 70 × 50 pixels et à 20Kio (20 480 octets) et aux formats gif, jpeg et png
+[*]les avatars sont limités à 150 × 100 pixels et à 20Kio (20 480 octets) et aux formats gif, jpeg et png
+[*]en cas de dépassement l’image est redimensionnée et convertie en jpeg (vous perdrez la transparence)
+
+
+[b]Informations sur le wiki smileys :[/b]
+[*]tout le monde peut modifier les mots-clés du wiki smileys sauf si vous êtes sous le coup d’une sanction
+[*]les mots-clés doivent faire au moins 3 caractères pour être pris en compte dans la recherche du wiki
+[*]dans les mots-clés tous les caractères non alphanumériques sont considérés comme des caractères séparateurs de mots-clés
+[*]les accents et les majuscules sont ignorés dans les mots-clés et la recherche (Gérard = gerard)
+[*]il faut attendre 5 min entre 2 modifications du wiki sur un même smiley (sauf depuis [url=https://forum.hardware.fr/user/uploadsmil.php?config=hfr.inc]votre page de gestion des smileys persos[/url])
+[*]dans la recherche il est possible de faire précéder les mots-clés des caractères + ou - (sans espace) pour faire une recherche plus précise
+
+
+[b]Outils de création et de conversion :[/b]
+[*]Aconvert propose des outils de conversion en ligne : https://www.aconvert.com/
+[*]EZgif propose des outils de conversion et d’édition en ligne : https://ezgif.com/
+[*]nano, un outil de compression de SVG en ligne : https://vecta.io/nano
+[*]FFMpeg, un outil de conversion en ligne de commande : https://ffmpeg.org/
+[*]GIMP, un éditeur d’images : https://www.gimp.org/
+[*]Inkscape, un éditeur d’images vectorielles : https://inkscape.org/
+
+
+[b]Hébergement d’images et de vidéos :[/b]
+[*]ImgBB, hébergement d’images : https://imgbb.com/
+[*]Imgur, hébergement d’images et de vidéos : https://imgur.com/
+[*]Streamable, hébergement de vidéos : https://streamable.com/
+[*]Rehost par [url=https://forum.hardware.fr/hfr/profil-58199.htm]DiB91[/url], hébergement d’images :  https://rehost.diberie.com/ ([url=https://forum.hardware.fr/hfr/Discussions/Viepratique/hebergement-gratuit-anonyme-sujet_118598_1.htm]topic[/url])
+[*]img.super-h.fr par [url=https://forum.hardware.fr/hfr/profil-259393.htm]LibreArbitre[/url], hébergement images : https://img.super-h.fr/ ([url=https://forum.hardware.fr/hfr/reseauxpersosoho/Hebergement/services-proposes-super-sujet_36784_1.htm]topic[/url])
+[*]reho.st par [url=https://forum.hardware.fr/hfr/profil-46415.htm]Sly Angel[/url], ré-hébergement d’images : https://reho.st/ ([url=https://forum.hardware.fr/hfr/reseauxpersosoho/Hebergement/hebergement-images-forum-sujet_27784_1.htm]topic[/url])
+[*]hfr-rehost.aurait.eu par [url=https://forum.hardware.fr/hfr/profil-28960.htm]leto[/url], ré-hébergement d’images : https://hfr-rehost.aurait.eu/
+[*]wsrv.nl, ré-hébergement d’images : https://wsrv.nl/
+
+
+[b]Les outils de ToYonos :[/b]
+[*][url=https://smiley.super-h.fr/]The SmileyHelper@HFR[/url] pour créer facilement un smiley depuis une image
+[*][url=https://avatar.super-h.fr/]The AvatarHelper@HFR[/url] pour créer facilement un avatar depuis une image
+[*][url=https://generateurs.super-h.fr/]Les Générateurs@HFR[/url] pour… faire des choses
+
+
+[b]Topics apparentés :[/b]
+[*][url=https://forum.hardware.fr/hfr/Graphisme/topic-noel-noel-sujet_16386_1.htm][Topic de Noël] les smileys et les avatars de Noël[/url]
+[*][url=https://forum.hardware.fr/hfr/Discussions/Viepratique/generateurs-smileys-sujet_92466_1.htm][R&D] Les générateurs de smileys \o/[/url]
+[*][url=https://forum.hardware.fr/hfr/Discussions/Viepratique/scripts-infos-news-sujet_116015_1.htm][ • Pimp my HFR • Topic des user scripts • Infos et news en FP • ][/url]
+
+
+[b]Merci aux tauliers précédents :[/b]
+[*][url=https://forum.hardware.fr/hfr/profil-304.htm]-tinost@r-[/url]
+[*][url=https://forum.hardware.fr/hfr/profil-46732.htm]SOF40[/url]
