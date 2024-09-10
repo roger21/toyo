@@ -3,8 +3,8 @@
 
 [b]Informations sur les smileys et les avatars du forum :[/b]
 [*]vous pouvez modifier votre avatar et ajouter 11 smileys persos depuis votre [url=https://forum.hardware.fr/user/editprofil.php?config=hardwarefr.inc]Profil[/url] -> [url=https://forum.hardware.fr/user/editprofil.php?config=hfr.inc&page=5]Gestion des images[/url]
-[*]les smileys sont limités à 70 × 50 pixels et à 20Kio (20 480 octets) et aux formats gif, jpeg et png
-[*]les avatars sont limités à 150 × 100 pixels et à 20Kio (20 480 octets) et aux formats gif, jpeg et png
+[*]les smileys sont limités à 70 × 50 pixels et à 20 Kio (20 480 octets) et aux formats gif, jpeg et png
+[*]les avatars sont limités à 150 × 100 pixels et à 20 Kio (20 480 octets) et aux formats gif, jpeg et png
 [*]en cas de dépassement l’image est redimensionnée et convertie en jpeg (vous perdrez la transparence)
 
 
