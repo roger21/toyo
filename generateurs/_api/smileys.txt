@@ -545,6 +545,7 @@ _internet_
 _ion_
 _jad_
 _jbm
+_jo_306:10
 _john_doe_
 _k a o s_
 _kazuo_
@@ -6665,6 +6666,7 @@ cupra_tt
 cupra_yvele
 cuprage
 cuprage:1
+cuprage:2
 cupralf
 cuprettes
 cuprheink
