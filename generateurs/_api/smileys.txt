@@ -11199,6 +11199,7 @@ gat$
 gath
 gatinho
 gatsu35
+gatsu35:1
 gatt
 gatt:1
 gatt:2
@@ -14905,6 +14906,7 @@ joost6:1
 joost6:2
 joost6:3
 joost6:4
+joost6:5
 joprime
 joprime:1
 joprime:2
@@ -17236,6 +17238,7 @@ le_chien:1
 le_chien:2
 le_chien:3
 le_chien:4
+le_compte_a_souriard
 le_comte
 le_coyote
 le_criss
@@ -17460,6 +17463,8 @@ lenslark
 lent
 lent:1
 lent:2
+leo leclerc:5
+leo leclerc:6
 leo leclerc:7
 leo leclerc:8
 leo leclerc:9
@@ -21817,6 +21822,7 @@ nicko:5
 nicko:6
 nicko:7
 nicko:8
+nicko:9
 nicko500
 nicky66
 nicky66:1
@@ -24362,6 +24368,7 @@ polichu
 polichu:1
 polichu:2
 polichu:3
+polichu:4
 polio
 polionamen
 polionamen:1
