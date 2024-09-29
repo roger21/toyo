@@ -2674,6 +2674,7 @@ b0wh
 b0wh:1
 b0wh:2
 b0wh:3
+b0wh:4
 b2g
 b2g:1
 b4x
@@ -8058,6 +8059,8 @@ dokmabuz:5
 dokmabuz:6
 dokmabuz:7
 dokmabuz:8
+dokmabuz:9
+dokmabuz:10
 dolan
 dolby
 dolby-digital3500
@@ -17463,6 +17466,7 @@ lenslark
 lent
 lent:1
 lent:2
+leo leclerc:4
 leo leclerc:5
 leo leclerc:6
 leo leclerc:7
@@ -25352,6 +25356,7 @@ rasthor:2
 rasthor:3
 rasthor:4
 rasthor:5
+rasthor:6
 rastiscar
 ratal
 ratm_viggen
@@ -29086,6 +29091,7 @@ supersic
 supersic:1
 supersic:2
 supersic:3
+supersic:4
 supersimdel
 supersimdel:1
 supersimdel:2
