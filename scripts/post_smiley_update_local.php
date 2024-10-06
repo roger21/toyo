@@ -22,6 +22,7 @@ trigger_error("changes\n".var_export($changes, true), E_USER_NOTICE);
 // les dates
 
 $command="git log -2 --format=%aI -- ../generateurs/_api/smileys.txt";
+
 $dates=exec_command($command);
 
 trigger_error("dates\n".print_r($dates, true), E_USER_NOTICE);
@@ -58,6 +59,7 @@ if($changes){
 
   $command="git log --format=\"\" -p -1 -U0 --no-color -- ../generateurs/_api/smileys.txt".
           " | grep -v \"^@@\" | tail -n +5";
+
   $smileys=exec_command($command);
 
 }else{
@@ -122,6 +124,7 @@ trigger_error("message\n$message", E_USER_NOTICE);
 // le nombre de smileys persos total
 
 $command="wc -l < ../generateurs/_api/smileys.txt | bc";
+
 $nbsmileys=(int)exec_command($command)[0];
 
 trigger_error("nbsmileys\n$nbsmileys", E_USER_NOTICE);
@@ -133,8 +136,8 @@ trigger_error("message\n$message", E_USER_NOTICE);
 
 // postage du message
 
-$result=post_message($message, $cookies, $cat, $topic);
 //$result=post_message($message, $cookies_test, $cat_test, $topic_test, $post_test);
+$result=post_message($message, $cookies, $cat, $topic);
 
 trigger_error("result\n$result", E_USER_NOTICE);
 

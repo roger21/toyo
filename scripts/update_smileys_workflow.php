@@ -161,7 +161,7 @@ if($changes){
 
 }else{
 
-  $message.="Aucun changement [:osweat]\n";
+  $message.="Aucun changement [:osweat]\n\n";
 
 }
 
