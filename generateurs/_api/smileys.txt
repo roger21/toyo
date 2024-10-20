@@ -2677,6 +2677,8 @@ b0wh:3
 b0wh:4
 b2g
 b2g:1
+b2g:2
+b2g:3
 b4x
 b4x:1
 b4x:2
