@@ -2679,6 +2679,8 @@ b2g
 b2g:1
 b2g:2
 b2g:3
+b2g:4
+b2g:5
 b4x
 b4x:1
 b4x:2
@@ -3769,6 +3771,7 @@ bitonio6
 bitru
 bitru:1
 bitubo
+bixibu
 bizoo76
 bizounours14
 bizounours14:1
@@ -11702,6 +11705,7 @@ gordon shumway:4
 gordon shumway:5
 gordon shumway:6
 gordon shumway:7
+gordon shumway:8
 gordonf_69:5
 gordoter
 gordotof
@@ -17472,6 +17476,7 @@ lenslark
 lent
 lent:1
 lent:2
+leo leclerc:3
 leo leclerc:4
 leo leclerc:5
 leo leclerc:6
