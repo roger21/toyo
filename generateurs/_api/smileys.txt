@@ -2667,6 +2667,7 @@ azymantiop:2
 azymantiop:3
 azymantiop:4
 azymantiop:5
+azymantiop:6
 azzaro75
 b vampire
 b x n
@@ -7700,6 +7701,8 @@ dfoisafoir
 dgensel
 dglacet
 dglacet:1
+dglacet:2
+dglacet:3
 dhalsim3
 di_canio
 diablesse
@@ -7956,6 +7959,7 @@ djmoissoneusebateuse:2
 djo djo
 djobidjoba
 djobidjoba:1
+djobidjoba:2
 djode
 djode:1
 djoffr
@@ -9126,6 +9130,11 @@ elias de kelliwich:2
 elias de kelliwich:3
 elias de kelliwich:4
 elias de kelliwich:5
+elie_cohbeet
+elie_cohbeet:1
+elie_cohbeet:2
+elie_cohbeet:3
+elie_cohbeet:4
 elieben
 elijano
 elikea_
@@ -12270,6 +12279,7 @@ h00d:8
 h0llow_dfx
 h11
 h2n3
+h2n3:1
 h3bus
 h3bus:1
 h3dg3hog
@@ -23130,6 +23140,7 @@ panem:1
 panem:2
 panog
 panorabix
+panot_ramix
 pantalaimon
 pantalaimon:1
 pantalaimon:2
@@ -24420,6 +24431,7 @@ polichu:1
 polichu:2
 polichu:3
 polichu:4
+polichu:5
 polio
 polionamen
 polionamen:1
@@ -26164,6 +26176,8 @@ rsh3:4
 rsh3:5
 rsh3:6
 rsh3:7
+rsh3:8
+rsh3:9
 rtfm
 rtl9
 rttolivers
@@ -28113,6 +28127,7 @@ so-saugrenu34:1
 so-saugrenu34:2
 so-saugrenu34:3
 so-saugrenu34:4
+so-saugrenu34:5
 so-saugrenu4
 so-saugrenu4:1
 so-saugrenu4:2
@@ -28946,6 +28961,7 @@ stigbambi:1
 stigbambi:2
 stigbambi:3
 stile
+stile:1
 stinson barney
 stipey
 stitch
@@ -29626,6 +29642,7 @@ tartragnan:3
 tartragnan:4
 tartragnan:5
 tartragnan:6
+tartragnan:7
 tarzan-la-banane
 tarzan-la-banane:1
 tarzan-la-banane:2
