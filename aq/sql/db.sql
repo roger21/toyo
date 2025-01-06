@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : sam. 10 août 2024 à 18:26
--- Version du serveur : 10.6.19-MariaDB
+-- Généré le : lun. 06 jan. 2025 à 14:17
+-- Version du serveur : 10.6.20-MariaDB
 -- Version de PHP : 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -1519,7 +1519,21 @@ INSERT INTO `alerte_qualitay` (`id`, `nom`, `topic_id`, `topic_titre`) VALUES
 (13591, 'Charger Tesla avec surplus production P', 113483, '[TU] Tesla HFR Club: SuC, Efficience et plaisir de conduire'),
 (13592, 'Golden CR', 21633, '◄ HFR Running Club ! ► Élite auto proclamée'),
 (13593, 'petg', 2144, '[TU] Bambu Labs, The King Is Back !'),
-(13594, 'HFR n\'oublie jamais', 8680, 'Topic Hontes - \"La vraie honte c\'est...\" = sanction');
+(13594, 'HFR n\'oublie jamais', 8680, 'Topic Hontes - \"La vraie honte c\'est...\" = sanction'),
+(13595, 'creation gif', 27848, 'Topic Gifs: Femmes, Caca, Chutes&Co (cf.1er post warning modération)'),
+(13598, 'chou disqualifié !', 99177, 'Trails et courses de montagne'),
+(13599, 'Les montres oui, mais surtout les boites', 1750, '[Horlogerie] Les montres /!\\ CB /!\\'),
+(13600, 'LBC Anonnce', 25005, 'Je viens de me faire aborder par un escroc...'),
+(13601, 'Creation originale', 16022, '[POGNON] ═╗ Topic Bourse : La semaine de tous les dangers ! ╔═'),
+(13602, 'CR Marathon de Berlin 2024', 21633, '◄ HFR Running Club ! ► Élite auto proclamée'),
+(13603, 'alerte bluesky ?', 116015, '[ • Pimp my HFR • Topic des user scripts • Infos et news en FP • ]'),
+(13604, 'nouveau bot pour les aq (sur bluesky)', 120499, 'Bluesky : C\'est open bar'),
+(13605, 'Topic bricolage : mec à oilp dans le reflet sur le mitigeur de la douche', 59228, '[Bricolage] Le topic du bricolage'),
+(13606, 'une histoire de veste ', 117906, '[TU] Vinted • votre expérience'),
+(13607, 'Malaisance', 8680, 'Topic Hontes - \"La vraie honte c\'est...\" = sanction'),
+(13608, 'BlueSky Bot', 116015, '[ • Pimp my HFR • Topic des user scripts • Infos et news en FP • ]'),
+(13609, 'Rehost Awards 2024', 118598, '[Rehost v1.8] Hébergement d\'images gratuit et anonyme !'),
+(13610, 'Roger21 la Faucheuse', 74700, '[Cimetière des célébrités]');
 
 -- --------------------------------------------------------
 
@@ -3746,7 +3760,22 @@ INSERT INTO `rapporteur` (`id`, `alerte_qualitay_id`, `pseudo`, `post_id`, `post
 (14267, 13591, 'pascal_974', 70379853, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=431&post=113483&page=1727&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t70379853', '2024-04-03 00:12:09', 1, 'post de arylol', '93.10.108.93'),
 (14268, 13592, 'eviltyler', 70500819, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=430&post=21633&page=9728&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t70500819', '2024-04-23 12:56:34', 1, 'post de M300A', '37.66.230.82'),
 (14269, 13593, 'lapeno93', 441366, 'https://forum.hardware.fr/hfr/electroniquedomotiquediy/imprimantes3D/bambu-labs-king-sujet_2144_112.htm#t441366', '2024-05-27 12:11:40', 1, 'post de epsiloncen​taury', '102.117.110.46'),
-(14270, 13594, 'oufwid', 70958090, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=434&post=8680&page=4011&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t70958090', '2024-07-01 22:08:46', 1, 'post de Bear\'sBear​d', '51.154.56.9');
+(14270, 13594, 'oufwid', 70958090, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=434&post=8680&page=4011&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t70958090', '2024-07-01 22:08:46', 1, 'post de Bear\'sBear​d', '51.154.56.9'),
+(14275, 13595, 'shinjo', 71389664, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=434&post=27848&page=4095&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t71389664', '2024-08-24 21:22:34', 1, 'post de Billy54', '92.184.117.50'),
+(14278, 13598, 'eviltyler', 71500742, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=430&post=99177&page=1837&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t71500742', '2024-09-10 19:14:23', 1, 'post de darkpotpot', '37.66.238.221'),
+(14279, 13599, 'flaie', 71510776, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=434&post=1750&page=21374&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t71510776', '2024-09-12 07:10:59', 1, 'post de oufwid', '193.168.42.241'),
+(14280, 13600, 'pascal_974', 71350793, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=423&post=25005&page=984&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t71350793', '2024-09-15 06:41:22', 1, 'post de Billy54', '93.10.108.93'),
+(14281, 13601, 'gimly the knight', 71596106, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=434&post=16022&page=17990&p=1&sondage=0&owntopic=3&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t71596106', '2024-09-26 20:58:31', 1, 'post de -Patrick-', '92.184.124.7'),
+(14282, 13602, 'nattura', 71631603, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=430&post=21633&page=9838&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t71631603', '2024-10-02 08:42:31', 1, 'post de SenorPollo', '92.184.97.140'),
+(14283, 13603, 'PetitJean', 71917492, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=116015&page=271&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t71917492', '2024-11-20 14:35:00', 1, 'essayons donc', '82.64.54.91'),
+(14284, 13604, 'roger21', 71919979, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=423&post=120499&page=10&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t71919979', '2024-11-20 15:10:30', 1, 'post de PetitJean', '82.65.238.179'),
+(14285, 13605, 'Chapeau de Paille', 71830071, 'https://forum.hardware.fr/hfr/Discussions/Viepratique/bricolage-bricolage-sujet_59228_3957.htm#t71830071', '2024-11-24 16:42:02', 1, 'post de Phenix21', '90.34.87.57'),
+(14286, 13606, 'saba93', 71962101, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=117906&page=129&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t71962101', '2024-11-28 13:27:23', 1, 'post de cyd125', '78.243.200.254'),
+(14287, 13607, 'ezzz', 72092578, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=434&post=8680&page=4023&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t72092578', '2024-12-20 13:24:48', 1, 'post de lord frica​delle', '80.214.57.32'),
+(14288, 13608, 'PetitJean', 72122416, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=116015&page=273&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t72122416', '2024-12-27 15:18:46', 1, 'normalement c\'est OK (venez sur ce fil si vous rencontrez des soucis)', '82.64.54.91'),
+(14289, 13609, 'ezzz', 72125537, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=118598&page=50&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t72125537', '2024-12-29 09:04:18', 1, 'post de DiB91', '80.215.168.233'),
+(14290, 13610, 'PetitJean', 72123046, 'https://forum.hardware.fr/hfr/Discussions/Actualite/cimetiere-celebrites-sujet_74700_2625.htm#t72123046', '2024-12-29 22:10:17', 1, 'oups', '82.64.54.91'),
+(14291, 13610, 'Eife', 72123046, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=422&post=74700&page=2625&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t72123046', '2024-12-29 23:08:32', 0, 'post de roger21', '82.64.100.169');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
