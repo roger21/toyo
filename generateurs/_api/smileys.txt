@@ -2446,6 +2446,7 @@ augmented
 augmented:1
 augmented:2
 augmented:3
+augmented:4
 augur6
 augustus citronus
 augustus citronus:1
@@ -5902,6 +5903,7 @@ cinqsurcinq:1
 cinqsurcinq:2
 cinqsurcinq:3
 cinqsurcinq:4
+cinqsurcinq:5
 cipp
 circenses
 cirdan sindar
@@ -9136,6 +9138,7 @@ elie_cohbeet:1
 elie_cohbeet:2
 elie_cohbeet:3
 elie_cohbeet:4
+elie_cohbeet:5
 elieben
 elijano
 elikea_
@@ -20069,6 +20072,8 @@ mini-mousaille
 minicray
 miniflominifolle
 minigus
+minimusette
+minimusette:1
 miniours
 miniours:1
 miniours:2
@@ -23895,6 +23900,7 @@ pflicht:2
 pgase
 pgase:1
 pgase:2
+pgase:3
 pgasus
 pgaz
 pgazze
