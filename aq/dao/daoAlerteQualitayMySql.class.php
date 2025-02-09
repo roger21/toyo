@@ -11,9 +11,9 @@ class DaoAlerteQualitayMySql implements DaoAlerteQualitay
   {
     mysqli_report(MYSQLI_REPORT_OFF);
     $this->link = mysqli_connect("host", "user", 'passwd')
-                or die("Impossible de se connecter : " . mysqli_error());
+                or die("Impossible de se connecter : " . mysqli_error($this->link));
     mysqli_select_db($this->link, "db")
-      or die("Impossible selectionner la base : " . mysqli_error());
+      or die("Impossible selectionner la base : " . mysqli_error($this->link));
     mysqli_query($this->link, "SET NAMES 'utf8'");
   }
 
