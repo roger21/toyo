@@ -7720,6 +7720,7 @@ dglacet
 dglacet:1
 dglacet:2
 dglacet:3
+dglacet:4
 dhalsim3
 di_canio
 diablesse
@@ -10819,6 +10820,7 @@ fred_div91:2
 fred_div91:3
 fred_div91:4
 fred_div91:5
+fred_div91:6
 fred_durst
 fred_tbg
 fredaxe
@@ -19699,6 +19701,11 @@ melon_musk:2
 melon_musk:3
 melon_musk:4
 melon_musk:5
+melon_musk:6
+melon_musk:7
+melon_musk:8
+melon_musk:9
+melon_musk:10
 meloti
 meloti:1
 meloti:2
@@ -24141,6 +24148,7 @@ piermo:1
 piermo:2
 piermo:3
 piermo:4
+pierre badmal
 pierre hic
 pierre-m
 pierre-m:1
@@ -27769,6 +27777,7 @@ smaragdus
 smaragdus:1
 smart51
 smart51:1
+smartymcfly
 smash62
 smash62:1
 smash62:2
@@ -29591,6 +29600,7 @@ talladega:2
 talladega:3
 talladega:4
 talladega:5
+talladega:6
 tamahome
 tamahome:1
 tamahome:2
