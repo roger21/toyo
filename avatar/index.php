@@ -21,7 +21,7 @@ if($dh=opendir($dir))
     {
       $filepath=$dir.$file;
       if((date("U") - date("U", filemtime($filepath))) > 3600){
-        //trigger_error("nettoyage ".$filepath);
+        trigger_error("nettoyage ".$filepath);
         @unlink($filepath);
       }
     }
