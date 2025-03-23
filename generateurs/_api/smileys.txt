@@ -95,6 +95,7 @@ $remi$
 -patrick-:2
 -patrick-:3
 -patrick-:4
+-patrick-:5
 -penta-
 -poison-
 -poison-:1
@@ -17385,6 +17386,9 @@ le_doc
 le_gardien_du_forum_seti
 le_glaude
 le_gribouri
+le_gribouri:1
+le_gribouri:2
+le_gribouri:3
 le_guen
 le_magi61
 le_max
@@ -25150,6 +25154,7 @@ pwarlk:3
 pwet69
 pyksel
 pymousse
+pyrethre
 pyroman
 pyropsy
 pyroque95
@@ -27126,6 +27131,7 @@ seu:2
 seu:3
 seu:4
 seu:5
+seu:6
 sexualromance
 sexualromance:1
 sexualromance:2
@@ -28253,6 +28259,9 @@ so-saugrenu34:4
 so-saugrenu34:5
 so-saugrenu34:6
 so-saugrenu34:7
+so-saugrenu34:8
+so-saugrenu34:9
+so-saugrenu34:10
 so-saugrenu4
 so-saugrenu4:1
 so-saugrenu4:2
