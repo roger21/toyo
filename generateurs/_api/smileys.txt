@@ -1942,6 +1942,13 @@ aoutch
 aozora
 apaques
 apaucalyptik
+apaucalyptik:1
+apaucalyptik:2
+apaucalyptik:3
+apaucalyptik:4
+apaucalyptik:5
+apaucalyptik:6
+apaucalyptik:7
 apges
 apges:1
 apges:2
@@ -14614,6 +14621,7 @@ jeff_cope_2027:2
 jeff_cope_2027:3
 jeff_cope_2027:4
 jeff_cope_2027:5
+jeff_cope_2027:6
 jeffbezos
 jeffbezos:1
 jeffbezos:2
@@ -18505,6 +18513,7 @@ lumin0u:4
 lumin0u:5
 lumin0u:6
 lumin0u:7
+lumin0u:8
 luminance
 luminance:1
 luminance:2
@@ -31775,6 +31784,9 @@ v pour:2
 v pour:3
 v pour:4
 v3ofme
+v87
+v87:1
+v87:2
 vachfolle
 vachoo
 vadrigar
