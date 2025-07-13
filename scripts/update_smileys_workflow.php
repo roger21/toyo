@@ -122,7 +122,7 @@ if($changes){
       $add[$smiley]=$detail_url.rawurlencode($smiley);
     }
   }
-  $max_line=5;
+  $max_line=4;
   $nbsup=count($sup);
   $nbadd=count($add);
   if($nbsup > 0){

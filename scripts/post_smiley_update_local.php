@@ -86,6 +86,7 @@ if($changes){
       $add[$smiley]=$detail_url.rawurlencode($smiley);
     }
   }
+  $max_line=4;
   $nbsup=count($sup);
   $nbadd=count($add);
   if($nbsup > 0){
@@ -94,9 +95,14 @@ if($changes){
     }else{
       $message.="1 smiley supprimé :\n\n";
     }
+    $cpt=0;
     foreach($sup as $s => $u){
-      $message.="$s\n";
+      $message.="$s        ";
+      if((++$cpt % $max_line) === 0){
+        $message=trim($message)."\n\n";
+      }
     }
+    $message=trim($message)."\n\n";
   }
   if($nbsup > 0 && $nbadd > 0){
     $message.="\n";
@@ -107,14 +113,19 @@ if($changes){
     }else{
       $message.="1 nouveau smiley :\n\n";
     }
+    $cpt=0;
     foreach($add as $s => $u){
-      $message.="$s [url=$u]Détail[/url]\n";
+      $message.="$s [url=$u]Détail[/url]        ";
+      if((++$cpt % $max_line) === 0){
+        $message=trim($message)."\n\n";
+      }
     }
+    $message=trim($message)."\n\n";
   }
 
 }else{
 
-  $message.="Aucun changement [:osweat]\n";
+  $message.="Aucun changement [:osweat]\n\n";
 
 }
 
@@ -129,7 +140,7 @@ $nbsmileys=(int)exec_command($command)[0];
 
 trigger_error("nbsmileys\n$nbsmileys", E_USER_NOTICE);
 
-$message.="\n".number_format($nbsmileys, 0, ",", "\u{2009}")." smileys persos au total";
+$message.=number_format($nbsmileys, 0, ",", "\u{2009}")." smileys persos au total";
 
 trigger_error("message\n$message", E_USER_NOTICE);
 
