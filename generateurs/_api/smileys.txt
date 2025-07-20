@@ -96,6 +96,7 @@ $remi$
 -patrick-:3
 -patrick-:4
 -patrick-:5
+-patrick-:6
 -penta-
 -poison-
 -poison-:1
@@ -1406,6 +1407,7 @@ alien64:3
 alien64:4
 alien64:5
 alien64:6
+alien64:7
 alien_
 alienmaster02
 aligatour
@@ -4462,6 +4464,8 @@ brown paper bag:3
 brown paper bag:4
 brown paper bag:5
 brown paper bag:6
+brown paper bag:7
+brown paper bag:8
 bruce
 bruce:1
 bruce_pentecote
@@ -11452,6 +11456,7 @@ general masse:1
 general masse:2
 general masse:3
 general masse:4
+general masse:5
 general masse:6
 general masse:7
 general masse:8
@@ -20114,6 +20119,7 @@ mickey willis:6
 mickey willis:7
 mickey willis:8
 mickey willis:9
+mickey willis:10
 mickey51
 mickey51:1
 mickey51:2
@@ -20308,6 +20314,7 @@ minigus
 minimusette
 minimusette:1
 minimusette:2
+minimusette:3
 miniours
 miniours:1
 miniours:2
@@ -31886,6 +31893,7 @@ v pour:1
 v pour:2
 v pour:3
 v pour:4
+v0t4r
 v3ofme
 v87
 v87:1
