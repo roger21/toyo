@@ -1388,6 +1388,7 @@ ali-pacha:2
 ali-pacha:3
 ali-pacha:4
 ali-pacha:5
+ali-pacha:6
 ali0baba
 alidrojainn
 alidrojainn:1
@@ -7846,6 +7847,7 @@ didus2005
 dieggg'
 dieggg':1
 dieggg':2
+dieggg':3
 dieshadow
 dieu_roger
 dieuanubis
@@ -27400,6 +27402,11 @@ shadows and dusts
 shaft_d0
 shaft_d0:1
 shaft_d0:2
+shaft_d0:3
+shaft_d0:4
+shaft_d0:5
+shaft_d0:6
+shaft_d0:7
 shafter
 shakaal
 shakagnom
@@ -30259,6 +30266,7 @@ tfpsly
 tfpsly:1
 tfpsly:2
 tfpsly:3
+tfpsly:4
 tgma78
 tgrx
 th0r1
@@ -31626,6 +31634,11 @@ truite58:9
 truite58:10
 trumks
 trumpet
+trumpy
+trumpy:1
+trumpy:2
+trumpy:3
+trumpy:4
 trunchy
 trunchy -
 trunckpetit
@@ -31926,6 +31939,7 @@ v0t4r
 v0t4r:1
 v0t4r:2
 v0t4r:3
+v0t4r:4
 v3ofme
 v87
 v87:1
