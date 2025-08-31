@@ -29,6 +29,7 @@
 [b]Hébergement d’images et de vidéos :[/b]
 [*]ImgBB, hébergement d’images : https://imgbb.com/
 [*]Imgur, hébergement d’images et de vidéos : https://imgur.com/
+[*]Lutim, liste d’hébergeurs de [url=https://framagit.org/fiat-tux/hat-softwares/lutim]Lutim[/url] sur [url=https://www.chatons.org/search/by-service?field_software_target_id=234]chatons.org[/url]
 [*]Streamable, hébergement de vidéos : https://streamable.com/
 [*]Rehost par [url=https://forum.hardware.fr/hfr/profil-58199.htm]DiB91[/url], hébergement d’images :  https://rehost.diberie.com/ ([url=https://forum.hardware.fr/hfr/Discussions/Viepratique/hebergement-gratuit-anonyme-sujet_118598_1.htm]topic[/url])
 [*]img.super-h.fr par [url=https://forum.hardware.fr/hfr/profil-259393.htm]LibreArbitre[/url], hébergement d’images : https://img.super-h.fr/ ([url=https://forum.hardware.fr/hfr/reseauxpersosoho/Hebergement/services-proposes-super-sujet_36784_1.htm]topic[/url])
