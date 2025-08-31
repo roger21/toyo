@@ -10679,6 +10679,7 @@ foukandish:4
 foukandish:5
 foul
 foul:1
+foul:2
 foulensois
 foulques
 foulques:1
@@ -15381,6 +15382,7 @@ jul mcfly:3
 jul mcfly:4
 jul mcfly:5
 jules cesar tnt
+jules cesar tnt:1
 jules winnfield
 jules winnfield:1
 jules winnfield:2
@@ -27407,6 +27409,9 @@ shaft_d0:4
 shaft_d0:5
 shaft_d0:6
 shaft_d0:7
+shaft_d0:8
+shaft_d0:9
+shaft_d0:10
 shafter
 shakaal
 shakagnom
@@ -31940,6 +31945,7 @@ v0t4r:1
 v0t4r:2
 v0t4r:3
 v0t4r:4
+v0t4r:5
 v3ofme
 v87
 v87:1
@@ -32477,6 +32483,7 @@ waddle:6
 waddle:7
 waddle:8
 waddle:9
+waddle:10
 wade
 wade:1
 wade:2
