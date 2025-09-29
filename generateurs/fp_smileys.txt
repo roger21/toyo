@@ -18,6 +18,7 @@
 
 
 [b]Outils de création et de conversion :[/b]
+[*]3D Gif Maker propose des outils de création de gif en ligne : https://www.3dgifmaker.com/
 [*]Aconvert propose des outils de conversion en ligne : https://www.aconvert.com/
 [*]EZgif propose des outils de conversion et d’édition en ligne : https://ezgif.com/
 [*]nano, un outil de compression de SVG en ligne : https://vecta.io/nano
