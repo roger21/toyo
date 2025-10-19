@@ -4990,6 +4990,10 @@ capitaine pat
 capitalist haha
 caporacaver
 caporacaver:1
+caporacaver:2
+caporacaver:3
+caporacaver:4
+caporacaver:5
 capovirage_de_fou:1
 capovirage_de_fou:2
 capovirage_de_fou:3
@@ -13394,6 +13398,9 @@ hubert_fournier:3
 hubert_fournier:4
 huche a pain
 huche a pain:1
+huche a pain:2
+huche a pain:3
+huche a pain:4
 huduzz
 huduzz:1
 huduzz:5
@@ -23506,6 +23513,7 @@ papanowel:4
 papanowel:5
 papanowel:6
 papanowel:7
+papanowel:8
 paparasta
 papasse
 papatte
