@@ -2713,6 +2713,7 @@ azymantiop:4
 azymantiop:5
 azymantiop:6
 azymantiop:7
+azymantiop:8
 azzaro75
 b vampire
 b x n
@@ -22272,6 +22273,7 @@ nicolas89
 nicolas91200
 nicolas_perruque
 nicolas_rey
+nicolasquipaie
 nicolazzz
 nicolbolas
 nicolulu
@@ -26494,6 +26496,7 @@ roum samsara:3
 roum samsara:4
 roumiah
 rouquine
+roveur
 roxelay
 roy_
 roy_:1
@@ -28214,6 +28217,7 @@ sn4cklip:1
 sn4cklip:2
 sn4cklip:3
 sn4cklip:4
+sn4cklip:5
 sn8k3
 snafu99
 snak
