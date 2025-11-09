@@ -4487,6 +4487,7 @@ brown paper bag:6
 brown paper bag:7
 brown paper bag:8
 brown paper bag:9
+brown paper bag:10
 bruce
 bruce:1
 bruce_pentecote
@@ -5004,6 +5005,7 @@ caporacaver:3
 caporacaver:4
 caporacaver:5
 caporacaver:6
+caporacaver:7
 capovirage_de_fou:1
 capovirage_de_fou:2
 capovirage_de_fou:3
@@ -28218,6 +28220,7 @@ sn4cklip:2
 sn4cklip:3
 sn4cklip:4
 sn4cklip:5
+sn4cklip:6
 sn8k3
 snafu99
 snak
