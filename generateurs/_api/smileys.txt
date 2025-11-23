@@ -2740,6 +2740,7 @@ b2g:3
 b2g:4
 b2g:5
 b2g:6
+b2g:7
 b4x
 b4x:1
 b4x:2
@@ -5006,6 +5007,7 @@ caporacaver:4
 caporacaver:5
 caporacaver:6
 caporacaver:7
+caporacaver:8
 capovirage_de_fou:1
 capovirage_de_fou:2
 capovirage_de_fou:3
@@ -5536,6 +5538,7 @@ cguignol:3
 ch4m4n3
 ch4m4n3:1
 ch4m4n3:2
+ch4m4n3:3
 chaaaaaasseur
 chacal2k
 chacal31
@@ -8878,6 +8881,7 @@ eddy_60:6
 eddy_60:7
 eddy_60:8
 eddy_60:9
+eddy_60:10
 eddyglasgow
 edf
 edhelas
@@ -17585,6 +17589,9 @@ le_gribouri:3
 le_gribouri:4
 le_gribouri:5
 le_gribouri:6
+le_gribouri:7
+le_gribouri:8
+le_gribouri:9
 le_guen
 le_magi61
 le_max
@@ -28224,6 +28231,7 @@ sn4cklip:3
 sn4cklip:4
 sn4cklip:5
 sn4cklip:6
+sn4cklip:7
 sn8k3
 snafu99
 snak
@@ -31740,6 +31748,8 @@ trumpy:1
 trumpy:2
 trumpy:3
 trumpy:4
+trumpy:5
+trumpy:6
 trunchy
 trunchy -
 trunckpetit
