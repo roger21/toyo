@@ -868,6 +868,7 @@ actarusprinced'euphor:2
 actarusprinced'euphor:3
 actarusprinced'euphor:4
 actarusprinced'euphor:5
+actarusprinced'euphor:6
 actikool
 actu one
 actu one:1
@@ -1400,6 +1401,7 @@ ali-pacha:3
 ali-pacha:4
 ali-pacha:5
 ali-pacha:6
+ali-pacha:7
 ali0baba
 alidrojainn
 alidrojainn:1
@@ -5008,6 +5010,7 @@ caporacaver:5
 caporacaver:6
 caporacaver:7
 caporacaver:8
+caporacaver:9
 capovirage_de_fou:1
 capovirage_de_fou:2
 capovirage_de_fou:3
@@ -15437,6 +15440,7 @@ jules cesar tnt
 jules cesar tnt:1
 jules cesar tnt:2
 jules cesar tnt:3
+jules cesar tnt:4
 jules winnfield
 jules winnfield:1
 jules winnfield:2
@@ -20064,6 +20068,7 @@ metaluna:3
 metaluna:4
 metaluna:5
 metek
+metek:1
 meteorik
 meteorik:1
 meteorix
@@ -20407,6 +20412,7 @@ minimusette
 minimusette:1
 minimusette:2
 minimusette:3
+minimusette:4
 miniours
 miniours:1
 miniours:2
@@ -26028,6 +26034,7 @@ reps42:1
 requin94
 rera
 rere_the_killer
+reroll
 retarded_andy
 retarded_fed
 retarded_fed:1
@@ -29551,6 +29558,8 @@ suomi
 sup3rdup0nt:1
 sup3rdup0nt:2
 sup3rdup0nt:3
+sup3rdup0nt:4
+sup3rdup0nt:5
 supadmin
 supaire
 supapictave
