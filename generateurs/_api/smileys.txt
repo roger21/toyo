@@ -5011,6 +5011,7 @@ caporacaver:6
 caporacaver:7
 caporacaver:8
 caporacaver:9
+caporacaver:10
 capovirage_de_fou:1
 capovirage_de_fou:2
 capovirage_de_fou:3
@@ -8746,6 +8747,7 @@ dux
 dux:1
 dvampire
 dvd
+dvn
 dvnk
 dwain
 dwayne gittens
@@ -22327,6 +22329,7 @@ nightbringer57:1
 nightbringer57:2
 nightbringer57:3
 nightbringer57:4
+nighteye
 nighthawkii
 nightkreature
 nighttime bird
@@ -28239,6 +28242,9 @@ sn4cklip:4
 sn4cklip:5
 sn4cklip:6
 sn4cklip:7
+sn4cklip:8
+sn4cklip:9
+sn4cklip:10
 sn8k3
 snafu99
 snak
