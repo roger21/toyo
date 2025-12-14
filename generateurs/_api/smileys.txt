@@ -5996,6 +5996,9 @@ cinqsurcinq:2
 cinqsurcinq:3
 cinqsurcinq:4
 cinqsurcinq:5
+cinqsurcinq:6
+cinqsurcinq:7
+cinqsurcinq:8
 cipp
 circenses
 cirdan sindar
