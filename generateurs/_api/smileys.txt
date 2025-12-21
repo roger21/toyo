@@ -3245,6 +3245,7 @@ bastinho:2
 bastinho:3
 bastinho:4
 bastinho:5
+bastinho:6
 batata
 batata:1
 batata:2
@@ -3911,6 +3912,7 @@ blastm:1
 blastm:2
 blastm:3
 blastm:4
+blastm:5
 blazevic
 blazevic:1
 blazevic:2
@@ -10131,6 +10133,8 @@ fantome2
 fapeur pompier
 fapeur pompier:1
 fapeur pompier:2
+faramir
+faramir:1
 farf_13
 farf_13:1
 farf_13:2
@@ -18780,6 +18784,10 @@ m0nday
 m0utz
 m0zart
 m1sery
+m1sh3ll
+m1sh3ll:1
+m1sh3ll:2
+m1sh3ll:3
 m300a
 m300a:1
 m300a:2
@@ -20418,6 +20426,7 @@ minimusette:1
 minimusette:2
 minimusette:3
 minimusette:4
+minimusette:5
 miniours
 miniours:1
 miniours:2
@@ -22155,6 +22164,8 @@ neweyofworking:1
 neweyofworking:2
 neweyofworking:3
 newidk
+nex84
+nex84:1
 nexingen-
 nexman
 nexus-5
