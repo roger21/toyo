@@ -74,11 +74,11 @@ nopeImg.alt = nopeImg.title = "nope...";
 
 let $ = function(id) {
   return document.getElementById(id);
-}
+};
 
 function getOffsets(el) {
-  var _x = 0;
-  var _y = 0;
+  let _x = 0;
+  let _y = 0;
   while(el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
     _x += el.offsetLeft /*- el.scrollLeft*/ ;
     _y += el.offsetTop - el.scrollTop;
@@ -202,9 +202,10 @@ function getWords(generateur) {
 }
 
 function wheelEvent(event, type, target, generateur, step = 1) {
+  let before;
   if(type === "range") {
-    let before = target.valueAsNumber;
-    target.valueAsNumber += (event.deltaY < 0) ? step : -step;
+    before = target.valueAsNumber;
+    target.valueAsNumber += event.deltaY < 0 ? step : -step;
     event.preventDefault();
     event.stopPropagation();
     if(target.valueAsNumber !== before) {
@@ -213,8 +214,8 @@ function wheelEvent(event, type, target, generateur, step = 1) {
     }
   }
   if(type === "select") {
-    let before = target.selectedIndex;
-    target.selectedIndex = (event.deltaY < 0) ?
+    before = target.selectedIndex;
+    target.selectedIndex = event.deltaY < 0 ?
       Math.max(target.selectedIndex - 1, 0) :
       Math.min(target.selectedIndex + 1, target.childElementCount - 1);
     event.preventDefault();
@@ -225,8 +226,8 @@ function wheelEvent(event, type, target, generateur, step = 1) {
     }
   }
   if(type === "number") {
-    let before = target.valueAsNumber;
-    target.valueAsNumber = (event.deltaY < 0) ?
+    before = target.valueAsNumber;
+    target.valueAsNumber = event.deltaY < 0 ?
       Math.min(parseInt(target.getAttribute("max"), 10), target.valueAsNumber + step) :
       Math.max(parseInt(target.getAttribute("min"), 10), target.valueAsNumber - step);
     event.preventDefault();
@@ -271,7 +272,27 @@ let generateurs = {
       alt: "Alerte {$1}",
 
       timerImg: null,
-      lastCall: null
+      lastCall: null,
+
+      addHandler: function(generateur) {
+        generateurs.defaultAddHandler(generateur);
+        $(generateur.id + "_random").addEventListener("click", function() {
+          generateurs.generateImgTimer(generateur, function(generateur) {
+            getWords(generateur).then(function(words) {
+              let word = "";
+              while(word.length < 3 || word.length > 9) {
+                let i = Math.floor(Math.random() * words.length);
+                word = words[i];
+              }
+              $(generateur.id + "_t").value = word;
+              $(generateur.id + "_s").checked = false; // default
+              generateurs.generateImg(generateur);
+            }).catch(function(e) {
+              console.log("ERROR random", generateur.id, e);
+            });
+          });
+        }, false);
+      },
     },
 
     nazi: {
@@ -288,7 +309,7 @@ let generateurs = {
         let url = generateur.url + encodeURIComponent(input);
         let alt = input + " NAZI";
         updateImg(generateur, url, alt);
-      }
+      },
     },
 
     fb: {
@@ -347,7 +368,7 @@ let generateurs = {
         $(generateur.id + "_not").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur);
         }, false);
-      }
+      },
     },
 
     seagal: {
@@ -357,7 +378,7 @@ let generateurs = {
       alt: "Steven Seagal {$1}",
 
       timerImg: null,
-      lastCall: null
+      lastCall: null,
     },
 
     bulle: {
@@ -451,7 +472,7 @@ let generateurs = {
           wheelEvent(event, "select", $(generateur.id + "_taille"), generateur);
         }, false);
         generateurs.addSmileyHelper(generateur.id + "_smiley", generateur);
-      }
+      },
     },
 
     moitmoit: {
@@ -542,7 +563,7 @@ let generateurs = {
         }, false);
         generateurs.addSmileyHelper(generateur.id + "_smiley1", generateur);
         generateurs.addSmileyHelper(generateur.id + "_smiley2", generateur);
-      }
+      },
     },
 
     seal: {
@@ -552,7 +573,7 @@ let generateurs = {
       alt: "Original {$1}, Seal of Quality",
 
       timerImg: null,
-      lastCall: null
+      lastCall: null,
     },
 
     ddr555: {
@@ -617,7 +638,7 @@ let generateurs = {
           });
         }, false);
         generateurs.addSmileyHelper(generateur.id + "_smiley", generateur);
-      }
+      },
     },
 
     note: {
@@ -692,7 +713,7 @@ let generateurs = {
             generateurs.generateImg(generateur);
           });
         }, false);
-      }
+      },
     },
 
     rofl: {
@@ -828,7 +849,7 @@ let generateurs = {
           });
         }, false);
         generateurs.addSmileyHelper(generateur.id + "_smiley", generateur);
-      }
+      },
     },
 
     boing: {
@@ -958,7 +979,7 @@ let generateurs = {
           });
         }, false);
         generateurs.addSmileyHelper(generateur.id + "_smiley", generateur);
-      }
+      },
     },
 
     miroir: {
@@ -978,7 +999,7 @@ let generateurs = {
         let part = $(generateur.id + "_part").value;
         let tpart = $(generateur.id + "_part")
           .options[$(generateur.id + "_part").selectedIndex].textContent;
-        let url = generateur.url + part
+        let url = generateur.url + part;
         if(smiley !== "") {
           if(base) {
             url += "&s=" + encodeURIComponent(smiley);
@@ -1023,7 +1044,7 @@ let generateurs = {
           });
         }, false);
         generateurs.addSmileyHelper(generateur.id + "_smiley", generateur);
-      }
+      },
     },
 
     southpark: {
@@ -1105,7 +1126,7 @@ let generateurs = {
           });
         }, false);
         generateurs.addSmileyHelper(generateur.id + "_smiley", generateur);
-      }
+      },
     },
 
     modo: {
@@ -1192,7 +1213,7 @@ let generateurs = {
           });
         }, false);
         generateurs.addSmileyHelper(generateur.id + "_smiley", generateur);
-      }
+      },
     },
 
     golden: {
@@ -1392,7 +1413,7 @@ let generateurs = {
           });
         }, false);
         generateurs.addSmileyHelper(generateur.id + "_smiley", generateur);
-      }
+      },
     },
 
     ump: {
@@ -1402,7 +1423,7 @@ let generateurs = {
       alt: "UMP {$1}",
 
       timerImg: null,
-      lastCall: null
+      lastCall: null,
     },
 
     bfmtv: {
@@ -1440,7 +1461,7 @@ let generateurs = {
         $(generateur.id + "_text2").addEventListener("keyup", function() {
           generateurs.generateImgTimer(generateur);
         }, false);
-      }
+      },
     },
 
     demot: {
@@ -1478,7 +1499,7 @@ let generateurs = {
         $(generateur.id + "_c").addEventListener("keyup", function() {
           generateurs.generateImgTimer(generateur);
         }, false);
-      }
+      },
     },
 
     giuseppe: {
@@ -1796,8 +1817,8 @@ let generateurs = {
           });
         }, false);
         generateurs.addSmileyHelper(generateur.id + "_smiley", generateur);
-      }
-    }
+      },
+    },
   },
 
   addSmileyHelper: function(smileyId, generateur) {
@@ -1826,26 +1847,26 @@ let generateurs = {
       while(select.firstElementChild) {
         select.removeChild(select.firstElementChild);
       }
-    }
+    };
 
     let hideSmileyHelper = function() {
       smileyHelper.style.display = "none";
       if(select.nextElementSibling) {
         smileyHelper.removeChild(select.nextElementSibling);
       }
-    }
+    };
 
     let startHideSmileyHelper = function() {
       window.clearTimeout(timerBlur);
       timerBlur = window.setTimeout(hideSmileyHelper, blurTime);
-    }
+    };
 
     let displaySmileyHelper = function() {
       let smileyOffset = getOffsets(smiley);
       smileyHelper.style.top = (smileyOffset.top + 35) + "px";
       smileyHelper.style.left = smileyOffset.left + "px";
       smileyHelper.style.display = "flex";
-    }
+    };
 
     let generatePreview = function() {
       if(smiley.value !== select.value) {
@@ -1853,7 +1874,7 @@ let generateurs = {
         generateurs.generateImgTimer(generateur);
       }
       let url, alt;
-      if(typeof bases[select.value] !== "undefined") {
+      if(bases[select.value] !== undefined) {
         url = "https://forum-images.hardware.fr/icones/" + bases[select.value];
         alt = select.value;
       } else {
@@ -1867,11 +1888,11 @@ let generateurs = {
         url += code + ".gif";
         alt = "[:" + code + (rang ? ":" + rang : "") + "]";
       }
-      let preview = select.nextElementSibling ? select.nextElementSibling :
+      let preview = select.nextElementSibling ||
         smileyHelper.appendChild(document.createElement("img"));
       preview.src = url;
       preview.alt = preview.title = alt;
-    }
+    };
 
     let startGeneratePreview = function() {
       window.clearTimeout(timerKey);
@@ -1879,7 +1900,7 @@ let generateurs = {
       let waitTime = Math.max(keyTime - (lastCall - keyLast), 0);
       keyLast = lastCall;
       timerKey = window.setTimeout(generatePreview, waitTime);
-    }
+    };
 
     let updateSmileyHelper = function() {
       let value = lowerAscii(smiley.value.trim());
@@ -1890,11 +1911,11 @@ let generateurs = {
         if(value !== lastValue) {
           lastValue = value;
           clearSmileyHelper();
-          for(const smiley in bases) {
-            if(lowerAscii(smiley).startsWith(value)) {
+          for(let s in bases) {
+            if(lowerAscii(s).startsWith(value)) {
               let option = document.createElement("option");
-              option.value = smiley;
-              option.textContent = smiley;
+              option.value = s;
+              option.textContent = s;
               select.appendChild(option);
             }
           }
@@ -1914,15 +1935,15 @@ let generateurs = {
             return r.text();
           }).then(function(r) {
             clearSmileyHelper();
-            let smileys = r.trim();
-            if(smileys !== "") {
-              smileys = smileys.split(";");
-              smileys.forEach(function(smiley) {
-                smiley = smiley.trim();
-                if(smiley !== "") {
+            let helpers = r.trim();
+            if(helpers !== "") {
+              helpers = helpers.split(";");
+              helpers.forEach(function(s) {
+                s = s.trim();
+                if(s !== "") {
                   let option = document.createElement("option");
-                  option.value = smiley;
-                  option.textContent = smiley;
+                  option.value = s;
+                  option.textContent = s;
                   select.appendChild(option);
                 }
               });
@@ -1937,7 +1958,7 @@ let generateurs = {
       } else {
         hideSmileyHelper();
       }
-    }
+    };
 
     let startUpdateSmileyHelper = function() {
       window.clearTimeout(timerKey);
@@ -1945,7 +1966,7 @@ let generateurs = {
       let waitTime = Math.max(keyTime - (lastCall - keyLast), 0);
       keyLast = lastCall;
       timerKey = window.setTimeout(updateSmileyHelper, waitTime);
-    }
+    };
 
     smiley.addEventListener("blur", function() {
       startHideSmileyHelper();
@@ -2100,26 +2121,24 @@ let generateurs = {
   },
 
   launch: function() {
-    for(let generateur in generateurs.generateurObjs) {
-      generateurs.initOptions(generateurs.generateurObjs[generateur]);
-      generateurs.addHandler(generateurs.generateurObjs[generateur]);
-      generateurs.generateImg(generateurs.generateurObjs[generateur]);
+    for(let g in generateurs.generateurObjs) {
+      generateurs.initOptions(generateurs.generateurObjs[g]);
+      generateurs.addHandler(generateurs.generateurObjs[g]);
+      generateurs.generateImg(generateurs.generateurObjs[g]);
     }
     generateurs.generateMenu();
     generateurs.selectGenerateur(generateurs.readCookie("generateur"));
   },
 
   initOptions: function(generateur) {
-    let initOptions = generateur.initOptions ?
-      generateur.initOptions : generateurs.defaultInitOptions;
+    let initOptions = generateur.initOptions || generateurs.defaultInitOptions;
     initOptions(generateur);
   },
 
   defaultInitOptions: function(generateur) {},
 
   addHandler: function(generateur) {
-    let addHandler = generateur.addHandler ?
-      generateur.addHandler : generateurs.defaultAddHandler;
+    let addHandler = generateur.addHandler || generateurs.defaultAddHandler;
     addHandler(generateur);
   },
 
@@ -2150,8 +2169,7 @@ let generateurs = {
   },
 
   generateImg: function(generateur) {
-    let generateImg = generateur.generateImg ?
-      generateur.generateImg : generateurs.defaultGenerateImg;
+    let generateImg = generateur.generateImg || generateurs.defaultGenerateImg;
     generateImg(generateur);
   },
 
@@ -2189,13 +2207,13 @@ let generateurs = {
       let button = $(id + "_menu");
       let div = $(id + "_div");
       button.classList.toggle("selected", id === generateurId);
-      div.style.display = (id === generateurId) ? "flex" : "none";
+      div.style.display = id === generateurId ? "flex" : "none";
     }
     updateTopMargin();
   },
 
   writeCookie: function(data, value) {
-    let date = new Date;
+    let date = new Date();
     date.setMonth(date.getMonth() + 1);
     document.cookie = data + "=" + encodeURIComponent(value) +
       "; expires=" + date.toUTCString() + "; samesite=lax";
