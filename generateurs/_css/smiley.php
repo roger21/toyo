@@ -22,7 +22,7 @@ header("Content-type: image/gif");
 
 $r=imagegif($im, null);
 if($r === false){
-  trigger_error("smiley.php  died on imagegif");
+  trigger_error("smiley.php died on imagegif");
   die();
 }
 
