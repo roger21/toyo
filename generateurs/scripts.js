@@ -151,13 +151,22 @@ function updateImg(generateur, url, alt) {
   img.src = url + "&TIMESTAMP=" + lastCall;
 }
 
-let smileys;
+let types = ["smileys", "words", "names", "feels", "pseudals"];
 
-function getSmileys(generateur) {
-  if(smileys) {
-    return Promise.resolve(smileys);
+let random = {};
+
+function getRandom(generateur, type) {
+  if(!types.includes(type)) {
+    throw new Error("ERROR getRandom type unknown", type);
   }
-  return fetch("./_api/smileys.txt", {
+  if(random[type]) {
+    return Promise.resolve(random[type]);
+  }
+  let source = "./_random/" + type + ".txt";
+  if(type === "smileys") {
+    source = "./_api/smileys.txt"
+  }
+  return fetch(source, {
     method: "GET",
     mode: "same-origin",
     credentials: "omit",
@@ -167,60 +176,13 @@ function getSmileys(generateur) {
   }).then(function(r) {
     return r.text();
   }).then(function(r) {
-    smileys = r.split("\n").concat(Object.keys(bases));
-    return smileys;
+    random[type] = r.split("\n");
+    if(type === "smileys") {
+      random[type] = random[type].concat(Object.keys(bases));
+    }
+    return random[type];
   }).catch(function(e) {
-    console.log("ERROR fetch smileys.txt", generateur.id, e);
-    updateNope(generateur);
-    throw e;
-  });
-}
-
-let words;
-
-function getWords(generateur) {
-  if(words) {
-    return Promise.resolve(words);
-  }
-  return fetch("./_misc/mots.txt", {
-    method: "GET",
-    mode: "same-origin",
-    credentials: "omit",
-    cache: "reload",
-    referrer: "",
-    referrerPolicy: "no-referrer"
-  }).then(function(r) {
-    return r.text();
-  }).then(function(r) {
-    words = r.split("\n");
-    return words;
-  }).catch(function(e) {
-    console.log("ERROR fetch mots.txt", generateur.id, e);
-    updateNope(generateur);
-    throw e;
-  });
-}
-
-let names;
-
-function getNames(generateur) {
-  if(names) {
-    return Promise.resolve(names);
-  }
-  return fetch("./_misc/prenoms.txt", {
-    method: "GET",
-    mode: "same-origin",
-    credentials: "omit",
-    cache: "reload",
-    referrer: "",
-    referrerPolicy: "no-referrer"
-  }).then(function(r) {
-    return r.text();
-  }).then(function(r) {
-    names = r.split("\n");
-    return names;
-  }).catch(function(e) {
-    console.log("ERROR fetch prenoms.txt", generateur.id, e);
+    console.log("ERROR getRandom fetch", type, generateur.id, e);
     updateNope(generateur);
     throw e;
   });
@@ -303,7 +265,7 @@ let generateurs = {
         generateurs.defaultAddHandler(generateur);
         $(generateur.id + "_random").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur, function(generateur) {
-            getWords(generateur).then(function(words) {
+            getRandom(generateur, "words").then(function(words) {
               let word = "";
               while(word.length < 3 || word.length > 14) {
                 let i = Math.floor(Math.random() * words.length);
@@ -340,7 +302,7 @@ let generateurs = {
         generateurs.defaultAddHandler(generateur);
         $(generateur.id + "_random").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur, function(generateur) {
-            getWords(generateur).then(function(words) {
+            getRandom(generateur, "words").then(function(words) {
               let word = "";
               while(word.length < 3 || word.length > 7) {
                 let i = Math.floor(Math.random() * words.length);
@@ -414,7 +376,7 @@ let generateurs = {
         }, false);
         $(generateur.id + "_random").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur, function(generateur) {
-            getNames(generateur).then(function(names) {
+            getRandom(generateur, "names").then(function(names) {
               let i = Math.floor(Math.random() * names.length);
               $(generateur.id + "_t").value = names[i];
               $(generateur.id + "_moi").checked = false; // default
@@ -439,6 +401,26 @@ let generateurs = {
 
       timerImg: null,
       lastCall: null,
+
+      addHandler: function(generateur) {
+        generateurs.defaultAddHandler(generateur);
+        $(generateur.id + "_random").addEventListener("click", function() {
+          generateurs.generateImgTimer(generateur, function(generateur) {
+            getRandom(generateur, "words").then(function(words) {
+              let word = "";
+              while(word.length < 3 || word.length > 8) {
+                let i = Math.floor(Math.random() * words.length);
+                word = words[i];
+              }
+              $(generateur.id + "_t").value = word;
+              $(generateur.id + "_s").checked = false; // default
+              generateurs.generateImg(generateur);
+            }).catch(function(e) {
+              console.log("ERROR random", generateur.id, e);
+            });
+          });
+        }, false);
+      },
     },
 
     bulle: {
@@ -609,7 +591,7 @@ let generateurs = {
         }, false);
         $(generateur.id + "_random").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur, function(generateur) {
-            getSmileys(generateur).then(function(smileys) {
+            getRandom(generateur, "smileys").then(function(smileys) {
               let i1 = Math.floor(Math.random() * smileys.length);
               let i2 = Math.floor(Math.random() * smileys.length);
               $(generateur.id + "_smiley1").value = smileys[i1];
@@ -687,7 +669,7 @@ let generateurs = {
         }, false);
         $(generateur.id + "_random").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur, function(generateur) {
-            getSmileys(generateur).then(function(smileys) {
+            getRandom(generateur, "smileys").then(function(smileys) {
               let i = Math.floor(Math.random() * smileys.length);
               $(generateur.id + "_smiley").value = smileys[i];
               $(generateur.id + "_angle").selectedIndex = 3; // 180° default
@@ -894,7 +876,7 @@ let generateurs = {
         }, false);
         $(generateur.id + "_random").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur, function(generateur) {
-            getSmileys(generateur).then(function(smileys) {
+            getRandom(generateur, "smileys").then(function(smileys) {
               let i = Math.floor(Math.random() * smileys.length);
               $(generateur.id + "_smiley").value = smileys[i];
               $(generateur.id + "_tours").value = 2; // default
@@ -1024,7 +1006,7 @@ let generateurs = {
         }, false);
         $(generateur.id + "_random").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur, function(generateur) {
-            getSmileys(generateur).then(function(smileys) {
+            getRandom(generateur, "smileys").then(function(smileys) {
               let i = Math.floor(Math.random() * smileys.length);
               $(generateur.id + "_smiley").value = smileys[i];
               $(generateur.id + "_facteur").value = 2; // default
@@ -1093,7 +1075,7 @@ let generateurs = {
         }, false);
         $(generateur.id + "_random").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur, function(generateur) {
-            getSmileys(generateur).then(function(smileys) {
+            getRandom(generateur, "smileys").then(function(smileys) {
               let i = Math.floor(Math.random() * smileys.length);
               $(generateur.id + "_smiley").value = smileys[i];
               $(generateur.id + "_part").selectedIndex = 0; // de gauche default
@@ -1174,7 +1156,7 @@ let generateurs = {
         }, false);
         $(generateur.id + "_random").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur, function(generateur) {
-            getSmileys(generateur).then(function(smileys) {
+            getRandom(generateur, "smileys").then(function(smileys) {
               let i = Math.floor(Math.random() * smileys.length);
               $(generateur.id + "_smiley").value = smileys[i];
               $(generateur.id + "_lim").value = 0; // auto default
@@ -1242,7 +1224,7 @@ let generateurs = {
           generateurs.generateImgTimer(generateur, function(generateur) {
             let whatdo = Math.random() * 3;
             if(whatdo < 1) {
-              getWords(generateur).then(function(words) {
+              getRandom(generateur, "words").then(function(words) {
                 // do words
                 $(generateur.id + "_icons").selectedIndex = 0; // Forum default
                 generateurs.generateImg(generateur);
@@ -1250,7 +1232,7 @@ let generateurs = {
                 console.log("ERROR random 1", generateur.id, e);
               });
             } else if(whatdo < 2) {
-              getSmileys(generateur).then(function(smileys) {
+              getRandom(generateur, "smileys").then(function(smileys) {
                 let i = Math.floor(Math.random() * smileys.length);
                 $(generateur.id + "_smiley").value = smileys[i];
                 $(generateur.id + "_icons").selectedIndex = 0; // Forum default
@@ -1259,16 +1241,18 @@ let generateurs = {
                 console.log("ERROR random 2", generateur.id, e);
               });
             } else {
-              Promise.all([getWords(generateur), getSmileys(generateur)])
-                .then(function([words, smileys]) {
-                  // do words
-                  let i = Math.floor(Math.random() * smileys.length);
-                  $(generateur.id + "_smiley").value = smileys[i];
-                  $(generateur.id + "_icons").selectedIndex = 0; // Forum default
-                  generateurs.generateImg(generateur);
-                }).catch(function(e) {
-                  console.log("ERROR random 3", generateur.id, e);
-                });
+              Promise.all([
+                getRandom(generateur, "words"),
+                getRandom(generateur, "smileys"),
+              ]).then(function([words, smileys]) {
+                // do words
+                let i = Math.floor(Math.random() * smileys.length);
+                $(generateur.id + "_smiley").value = smileys[i];
+                $(generateur.id + "_icons").selectedIndex = 0; // Forum default
+                generateurs.generateImg(generateur);
+              }).catch(function(e) {
+                console.log("ERROR random 3", generateur.id, e);
+              });
             }
           });
         }, false);
@@ -1455,7 +1439,7 @@ let generateurs = {
         }, false);
         $(generateur.id + "_random").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur, function(generateur) {
-            getSmileys(generateur).then(function(smileys) {
+            getRandom(generateur, "smileys").then(function(smileys) {
               let i = Math.floor(Math.random() * smileys.length);
               $(generateur.id + "_smiley").value = smileys[i];
               $(generateur.id + "_stars").value = 5; // default
@@ -1855,7 +1839,7 @@ let generateurs = {
         }, false);
         $(generateur.id + "_random").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur, function(generateur) {
-            getSmileys(generateur).then(function(smileys) {
+            getRandom(generateur, "smileys").then(function(smileys) {
               let i = Math.floor(Math.random() * smileys.length);
               $(generateur.id + "_smiley").value = smileys[i];
               $(generateur.id + "_mode").selectedIndex = 0; // simple default
