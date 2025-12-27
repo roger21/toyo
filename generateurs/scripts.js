@@ -201,6 +201,31 @@ function getWords(generateur) {
   });
 }
 
+let names;
+
+function getNames(generateur) {
+  if(names) {
+    return Promise.resolve(names);
+  }
+  return fetch("./_misc/prenoms.txt", {
+    method: "GET",
+    mode: "same-origin",
+    credentials: "omit",
+    cache: "reload",
+    referrer: "",
+    referrerPolicy: "no-referrer"
+  }).then(function(r) {
+    return r.text();
+  }).then(function(r) {
+    names = r.split("\n");
+    return names;
+  }).catch(function(e) {
+    console.log("ERROR fetch prenoms.txt", generateur.id, e);
+    updateNope(generateur);
+    throw e;
+  });
+}
+
 function wheelEvent(event, type, target, generateur, step = 1) {
   let before;
   if(type === "range") {
@@ -280,7 +305,7 @@ let generateurs = {
           generateurs.generateImgTimer(generateur, function(generateur) {
             getWords(generateur).then(function(words) {
               let word = "";
-              while(word.length < 3 || word.length > 9) {
+              while(word.length < 3 || word.length > 14) {
                 let i = Math.floor(Math.random() * words.length);
                 word = words[i];
               }
@@ -309,6 +334,25 @@ let generateurs = {
         let url = generateur.url + encodeURIComponent(input);
         let alt = input + " NAZI";
         updateImg(generateur, url, alt);
+      },
+
+      addHandler: function(generateur) {
+        generateurs.defaultAddHandler(generateur);
+        $(generateur.id + "_random").addEventListener("click", function() {
+          generateurs.generateImgTimer(generateur, function(generateur) {
+            getWords(generateur).then(function(words) {
+              let word = "";
+              while(word.length < 3 || word.length > 7) {
+                let i = Math.floor(Math.random() * words.length);
+                word = words[i];
+              }
+              $(generateur.id + "_t").value = word;
+              generateurs.generateImg(generateur);
+            }).catch(function(e) {
+              console.log("ERROR random", generateur.id, e);
+            });
+          });
+        }, false);
       },
     },
 
@@ -367,6 +411,22 @@ let generateurs = {
         }, false);
         $(generateur.id + "_not").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_random").addEventListener("click", function() {
+          generateurs.generateImgTimer(generateur, function(generateur) {
+            getNames(generateur).then(function(names) {
+              let i = Math.floor(Math.random() * names.length);
+              $(generateur.id + "_t").value = names[i];
+              $(generateur.id + "_moi").checked = false; // default
+              $(generateur.id + "_pluriel").checked = false; // default
+              $(generateur.id + "_not").checked = false; // default
+              $(generateur.id + "_s").checked = false; // default
+              generateurs.initOptions(generateur);
+              generateurs.generateImg(generateur);
+            }).catch(function(e) {
+              console.log("ERROR random", generateur.id, e);
+            });
+          });
         }, false);
       },
     },

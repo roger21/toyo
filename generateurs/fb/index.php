@@ -28,6 +28,13 @@ if($test === false){
   die();
 }
 
+// normalise
+$sujet=normalizer_normalize($sujet, Normalizer::NFKC);
+if($sujet === false){
+  trigger_error(__DIR__."/index.php died on normalizer_normalize $sujet");
+  die();
+}
+
 // sujet
 if($moi){
   $sujet=$not ? "Je n'aime pas ça" : "J'aime ça";

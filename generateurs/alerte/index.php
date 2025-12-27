@@ -34,6 +34,13 @@ if($noir === false){
   die();
 }
 
+// normalise
+$text=normalizer_normalize($text, Normalizer::NFKC);
+if($text === false){
+  trigger_error(__DIR__."/index.php died on normalizer_normalize $text");
+  die();
+}
+
 // texte
 $sizes=[55 => [62, 127],
         47 => [63, 119],
