@@ -1033,7 +1033,7 @@ Kevin
 Kévin
 Kilian
 Killian
-kim
+Kim
 Lætitia
 Laetitia & dérivés
 Laly
@@ -1044,7 +1044,7 @@ Lancelot
 Landry
 Larissa
 Laura
-lauranna
+Lauranna
 Laure
 Laureline
 Lauréline
@@ -1058,7 +1058,7 @@ Laurianne
 Laurie
 Laurina
 Laurine
-lausanne
+Lausanne
 Lazare
 Léa
 Léana
@@ -1308,7 +1308,7 @@ Modestie
 Modestine
 Moïse
 Moïsette
-mona
+Mona
 Monique
 Montaine
 Morgan
