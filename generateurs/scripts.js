@@ -406,13 +406,9 @@ let generateurs = {
         generateurs.defaultAddHandler(generateur);
         $(generateur.id + "_random").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur, function(generateur) {
-            getRandom(generateur, "words").then(function(words) {
-              let word = "";
-              while(word.length < 3 || word.length > 8) {
-                let i = Math.floor(Math.random() * words.length);
-                word = words[i];
-              }
-              $(generateur.id + "_t").value = word;
+            getRandom(generateur, "feels").then(function(feels) {
+              let i = Math.floor(Math.random() * feels.length);
+              $(generateur.id + "_t").value = feels[i];
               $(generateur.id + "_s").checked = false; // default
               generateurs.generateImg(generateur);
             }).catch(function(e) {
@@ -616,6 +612,22 @@ let generateurs = {
 
       timerImg: null,
       lastCall: null,
+
+      addHandler: function(generateur) {
+        generateurs.defaultAddHandler(generateur);
+        $(generateur.id + "_random").addEventListener("click", function() {
+          generateurs.generateImgTimer(generateur, function(generateur) {
+            getRandom(generateur, "words").then(function(words) {
+              let i = Math.floor(Math.random() * words.length);
+              $(generateur.id + "_t").value = words[i];
+              $(generateur.id + "_s").checked = false; // default
+              generateurs.generateImg(generateur);
+            }).catch(function(e) {
+              console.log("ERROR random", generateur.id, e);
+            });
+          });
+        }, false);
+      },
     },
 
     ddr555: {
