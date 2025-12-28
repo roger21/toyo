@@ -1,12 +1,13 @@
-words.txt est un assemblage sélectif de différentes sources :
+words.txt est constitué de :
 
-- https://gitlab.com/gpernot/wfrench
-- https://www.vd.ch/guide-typo3/les-principes-de-redaction/redaction-egalitaire/2000-noms-au-masculin-et-au-feminin
-- https://www.lalanguefrancaise.com/dictionnaire/classe-grammaticale/nom-commun
+- les mots :N du fichier French.lex de Grammalecte : http://grammalecte.net:8080/file?name=lexicons/French.lex&ci=tip
+- qui sont également présents dans le fichier dictDecl.txt de Grammalecte : http://grammalecte.net:8080/file?name=gc_lang/fr/data/dictDecl.txt&ci=tip
+- et les mots :J :B et :ÉW du fichier French.lex de Grammalecte : http://grammalecte.net:8080/file?name=lexicons/French.lex&ci=tip
 
 
 names.txt est un assemblage sélectif de différentes sources :
 
+- les mots :M1 et :M2 du fichier French.lex de Grammalecte : http://grammalecte.net:8080/file?name=lexicons/French.lex&ci=tip
 - https://fr.wikimini.org/wiki/Liste_des_pr%C3%A9noms_fran%C3%A7ais
 - https://fr.wikipedia.org/wiki/Liste_de_pr%C3%A9noms_en_fran%C3%A7ais
 - https://www.herault.gouv.fr/content/download/39729/260550/file/Pr%C3%A9noms%20f%C3%A9minin%20pdf.pdf
