@@ -151,13 +151,13 @@ function updateImg(generateur, url, alt) {
   img.src = url + "&TIMESTAMP=" + lastCall;
 }
 
-let types = ["smileys", "words", "names", "feels", "pseudals"];
+let types = ["smileys", "words", "names", "feels", "brands", "pseudals", ];
 
 let random = {};
 
 function getRandom(generateur, type) {
   if(!types.includes(type)) {
-    throw new Error("ERROR getRandom type unknown", type);
+    throw new Error("ERROR getRandom type unknown " + type);
   }
   if(random[type]) {
     return Promise.resolve(random[type]);
@@ -267,7 +267,7 @@ let generateurs = {
           generateurs.generateImgTimer(generateur, function(generateur) {
             getRandom(generateur, "words").then(function(words) {
               let word = "";
-              while(word.length < 3 || word.length > 14) {
+              while(word.length < 4 || word.length > 13) {
                 let i = Math.floor(Math.random() * words.length);
                 word = words[i];
               }
@@ -304,7 +304,7 @@ let generateurs = {
           generateurs.generateImgTimer(generateur, function(generateur) {
             getRandom(generateur, "words").then(function(words) {
               let word = "";
-              while(word.length < 3 || word.length > 7) {
+              while(word.length < 4 || word.length > 8) {
                 let i = Math.floor(Math.random() * words.length);
                 word = words[i];
               }
@@ -617,9 +617,9 @@ let generateurs = {
         generateurs.defaultAddHandler(generateur);
         $(generateur.id + "_random").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur, function(generateur) {
-            getRandom(generateur, "words").then(function(words) {
-              let i = Math.floor(Math.random() * words.length);
-              $(generateur.id + "_t").value = words[i];
+            getRandom(generateur, "brands").then(function(brands) {
+              let i = Math.floor(Math.random() * brands.length);
+              $(generateur.id + "_t").value = brands[i];
               $(generateur.id + "_s").checked = false; // default
               generateurs.generateImg(generateur);
             }).catch(function(e) {

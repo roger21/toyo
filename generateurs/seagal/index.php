@@ -64,6 +64,13 @@ if($r === false){
   die();
 }
 
+// normalise
+$text=normalizer_normalize($text, Normalizer::NFKC);
+if($text === false){
+  trigger_error(__DIR__."/index.php died on normalizer_normalize $text");
+  die();
+}
+
 // texte
 $pos=imagefttext($test, 8, 0, 0, 0, $noir, "./arial.ttf", $text);
 if($pos === false){
