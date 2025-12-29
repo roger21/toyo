@@ -1,13 +1,21 @@
-words.txt est constitué de :
-
-- les mots :N du fichier French.lex de Grammalecte : http://grammalecte.net:8080/file?name=lexicons/French.lex&ci=tip
-- qui sont également présents dans le fichier dictDecl.txt de Grammalecte : http://grammalecte.net:8080/file?name=gc_lang/fr/data/dictDecl.txt&ci=tip
-- et les mots :J :B et :ÉW du fichier French.lex de Grammalecte : http://grammalecte.net:8080/file?name=lexicons/French.lex&ci=tip
 
 
-names.txt est un assemblage sélectif de différentes sources :
+#### 1. brands.txt est un assemblage très sélectif :
 
-- les mots :M1 et :M2 du fichier French.lex de Grammalecte : http://grammalecte.net:8080/file?name=lexicons/French.lex&ci=tip
+- de listes de marques générées par ChatGPT
+- principalement autour de l’électronique, l’électroménager et l'automobile
+
+
+#### 2. feels.txt est un assemblage sélectif de différentes sources :
+
+- http://expertise.uriopss-npdc.asso.fr/resources/npca/pdfs/2018/6_Juin//Liste_des_sentiments_FAURE.pdf
+- https://www.zebrezen.fr/liste-des-emotions/
+- https://apprendreaeduquer.fr/tableau-des-nuances-des-emotions-un-outil-pour-developper-le-vocabulaire-des-enfants-autour-des-emotions/
+
+
+#### 3. names.txt est un assemblage sélectif de différentes sources :
+
+- les mots `:M1` du fichier `French.lex` de Grammalecte : http://grammalecte.net:8080/file?name=lexicons/French.lex&ci=tip
 - https://fr.wikimini.org/wiki/Liste_des_pr%C3%A9noms_fran%C3%A7ais
 - https://fr.wikipedia.org/wiki/Liste_de_pr%C3%A9noms_en_fran%C3%A7ais
 - https://www.herault.gouv.fr/content/download/39729/260550/file/Pr%C3%A9noms%20f%C3%A9minin%20pdf.pdf
@@ -15,22 +23,25 @@ names.txt est un assemblage sélectif de différentes sources :
 - https://www.prefecturedepolice.interieur.gouv.fr/sites/default/files/Documents/liste_prenoms.pdf
 
 
-feels.txt est un assemblage sélectif de différentes sources :
+#### 4. pseudals.txt est un top 1000 des profils en nombre de posts au jeudi 11 décembre 2025
 
-- http://expertise.uriopss-npdc.asso.fr/resources/npca/pdfs/2018/6_Juin//Liste_des_sentiments_FAURE.pdf
-- https://www.zebrezen.fr/liste-des-emotions/
-- https://apprendreaeduquer.fr/tableau-des-nuances-des-emotions-un-outil-pour-developper-le-vocabulaire-des-enfants-autour-des-emotions/
-
-
-pseudals.txt est un top 1000 des profils en nombre de posts au jeudi 11 décembre 2025
 - ayant un avatar ;
 - existant et ayant un avatar au lundi 13 juillet 2020 ;
 - ayant posté depuis moins d'un mois au jeudi 11 décembre 2025 :
 
+```
 WITH old AS (SELECT pseudal FROM old.p WHERE avatarurl IS NOT NULL),
 last AS (SELECT min(date) - interval '1 month' date FROM new.p)
 SELECT new.pseudal FROM new.p new, old, last WHERE
 avatarurl IS NOT NULL AND new.pseudal = old.pseudal AND lastpostdate > last.date
 ORDER BY nbposts DESC LIMIT 1000
+```
+
+
+#### 5. words.txt est constitué de :
+
+- les mots `:N` du fichier `French.lex` de Grammalecte : http://grammalecte.net:8080/file?name=lexicons/French.lex&ci=tip
+- qui sont également présents dans le fichier `dictDecl.txt` de Grammalecte : http://grammalecte.net:8080/file?name=gc_lang/fr/data/dictDecl.txt&ci=tip
+- et les mots `:J` `:B` et `:ÉW` du fichier `French.lex` de Grammalecte : http://grammalecte.net:8080/file?name=lexicons/French.lex&ci=tip
 
 
