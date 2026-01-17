@@ -13,7 +13,15 @@
 - https://apprendreaeduquer.fr/tableau-des-nuances-des-emotions-un-outil-pour-developper-le-vocabulaire-des-enfants-autour-des-emotions/
 
 
-#### 3. names.txt est un assemblage sélectif de différentes sources :
+#### 3. modals.txt est un assemblage sélectif :
+
+- de posts roses issus des topics :  bli, cha, cim, cov, cul, dem, eur, exg, foo, for, gif, gil, gsn, hdl, img, inf, ins, jop, lfi, lib, lrm, lux, med, met, moy, nat, noe, pho, que, rep, scr, soc, sor, sub, ter, ukr, upr, usp, vrt et zem ( voir https://roger21.github.io/stats/ )
+- globalement (mais pas entièrement) décontextualisés (thèmes et pseudals impliqués principalement)
+- modifiés pour s'adapter à la forme du générateur
+- légèrement corrigés (syntaxe, grammaire, ponctuation, typo, ...)
+
+
+#### 4. names.txt est un assemblage sélectif de différentes sources :
 
 - les mots `:M1` du fichier `French.lex` de Grammalecte : http://grammalecte.net:8080/file?name=lexicons/French.lex&ci=tip
 - https://fr.wikimini.org/wiki/Liste_des_pr%C3%A9noms_fran%C3%A7ais
@@ -23,7 +31,7 @@
 - https://www.prefecturedepolice.interieur.gouv.fr/sites/default/files/Documents/liste_prenoms.pdf
 
 
-#### 4. pseudals.txt est un top 1000 des profils en nombre de posts au jeudi 11 décembre 2025
+#### 5. pseudals.txt est un top 1000 des profils en nombre de posts au jeudi 11 décembre 2025
 
 - ayant un avatar ;
 - existant et ayant un avatar au lundi 13 juillet 2020 ;
@@ -38,7 +46,7 @@ ORDER BY nbposts DESC LIMIT 1000
 ```
 
 
-#### 5. words.txt est constitué de :
+#### 6. words.txt est constitué de :
 
 - les mots `:N` du fichier `French.lex` de Grammalecte : http://grammalecte.net:8080/file?name=lexicons/French.lex&ci=tip
 - qui sont également présents dans le fichier `dictDecl.txt` de Grammalecte : http://grammalecte.net:8080/file?name=gc_lang/fr/data/dictDecl.txt&ci=tip
