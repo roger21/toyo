@@ -32,6 +32,13 @@ if($noir === false){
   die();
 }
 
+// normalise
+$text=normalizer_normalize($text, Normalizer::NFKC);
+if($text === false){
+  trigger_error(__DIR__."/index.php died on normalizer_normalize $text");
+  die();
+}
+
 // texte
 foreach([18, 14, 11] as $t){
   $pos=imagefttext($test, $t, 0, 0, 0, $blanc, "./arialb.ttf", $text);
