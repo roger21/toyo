@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : lun. 06 jan. 2025 à 14:17
--- Version du serveur : 10.6.20-MariaDB
+-- Généré le : dim. 25 jan. 2026 à 21:16
+-- Version du serveur : 11.4.9-MariaDB
 -- Version de PHP : 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `alerte_qualitay` (
   `topic_id` int(11) NOT NULL,
   `topic_titre` varchar(512) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=13628 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Déchargement des données de la table `alerte_qualitay`
@@ -1533,7 +1533,23 @@ INSERT INTO `alerte_qualitay` (`id`, `nom`, `topic_id`, `topic_titre`) VALUES
 (13607, 'Malaisance', 8680, 'Topic Hontes - \"La vraie honte c\'est...\" = sanction'),
 (13608, 'BlueSky Bot', 116015, '[ • Pimp my HFR • Topic des user scripts • Infos et news en FP • ]'),
 (13609, 'Rehost Awards 2024', 118598, '[Rehost v1.8] Hébergement d\'images gratuit et anonyme !'),
-(13610, 'Roger21 la Faucheuse', 74700, '[Cimetière des célébrités]');
+(13610, 'Roger21 la Faucheuse', 74700, '[Cimetière des célébrités]'),
+(13611, 'merci', 11704, 'Le réseau à la maison RJ45@HOME'),
+(13612, 'Fire et retraite', 119810, 'Le topic du QLRR et FIRE : \"fuck you money\" et jeunes retraités'),
+(13613, 'Velo', 9055, '★ Remise en forme ★'),
+(13614, 'Gif magnifique :o', 10, '[TU] Impression 3D : Venez imprimer des bateaux et des baby yoda :o'),
+(13615, 'comparatif perf CW8/WPEA', 66515, '[POGNON] Épargne / Placements - Votre rémunération annuelle'),
+(13616, 'achat de maison en couple', 35843, '[Topic achat immobilier] À quand le krach ?'),
+(13617, 'clauses achat en couple', 66515, '[POGNON] Épargne / Placements - Valorisation de votre RP'),
+(13618, 'photo finish', 42623, 'Les trucs à la con que vous savez'),
+(13619, 'belle remarque de parentalité', 62903, 'Séries TV : Infos, débats, questions / Breaking Bad écrase tt le monde'),
+(13620, 'apprendre le japonais ', 19761, 'Le topic des gens qui apprennent le japonais...'),
+(13621, 'liste arcade', 184723, '[TU] Bartops et bornes d\'arcade'),
+(13622, 'tout sur l\'IA', 55667, 'Le topic de toutes les Questions (AVFFUO)'),
+(13623, 'Guacamole ', 55667, 'Le topic de toutes les Questions (AVFFUO)'),
+(13624, 'CDP Leboncoin', 90962, 'Le topic des très sales coups (demande de CDP = TT)'),
+(13625, 'conseil aux peureux et emotifs ', 66515, '[POGNON] Épargne / Placements - Thune sur le compte courant'),
+(13627, 'zguegologue', 8680, 'Topic Hontes - \"La vraie honte c\'est...\" = sanction');
 
 -- --------------------------------------------------------
 
@@ -1555,7 +1571,7 @@ CREATE TABLE IF NOT EXISTS `rapporteur` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `alerte_qualitay_id` (`alerte_qualitay_id`,`pseudo`),
   UNIQUE KEY `pseudo` (`pseudo`,`post_url`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=14314 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Déchargement des données de la table `rapporteur`
@@ -3775,7 +3791,23 @@ INSERT INTO `rapporteur` (`id`, `alerte_qualitay_id`, `pseudo`, `post_id`, `post
 (14288, 13608, 'PetitJean', 72122416, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=116015&page=273&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t72122416', '2024-12-27 15:18:46', 1, 'normalement c\'est OK (venez sur ce fil si vous rencontrez des soucis)', '82.64.54.91'),
 (14289, 13609, 'ezzz', 72125537, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=118598&page=50&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t72125537', '2024-12-29 09:04:18', 1, 'post de DiB91', '80.215.168.233'),
 (14290, 13610, 'PetitJean', 72123046, 'https://forum.hardware.fr/hfr/Discussions/Actualite/cimetiere-celebrites-sujet_74700_2625.htm#t72123046', '2024-12-29 22:10:17', 1, 'oups', '82.64.54.91'),
-(14291, 13610, 'Eife', 72123046, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=422&post=74700&page=2625&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t72123046', '2024-12-29 23:08:32', 0, 'post de roger21', '82.64.100.169');
+(14291, 13610, 'Eife', 72123046, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=422&post=74700&page=2625&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t72123046', '2024-12-29 23:08:32', 0, 'post de roger21', '82.64.100.169'),
+(14292, 13611, 'bobdennard', 1250904, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=22&subcat=503&post=11704&page=606&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t1250904', '2025-01-07 08:44:26', 1, 'post de hot22shot', '37.166.95.199'),
+(14293, 13612, 'george$abitbol', 72202037, 'https://forum.hardware.fr/hfr/Discussions/Societe/money-jeunes-retraites-sujet_119810_80.htm#t72202037', '2025-01-13 10:09:44', 1, 'post de mlon', '91.167.187.244'),
+(14294, 13613, 'ezzz', 72217237, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=430&post=9055&page=8719&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t72217237', '2025-01-16 09:12:11', 1, 'post de Konovalov', '87.88.144.182'),
+(14300, 13614, 'bardemeteore', 465807, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=30&subcat=575&post=10&page=1913&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t465807', '2025-04-03 22:59:35', 1, 'post de Augmented', '92.184.124.194'),
+(14301, 13615, 'nattura', 72735170, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=66515&page=12036&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t72735170', '2025-04-15 11:57:17', 1, 'post de cataflamme', '92.184.118.95'),
+(14302, 13616, 'maaah', 50798986, 'https://forum.hardware.fr/hfr/Discussions/Societe/achat-immobilier-krach-sujet_35843_14392.htm#t50798986', '2025-06-17 14:34:06', 1, 'post de gusano', '217.31.77.126'),
+(14303, 13617, 'maaah', 72919162, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=66515&page=12109&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t72919162', '2025-06-21 19:14:31', 1, 'post de gusano', '37.65.54.224'),
+(14304, 13618, 'shinjo', 73152313, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=42623&page=1873&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t73152313', '2025-07-02 14:38:29', 1, 'post de chienBlanc', '4.17.129.203'),
+(14305, 13619, 'targan82', 73186791, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=427&post=62903&page=3789&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t73186791', '2025-07-09 18:06:39', 1, 'post de fiscalisat​or', '37.62.16.168'),
+(14306, 13620, 'sinbadlemarin', 73142516, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=434&post=19761&page=305&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t73142516', '2025-07-17 23:24:22', 1, 'post de Mr Oscar', '152.37.122.98'),
+(14307, 13621, 'cyran', 15974768, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=5&subcat=250&post=184723&page=55&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t15974768', '2025-08-13 22:08:04', 1, 'post de foul', '90.54.77.124'),
+(14308, 13622, 'shinjo', 73389001, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=55667&page=14614&p=1&sondage=0&owntopic=2&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t73389001', '2025-08-24 21:03:19', 1, 'post de pascaldeux​zero', '82.66.240.200'),
+(14309, 13623, 'ezzz', 73467285, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=55667&page=14634&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t73467285', '2025-09-05 06:20:32', 1, 'post de moonblood', '94.239.38.152'),
+(14310, 13624, 'pascal_974', 73552970, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=90962&page=1219&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t73552970', '2025-09-20 05:44:48', 1, 'post de sinclair_w​ilde', '93.10.108.93'),
+(14311, 13625, 'silicium', 73610005, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=66515&page=12331&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t73610005', '2025-10-01 13:59:42', 1, 'post de boisse', '88.172.254.22'),
+(14313, 13627, 'ezzz', 74105885, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=434&post=8680&page=4045&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t74105885', '2026-01-18 07:37:22', 1, 'post de salsifi34', '94.239.38.152');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
