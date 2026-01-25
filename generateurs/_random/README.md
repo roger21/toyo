@@ -3,7 +3,7 @@
 #### 1. brands.txt est un assemblage très sélectif :
 
 - de listes de marques générées par ChatGPT
-- principalement autour de l’électronique, l’électroménager et l'automobile
+- principalement autour de l’électronique, l’électroménager, l'automobile et la grande distribution
 
 
 #### 2. feels.txt est un assemblage sélectif de différentes sources :

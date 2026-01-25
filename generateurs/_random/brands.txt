@@ -1,47 +1,82 @@
+Action
+Aldi
 AMD
 Apple
 Asus
+Auchan
 Audi
+Biocoop
 BMW
 Bosch
+Boulanger
 Brandt
 Braun
+Brico dépôt
+BUT
 Calor
 Canon
+Carrefour
+Casino
 Casio
+Castorama
 Citroën
+Conforama
 Dacia
+DARTY
+DECATHLON
 Dell
 DJI
+E.Leclerc
+FACOM
 Fiat
 Ford
+Franprix
+Gifi
+Grand Frais
 Honda
 Hyundai
+IKEA
 Intel
+Intermarché
 Kenwood
+KIABI
 Krups
 Lada
+La Foir'Fouille
+La Vie Claire
+La Vie Saine
 LDLC
+Leader Price
+L’Eau Vive
 Lenovo
+Leroy Merlin
 Lexus
+Lidl
 Logitech
 Maserati
 Mazda
 Mercedes
+Metro
 Miele
+Millet
 Mitsubishi
+Monoprix
 Motorola
 Moulinex
+Naturalia
+Netto
 Nikon
 Nintendo
 Nissan
 Nokia
+Noz
 Nvidia
 Olympus
 Opel
 Panasonic
 Peugeot
 Philips
+Picard
 Porsche
 Renault
 Rowenta
@@ -51,13 +86,17 @@ Seb
 Siemens
 Škoda
 Sony
+SPAR
 Subaru
+Super U
 Suzuki
 Tefal
 Tesla
+Thiriet
 Thomson
 Toshiba
 Toyota
+Vival
 Volkswagen
 Volvo
 Whirlpool
