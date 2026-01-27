@@ -22,9 +22,11 @@ Bounty
 Boursin
 Brandt
 Braun
-Bret’s
+Brets
 Brico dépôt
+Brioche Dorée
 Buitoni
+Burger King
 BUT
 Cacolac
 Calor
@@ -53,13 +55,16 @@ De Cecco
 Dell
 Del Monte
 DJI
+Dominos Pizza
 Doritos
+Dr Oetker
 E.Leclerc
 FACOM
 Fanta
 Ferrero
 Fiat
 Findus
+Five Guys
 Fleury Michon
 Fnac
 Ford
@@ -68,7 +73,7 @@ Gerblé
 Gifi
 Grand Frais
 Haagen-Dazs
-Harry’s
+Harrys
 Heinz
 Hénaff
 Herta
@@ -77,20 +82,23 @@ Hyundai
 IKEA
 Intel
 Intermarché
-Kellogg’s
+Kelloggs
 Kenwood
+KFC
 KIABI
 Kinder
 Kiri
 Knorr
 Krups
+La Croissanterie
 Lactel
 Lada
 La Foir'Fouille
 La Laitière
+La Mie Câline
 La Vie Claire
 La Vie Saine
-Lay’s
+Lays
 LDLC
 Leader Price
 L’Eau Vive
@@ -112,6 +120,7 @@ Maserati
 Materne
 Mazda
 McCain
+McDonalds
 Mercedes
 Metro
 Michel et Augustin
@@ -122,7 +131,7 @@ Milky Way
 Millet
 Minute Maid
 Mitsubishi
-M&M’s
+M&M
 Monoprix
 Monster
 Motorola
@@ -141,9 +150,11 @@ Olympus
 Opel
 Orangina
 Oreo
+O’Tacos
 Panasonic
 Panzani
 Pasquier
+Paul
 Paysan Breton
 Pepsi
 Perrier
@@ -152,10 +163,12 @@ Peugeot
 Philadelphia
 Philips
 Picard
+Pizza Hut
 Porsche
 Président
 Pringles
 Pulco
+Quick
 Red Bull
 Renault
 Ritz
@@ -172,9 +185,12 @@ Sodebo
 Sony
 SPAR
 Sprite
+Starbucks
 St Michel
 Subaru
+Subway
 Super U
+Sushi Shop
 Suzuki
 Tefal
 Teisseire
