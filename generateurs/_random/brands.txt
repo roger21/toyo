@@ -1,51 +1,96 @@
 Action
 Aldi
+Alsa
 AMD
+Amora
+Andros
 Apple
 Asus
 Auchan
 Audi
+Babybel
+Barilla
 Biocoop
+Bjorg
 BMW
+BN
+Bonduelle
+Bonne Maman
 Bosch
 Boulanger
+Bounty
+Boursin
 Brandt
 Braun
+Bret’s
 Brico dépôt
+Buitoni
 BUT
+Cacolac
 Calor
+Candia
 Canon
+Capri-Sun
+Carambar
 Carrefour
+Carte d’Or
 Casino
 Casio
 Castorama
+Céréal
+Cheetos
 Citroën
+Coca-Cola
+Cochonou
 Conforama
+Cornetto
+Côte d’Or
 Dacia
+Danone
 DARTY
 DECATHLON
+De Cecco
 Dell
+Del Monte
 DJI
+Doritos
 E.Leclerc
 FACOM
+Fanta
+Ferrero
 Fiat
+Findus
+Fleury Michon
 Fnac
 Ford
 Franprix
+Gerblé
 Gifi
 Grand Frais
+Haagen-Dazs
+Harry’s
+Heinz
+Hénaff
+Herta
 Honda
 Hyundai
 IKEA
 Intel
 Intermarché
+Kellogg’s
 Kenwood
 KIABI
+Kinder
+Kiri
+Knorr
 Krups
+Lactel
 Lada
 La Foir'Fouille
+La Laitière
 La Vie Claire
 La Vie Saine
+Lay’s
 LDLC
 Leader Price
 L’Eau Vive
@@ -53,15 +98,33 @@ Lenovo
 Leroy Merlin
 Lexus
 Lidl
+Liebig
+Lindt
 Logitech
+Lu
+Lustucru
+Lutti
+Maggi
+Magnum
+Maille
+Mars
 Maserati
+Materne
 Mazda
+McCain
 Mercedes
 Metro
+Michel et Augustin
 Miele
+Mikado
+Milka
+Milky Way
 Millet
+Minute Maid
 Mitsubishi
+M&M’s
 Monoprix
+Monster
 Motorola
 Moulinex
 Naturalia
@@ -71,34 +134,63 @@ Nintendo
 Nissan
 Nokia
 Noz
+Nutella
 Nvidia
+Oasis
 Olympus
 Opel
+Orangina
+Oreo
 Panasonic
+Panzani
+Pasquier
+Paysan Breton
+Pepsi
+Perrier
+Petit Navire
 Peugeot
+Philadelphia
 Philips
 Picard
 Porsche
+Président
+Pringles
+Pulco
+Red Bull
 Renault
+Ritz
 Rowenta
 Saab
 Samsung
+Saupiquet
+Schweppes
 Seb
 Siemens
 Škoda
+Snickers
+Sodebo
 Sony
 SPAR
+Sprite
+St Michel
 Subaru
 Super U
 Suzuki
 Tefal
+Teisseire
 Tesla
 Thiriet
 Thomson
+Tipiak
+Toblerone
 Toshiba
 Toyota
+TUC
+Twix
+Viennetta
 Vival
 Volkswagen
 Volvo
 Whirlpool
 Xiaomi
+Yoplait
