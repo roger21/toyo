@@ -10,6 +10,10 @@ Auchan
 Audi
 Babybel
 Barilla
+Belin
+Benedicta
+Bénénuts
+Bio C’Bon
 Biocoop
 Bjorg
 BMW
@@ -47,6 +51,7 @@ Cochonou
 Conforama
 Cornetto
 Côte d’Or
+Cracotte
 Dacia
 Danone
 DARTY
@@ -58,6 +63,7 @@ DJI
 Dominos Pizza
 Doritos
 Dr Oetker
+Ducros
 E.Leclerc
 FACOM
 Fanta
@@ -77,11 +83,15 @@ Harrys
 Heinz
 Hénaff
 Herta
+Heudebert
 Honda
 Hyundai
 IKEA
+innocent
 Intel
 Intermarché
+Joker
+Justin Bridou
 Kelloggs
 Kenwood
 KFC
@@ -96,6 +106,7 @@ Lada
 La Foir'Fouille
 La Laitière
 La Mie Câline
+Lanvin
 La Vie Claire
 La Vie Saine
 Lays
@@ -126,17 +137,19 @@ Metro
 Michel et Augustin
 Miele
 Mikado
+Miko
 Milka
 Milky Way
 Millet
 Minute Maid
 Mitsubishi
-M&M
+M&Ms
 Monoprix
 Monster
 Motorola
 Moulinex
 Naturalia
+Nestlé
 Netto
 Nikon
 Nintendo
@@ -201,8 +214,11 @@ Tipiak
 Toblerone
 Toshiba
 Toyota
+Tropico
 TUC
 Twix
+Vahiné
+Vico
 Viennetta
 Vival
 Volkswagen
