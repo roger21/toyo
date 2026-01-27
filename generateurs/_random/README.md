@@ -38,15 +38,30 @@
 - ayant posté depuis moins d'un mois au jeudi 11 décembre 2025 :
 
 ```
-WITH old AS (SELECT pseudal FROM old.p WHERE avatarurl IS NOT NULL),
-last AS (SELECT min(date) - interval '1 month' date FROM new.p)
-SELECT new.pseudal FROM new.p new, old, last WHERE
-avatarurl IS NOT NULL AND new.pseudal = old.pseudal AND lastpostdate > last.date
+WITH old AS (SELECT pseudal FROM old.p WHERE avatarurl IS NOT NULL)
+SELECT new.pseudal FROM new.p new, old WHERE
+avatarurl IS NOT NULL AND new.pseudal = old.pseudal AND
+lastpostdate > date - interval '1 month'
 ORDER BY nbposts DESC LIMIT 1000
 ```
 
 
-#### 6. words.txt est constitué de :
+#### 6. quotes.txt contient les signatures des profils au jeudi 11 décembre 2025
+- ayant posté depuis moins d'un mois au jeudi 11 décembre 2025 ;
+- nettoyées pour ne garder que des celles qui peuvent constituer une citation (en gros) ;
+- auxquelles je comprends quelque chose (en gros) ;
+- légèrement corrigées (syntaxe, grammaire, ponctuation, typo, ...) ;
+- découpées en plusieurs citations quand il y en a plusieurs ;
+- modifiés pour s'adapter à la forme du générateur :
+
+```
+SELECT btrim(signature) FROM p WHERE
+btrim(signature) != '' AND
+lastpostdate > date - interval '1 month'
+```
+
+
+#### 7. words.txt est constitué de :
 
 - les mots `:N` du fichier `French.lex` de Grammalecte : http://grammalecte.net:8080/file?name=lexicons/French.lex&ci=tip
 - qui sont également présents dans le fichier `dictDecl.txt` de Grammalecte : http://grammalecte.net:8080/file?name=gc_lang/fr/data/dictDecl.txt&ci=tip

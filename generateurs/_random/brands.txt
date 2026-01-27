@@ -29,6 +29,7 @@ DJI
 E.Leclerc
 FACOM
 Fiat
+Fnac
 Ford
 Franprix
 Gifi
