@@ -47,17 +47,17 @@ ORDER BY nbposts DESC LIMIT 1000
 
 
 #### 6. quotes.txt contient les signatures des profils au jeudi 11 décembre 2025
-- ayant posté depuis moins d'un mois au jeudi 11 décembre 2025 ;
+- ayant posté depuis moins d'un an au jeudi 11 décembre 2025 ;
 - nettoyées pour ne garder que des celles qui peuvent constituer une citation (en gros) ;
 - auxquelles je comprends quelque chose (en gros) ;
 - légèrement corrigées (syntaxe, grammaire, ponctuation, typo, ...) ;
 - découpées en plusieurs citations quand il y en a plusieurs ;
-- modifiés pour s'adapter à la forme du générateur :
+- en excluant les signatures descriptives (en gros) et les dialogues (en gros aussi) :
 
 ```
 SELECT btrim(signature) FROM p WHERE
 btrim(signature) != '' AND
-lastpostdate > date - interval '1 month'
+lastpostdate > date - interval '1 year'
 ```
 
 
