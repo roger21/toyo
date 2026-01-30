@@ -12,12 +12,16 @@ https://generateurs.super-h.fr/
 [b]Paramètres :[/b]
 [*]t : le texte de l'alerte
 [*]s (sans valeur) : met l'image en taille smiley
+[b]Bouton :[/b]
+[*]random : choisit un mot au hasard et remet l'autre paramètre par défaut
 
 
 
 [b]Nazi[/b] [img]https://reho.st/https://generateurs.super-h.fr/nazi/?t=G%C3%89N%C3%89RATOR[/img]
 [b]Paramètres :[/b]
 [*]t : le texte avant le "nazi"
+[b]Bouton :[/b]
+[*]random : choisit un mot au hasard
 
 
 
@@ -28,6 +32,8 @@ https://generateurs.super-h.fr/
 [*]pluriel (sans valeur) : met le verbe au pluriel
 [*]not (sans valeur) : met le verbe au négatif
 [*]s (sans valeur) : met l'image en taille smiley
+[b]Bouton :[/b]
+[*]random : choisit un prénom au hasard et remet les autres paramètres par défaut
 
 
 
@@ -35,6 +41,8 @@ https://generateurs.super-h.fr/
 [b]Paramètres :[/b]
 [*]t : l'émotion de Steven :o
 [*]s (sans valeur) : met l'image en taille smiley
+[b]Bouton :[/b]
+[*]random : choisit une émotion au hasard et remet l'autre paramètre par défaut
 
 
 
@@ -47,6 +55,8 @@ https://generateurs.super-h.fr/
 [*]taille : la taille de la police (de 1 à 3)
 [*]s (facultatif) : le code du smiley, annule l'effet du paramètre delta
 [*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
+[b]Bouton :[/b]
+[*]random : choisit une citation au hasard, la police Carter One et la taille 3 et remet les autres paramètres par défaut
 
 
 
@@ -59,7 +69,7 @@ https://generateurs.super-h.fr/
 [*]v (sans valeur) : découpe les smileys verticalement
 [b]Boutons :[/b]
 [*]switch : inverse les deux smileys
-[*]random : choisit deux smileys au hazard et remet les autres paramètres par défaut
+[*]random : choisit deux smileys au hasard et remet les autres paramètres par défaut
 
 
 
@@ -67,6 +77,8 @@ https://generateurs.super-h.fr/
 [b]Paramètres :[/b]
 [*]t : le texte du "Seal of Quality"
 [*]s (sans valeur) : met l'image en taille smiley
+[b]Bouton :[/b]
+[*]random : choisit une marque au hasard et remet l'autre paramètre par défaut
 
 
 
@@ -76,7 +88,7 @@ https://generateurs.super-h.fr/
 [*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
 [*]a : l'angle en degrés (45, 90, 135, 180, 225, 270 ou 315)
 [b]Bouton :[/b]
-[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+[*]random : choisit un smiley au hasard et remet les autres paramètres par défaut
 
 
 
@@ -85,7 +97,7 @@ https://generateurs.super-h.fr/
 [*]n : le numérateur (de 0 à 99)
 [*]d : le dénominateur (de 0 à 99)
 [b]Bouton :[/b]
-[*]random : choisit une note au hazard (le numérateur sera inférieur ou égal au dénominateur)
+[*]random : choisit une note au hasard (le numérateur sera inférieur ou égal au dénominateur)
 
 
 
@@ -98,7 +110,7 @@ https://generateurs.super-h.fr/
 [*]dx : le décalage horizontal en pixels que prend le smiley à chaque frame (de -100 à 100), s'ajoute au mode
 [*]v : la vitesse (de 1 à 10)
 [b]Bouton :[/b]
-[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+[*]random : choisit un smiley au hasard et remet les autres paramètres par défaut
 
 
 
@@ -111,7 +123,7 @@ https://generateurs.super-h.fr/
 [*]v : la vitesse (de 1 à 10)
 [*]rofl (sans valeur) : fait "rofler" le smiley en même temps :D
 [b]Bouton :[/b]
-[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+[*]random : choisit un smiley au hasard et remet les autres paramètres par défaut
 
 
 
@@ -121,7 +133,7 @@ https://generateurs.super-h.fr/
 [*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
 [*]left, right, top ou bottom (sans valeur) : la partie du smiley à refléter (gauche, droite, haute ou basse)
 [b]Bouton :[/b]
-[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+[*]random : choisit un smiley au hasard et remet les autres paramètres par défaut
 
 
 
@@ -131,7 +143,7 @@ https://generateurs.super-h.fr/
 [*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
 [*]l : la limite de découpage en partant du bas (de 0 à 129, 0 = auto, la moitié du smiley)
 [b]Bouton :[/b]
-[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+[*]random : choisit un smiley au hasard et remet les autres paramètres par défaut
 
 
 
@@ -142,6 +154,8 @@ https://generateurs.super-h.fr/
 [*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
 [*]i : le jeu d'icônes (de 1 à 5, Forum, CrystalXP, Défaut, Old Fashioned ou Silk)
 [*]ts (facultatif) : la date sous la forme d'un timestamp unix (epoch)
+[b]Bouton :[/b]
+[*]random : choisit une modération au hasard (avec éventuellement un smiley) et remet les autres paramètres par défaut
 
 
 
@@ -159,14 +173,17 @@ https://generateurs.super-h.fr/
 [*]frames : le nombre de frames avant que la sequence d'étoiles ne reboucle (de 1 à 100)
 [*]v : la vitesse (de 1 à 10)
 [b]Bouton :[/b]
-[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+[*]random : choisit un smiley au hasard et remet les autres paramètres par défaut
 
 
 
 [b]UMP[/b] [img]https://reho.st/https://generateurs.super-h.fr/ump/?t=Travail%20Forc%C3%A9[/img]
 [b]Paramètres :[/b]
 [*]t : le texte sous le logo
+[*]taille : la taille de la police (de 1 à 4)
 [*]s (sans valeur) : met l'image en taille smiley
+[b]Bouton :[/b]
+[*]random : choisit un texte au hasard et remet les autres paramètres par défaut
 
 
 
@@ -175,6 +192,8 @@ https://generateurs.super-h.fr/
 [*]t1 : le texte de la première ligne
 [*]t2 : le texte de la deuxième ligne
 [*]s (sans valeur) : met l'image en taille smiley
+[b]Bouton :[/b]
+[*]random : choisit un titre au hasard et remet l'autre paramètre par défaut
 
 
 
@@ -183,6 +202,8 @@ https://generateurs.super-h.fr/
 [*]p : le pseudo (qui doit avoir un avatar)
 [*]t : le titre
 [*]c (facultatif) : le texte
+[b]Bouton :[/b]
+[*]random : TODO
 
 
 
@@ -190,6 +211,8 @@ https://generateurs.super-h.fr/
 [b]Paramètres :[/b]
 [*]t : le texte
 [*]s (sans valeur) : met l'image en taille smiley
+[b]Bouton :[/b]
+[*]random : TODO
 
 
 
@@ -209,7 +232,7 @@ https://generateurs.super-h.fr/
 [*]center (sans valeur) : rajoute un smiley au centre
 [*]v : la vitesse (de 1 à 10)
 [b]Bouton :[/b]
-[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+[*]random : choisit un smiley au hasard et remet les autres paramètres par défaut
 
 
 
@@ -237,6 +260,7 @@ https://generateurs.super-h.fr/
 
 
 [b]Changelog :[/b]
+[*]//2026 : ajout de boutons random sur les générateurs qui n'en avaient pas TODO
 [*]06/01/2025 : passage à php 8.3 pour smiley, avatar et générateurs, support complet du avif pour smiley et avatar
 [*]10/08/2024 : correction du code de gestion des erreurs mysql des aq pour le passage à php 8.1
 [*]16/06/2024 : correction des entêtes de récupération des images pour Avatar Helper et Smiley Helper pour éviter que imgur (ou autre) ne serve une page web plutôt qu'une image
