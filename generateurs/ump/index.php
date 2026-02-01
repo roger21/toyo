@@ -5,8 +5,21 @@ require_once "../_include/errors.php";
 //trigger_error(__DIR__."/index.php ".var_export($_REQUEST, true));
 
 // paramètres
-$text=isset($_GET["t"]) ? $_GET["t"] : "";
-$smiley=isset($_GET["s"]);
+$text=isset($_GET["t"]) ? $_GET["t"] : ""; // texte
+$taille=(isset($_GET["taille"]) && (int)$_GET["taille"] >= 0 &&
+         (int)$_GET["taille"] <= 3) ? (int)$_GET["taille"] : 3; // taille
+$smiley=isset($_GET["s"]); // smiley
+
+// taille de la police
+$taille=[18, 14, 11, 9][$taille];
+
+$w=144;
+$halfw=72;
+$thw=140;
+$h=75;
+$dx=2;
+$dy=63;
+$sw=70;
 
 // images
 $im=imagecreatefrompng("./ump.png");
@@ -19,16 +32,9 @@ if($test === false){
   trigger_error(__DIR__."/index.php died on imagecreatetruecolor test");
   die();
 }
-
-// couleurs
-$blanc=imagecolorallocate($im, 250, 250, 250);
-if($blanc === false){
-  trigger_error(__DIR__."/index.php died on imagecolorallocate blanc");
-  die();
-}
-$noir=imagecolorallocate($im, 56, 0, 5);
-if($noir === false){
-  trigger_error(__DIR__."/index.php died on imagecolorallocate noir");
+$color=imagecolorallocate($test, 250, 250, 250);
+if($color === false){
+  trigger_error(__DIR__."/index.php died on imagecolorallocate test color");
   die();
 }
 
@@ -39,25 +45,73 @@ if($text === false){
   die();
 }
 
-// texte
-foreach([18, 14, 11] as $t){
-  $pos=imagefttext($test, $t, 0, 0, 0, $blanc, "./arialb.ttf", $text);
-  if($pos === false){
-    trigger_error(__DIR__."/index.php died on imagefttext test texte $t");
+// taille du texte
+$pos=imagefttext($test, $taille, 0, 0, 0, $color, "./arialb.ttf", $text);
+if($pos === false){
+  trigger_error(__DIR__."/index.php died on imagefttext test texte $taille");
+  die();
+}
+if($pos[4] <= $thw){
+  $dx=$dx + floor(($thw - $pos[4]) / 2);
+}
+
+// new image
+if($pos[4] > $thw){
+  $newhalfw=ceil($pos[4] / 2);
+  $neww=($newhalfw * 2) + 4;
+  $newim=imagecreatetruecolor($neww, $h);
+  if($newim === false){
+    trigger_error(__DIR__."/index.php died on imagecreatetruecolor newim");
     die();
   }
-  if($pos[4] <= 140){
-    $x=2 + floor((140 - $pos[4]) / 2);
-    break;
+  $blue=imagecolorallocate($newim, 35, 62, 153);
+  if($blue === false){
+    trigger_error(__DIR__."/index.php died on imagecolorallocate newim blue");
+    die();
   }
-  $x=2;
+  $rouge=imagecolorallocate($newim, 173, 30, 55);
+  if($rouge === false){
+    trigger_error(__DIR__."/index.php died on imagecolorallocate newim rouge");
+    die();
+  }
+  $r=imagefilledrectangle($newim, 0, 0, $neww - 1, $h - 1, $blue);
+  if($r === false){
+    trigger_error(__DIR__."/index.php died on imagefilledrectangle newim bleu");
+    die();
+  }
+  $r=imagefilledrectangle($newim, $newhalfw, 0, $neww - 1, $h - 1, $rouge);
+  if($r === false){
+    trigger_error(__DIR__."/index.php died on imagefilledrectangle newim rouge");
+    die();
+  }
+  $r=imagecopyresized($newim, $im, $newhalfw - $halfw, 0, 0, 0, $w, $h, $w, $h);
+  if($r === false){
+    trigger_error(__DIR__."/index.php died on imagecopyresized im");
+    die();
+  }
+  $im=$newim;
+  $w=$neww;
 }
-$r=imagefttext($im, $t, 0, $x + 2, 65, $noir, "./arialb.ttf", $text);
+
+// couleurs
+$blanc=imagecolorallocate($im, 250, 250, 250);
+if($blanc === false){
+  trigger_error(__DIR__."/index.php died on imagecolorallocate blanc im");
+  die();
+}
+$noir=imagecolorallocate($im, 56, 0, 5);
+if($noir === false){
+  trigger_error(__DIR__."/index.php died on imagecolorallocate noir im");
+  die();
+}
+
+// texte
+$r=imagefttext($im, $taille, 0, $dx + 2, $dy + 2, $noir, "./arialb.ttf", $text);
 if($r === false){
   trigger_error(__DIR__."/index.php died on imagefttext texte noir");
   die();
 }
-$r=imagefttext($im, $t, 0, $x, 63, $blanc, "./arialb.ttf", $text);
+$r=imagefttext($im, $taille, 0, $dx, $dy, $blanc, "./arialb.ttf", $text);
 if($r === false){
   trigger_error(__DIR__."/index.php died on imagefttext texte blanc");
   die();
@@ -67,13 +121,13 @@ if($r === false){
 header("Content-type: image/png");
 
 if($smiley){
-
-  $s=imagecreatetruecolor(70, 36);
+  $sh=floor($h * $sw / $w);
+  $s=imagecreatetruecolor($sw, $sh);
   if($s === false){
     trigger_error(__DIR__."/index.php died on imagecreatetruecolor s");
     die();
   }
-  $r=imagecopyresampled($s, $im, 0, 0, 0, 0, 70, 36, 143, 75);
+  $r=imagecopyresampled($s, $im, 0, 0, 0, 0, $sw, $sh, $w, $h);
   if($r === false){
     trigger_error(__DIR__."/index.php died on imagecopyresampled s");
     die();
