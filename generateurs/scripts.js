@@ -60,6 +60,8 @@ let bases = {
   ":whistle:": "smilies/whistle.gif"
 };
 
+let static_modo_random = 0;
+
 let timerGen = null;
 let genTime = 250;
 let genLast = 0;
@@ -172,7 +174,6 @@ function getRandom(generateur, type) {
     throw new Error("ERROR getRandom type unknown " + type);
   }
   if(random[type]) {
-    //console.log("getRandom", generateur.id, type, "ok");
     return Promise.resolve(random[type]);
   }
   let source = "./_random/" + type + ".txt";
@@ -189,7 +190,6 @@ function getRandom(generateur, type) {
   }).then(function(r) {
     return r.text();
   }).then(function(r) {
-    //console.log("getRandom", generateur.id, type, "fetch");
     random[type] = r.split("\n");
     if(type === "smileys") {
       random[type] = random[type].concat(Object.keys(bases));
@@ -1271,8 +1271,12 @@ let generateurs = {
         $(generateur.id + "_random").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur, function(generateur) {
             getRandom(generateur, "modals").then(function(modals) {
-              let i = Math.floor(Math.random() * modals.length);
-              let modal = modals[i];
+              //let i = Math.floor(Math.random() * modals.length);
+              //let modal = modals[i];
+
+              console.log("modo", static_modo_random);
+              let modal = modals[static_modo_random++];
+
               let index = modal.indexOf(";");
               let text = index === -1 ? modal : modal.substring(0, index);
               let smiley = index === -1 ? "" : modal.substring(index + 1).trim();
