@@ -1624,11 +1624,34 @@ let generateurs = {
         $(generateur.id + "_p").addEventListener("keyup", function() {
           generateurs.generateImgTimer(generateur);
         }, false);
+        $(generateur.id + "_t").addEventListener("paste", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_t").addEventListener("keyup", function() {
+          generateurs.generateImgTimer(generateur);
+        }, false);
         $(generateur.id + "_c").addEventListener("paste", function() {
           generateurs.generateImgTimer(generateur);
         }, false);
         $(generateur.id + "_c").addEventListener("keyup", function() {
           generateurs.generateImgTimer(generateur);
+        }, false);
+        $(generateur.id + "_random").addEventListener("click", function() {
+          generateurs.generateImgTimer(generateur, function(generateur) {
+            getRandom(generateur, "pseudals").then(function(pseudals) {
+              let i = Math.floor(Math.random() * pseudals.length);
+              let pseudal = pseudals[i];
+              let index = pseudal.indexOf(";");
+              let p = pseudal.substring(0, index);
+              let t = pseudal.substring(index + 1).trim();
+              $(generateur.id + "_p").value = p; // pseudal
+              $(generateur.id + "_t").value = p; // pseudal (titre)
+              $(generateur.id + "_c").value = t; // quote (texte)
+              generateurs.generateImg(generateur);
+            }).catch(function(e) {
+              console.log("ERROR random", generateur.id, e);
+            });
+          });
         }, false);
       },
     },

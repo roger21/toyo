@@ -29,6 +29,7 @@
 - existant et ayant un avatar, une « citation personnelle associée au pseudo » et au moins 10 000 posts au lundi 13 juillet 2020
 - n'ayant **PAS** posté depuis plus d'un an au 11 décembre 2025 (en gros)
 - et dont la « citation personnelle associée au pseudo » ne contient pas de caractère non géré par la police d'écriture du générateur
+- ou éventuellement avec la « citation personnelle associée au pseudo » nétoyée de ces caractères non gérés
 ```sql
 WITH old AS (
   SELECT
@@ -41,7 +42,7 @@ WITH old AS (
     AND nbposts > 10000
 )
 SELECT
-  pseudal || ';' || btrim(quote, U&'\000A\000B\000C\000D\0009\0020\0085\2028\2029')
+  pseudal || ';' || btrim(quote, U&'\000A\000B\000C\000D\0009\0020\0085\2028\2029') p
 FROM
   new.p NATURAL JOIN old
 WHERE
@@ -49,6 +50,7 @@ WHERE
   AND btrim(quote, U&'\000A\000B\000C\000D\0009\0020\0085\2028\2029') != ''
   AND nbposts > 10000
   AND date - lastpostdate > interval '1 year'
+ORDER BY p
 ```
 
 ### _[quotes.txt](quotes.txt)_ contient les signatures des profils au jeudi 11 décembre 2025 :
@@ -60,12 +62,13 @@ WHERE
 - en excluant les signatures descriptives (en gros) et les dialogues (en gros aussi)
 ```sql
 SELECT
-  btrim(signature, U&'\000A\000B\000C\000D\0009\0020\0085\2028\2029')
+  btrim(signature, U&'\000A\000B\000C\000D\0009\0020\0085\2028\2029') q
 FROM
-  p
+  new.p
 WHERE
   btrim(signature, U&'\000A\000B\000C\000D\0009\0020\0085\2028\2029') != ''
   AND date - lastpostdate < interval '1 year'
+ORDER BY q
 ```
 
 ### _[words.txt](words.txt)_ est constitué de :
