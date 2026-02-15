@@ -60,7 +60,7 @@ let bases = {
   ":whistle:": "smilies/whistle.gif"
 };
 
-let static_modo_random = 600;
+let static_modo_random = 786;
 
 let timerGen = null;
 let genTime = 250;
