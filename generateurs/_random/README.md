@@ -26,5 +26,5 @@
 | UMP | [ump.txt](ump.txt) |  |  |
 | BFMTV | [bfmtv1.txt](bfmtv1.txt) + [bfmtv2.txt](bfmtv2.txt) |  |  |
 | Démotivator | [pseudals.txt](pseudals.txt) |  |  |
-| Giuseppe | ??? |  |  |
+| Giuseppe | [trump.txt](trump.txt) |  |  |
 | Spin | `smileys` |  |  |

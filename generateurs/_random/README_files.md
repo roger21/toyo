@@ -1,9 +1,10 @@
 ### _[bfmtv1.txt](bfmtv1.txt)_ et _[bfmtv2.txt](bfmtv2.txt)_ sont des assemblages sélectifs :
-- de listes de titres et d'éléments de titres générés par ChatGPT
+- de listes de titres et d'éléments de titres à la BFMTV
+- générés par ChatGPT
 
-### _[brands.txt](brands.txt)_ est un assemblage très sélectif :
-- de listes de marques générées par ChatGPT
+### _[brands.txt](brands.txt)_ est un assemblage très sélectif de listes de marques :
 - principalement autour de l’électronique, l’électroménager, l'automobile, l'alimentation, la restauration rapide et la grande distribution
+- générées par ChatGPT
 
 ### _[feels.txt](feels.txt)_ est un assemblage sélectif de différentes sources :
 - <http://expertise.uriopss-npdc.asso.fr/resources/npca/pdfs/2018/6_Juin//Liste_des_sentiments_FAURE.pdf>
@@ -70,6 +71,13 @@ WHERE
   AND date - lastpostdate < interval '1 year'
 ORDER BY q
 ```
+
+### _[trump.txt](trump.txt)_ contient des citations et des tweets de trump :
+- générés par ChatGPT
+
+### _[ump.txt](ump.txt)_ contient des phrases typiques ou caricaturales :
+- de réactionnaires, conservateurs ou libéraux
+- générées par ChatGPT
 
 ### _[words.txt](words.txt)_ est constitué de :
 - les mots `:N` du fichier `French.lex` de Grammalecte : <http://grammalecte.net:8080/file?name=lexicons/French.lex&ci=tip>

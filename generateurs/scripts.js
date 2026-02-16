@@ -163,6 +163,7 @@ let types = [
   "pseudals",
   "quotes",
   "smileys",
+  "trump",
   "ump",
   "words",
 ];
@@ -1624,12 +1625,7 @@ let generateurs = {
         $(generateur.id + "_p").addEventListener("keyup", function() {
           generateurs.generateImgTimer(generateur);
         }, false);
-        $(generateur.id + "_t").addEventListener("paste", function() {
-          generateurs.generateImgTimer(generateur);
-        }, false);
-        $(generateur.id + "_t").addEventListener("keyup", function() {
-          generateurs.generateImgTimer(generateur);
-        }, false);
+        // _t is handeled by defaultAddHandler
         $(generateur.id + "_c").addEventListener("paste", function() {
           generateurs.generateImgTimer(generateur);
         }, false);
@@ -1664,6 +1660,23 @@ let generateurs = {
 
       timerImg: null,
       lastCall: null,
+
+      addHandler: function(generateur) {
+        generateurs.defaultAddHandler(generateur);
+        $(generateur.id + "_random").addEventListener("click", function() {
+          generateurs.generateImgTimer(generateur, function(generateur) {
+            getRandom(generateur, "trump").then(function(trump) {
+              let i = Math.floor(Math.random() * trump.length);
+              $(generateur.id + "_t").value = trump[i]
+                .replaceAll(/([^\\]{15,35}?) /g, "$1\n");
+              $(generateur.id + "_s").checked = false; // default
+              generateurs.generateImg(generateur);
+            }).catch(function(e) {
+              console.log("ERROR random", generateur.id, e);
+            });
+          });
+        }, false);
+      },
     },
 
     spin: {
