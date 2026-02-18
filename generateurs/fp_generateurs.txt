@@ -59,7 +59,7 @@ https://generateurs.super-h.fr/
 [*]v (sans valeur) : découpe les smileys verticalement
 [b]Boutons :[/b]
 [*]switch : inverse les deux smileys
-[*]random : choisit deux smileys au hazard et remet les autres paramètres par défaut
+[*]random : choisit deux smileys au hasard et remet les autres paramètres par défaut
 
 
 
@@ -76,7 +76,7 @@ https://generateurs.super-h.fr/
 [*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
 [*]a : l'angle en degrés (45, 90, 135, 180, 225, 270 ou 315)
 [b]Bouton :[/b]
-[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+[*]random : choisit un smiley au hasard et remet les autres paramètres par défaut
 
 
 
@@ -85,7 +85,7 @@ https://generateurs.super-h.fr/
 [*]n : le numérateur (de 0 à 99)
 [*]d : le dénominateur (de 0 à 99)
 [b]Bouton :[/b]
-[*]random : choisit une note au hazard (le numérateur sera inférieur ou égal au dénominateur)
+[*]random : choisit une note au hasard (le numérateur sera inférieur ou égal au dénominateur)
 
 
 
@@ -98,7 +98,7 @@ https://generateurs.super-h.fr/
 [*]dx : le décalage horizontal en pixels que prend le smiley à chaque frame (de -100 à 100), s'ajoute au mode
 [*]v : la vitesse (de 1 à 10)
 [b]Bouton :[/b]
-[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+[*]random : choisit un smiley au hasard et remet les autres paramètres par défaut
 
 
 
@@ -111,7 +111,7 @@ https://generateurs.super-h.fr/
 [*]v : la vitesse (de 1 à 10)
 [*]rofl (sans valeur) : fait "rofler" le smiley en même temps :D
 [b]Bouton :[/b]
-[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+[*]random : choisit un smiley au hasard et remet les autres paramètres par défaut
 
 
 
@@ -121,7 +121,7 @@ https://generateurs.super-h.fr/
 [*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
 [*]left, right, top ou bottom (sans valeur) : la partie du smiley à refléter (gauche, droite, haute ou basse)
 [b]Bouton :[/b]
-[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+[*]random : choisit un smiley au hasard et remet les autres paramètres par défaut
 
 
 
@@ -131,7 +131,7 @@ https://generateurs.super-h.fr/
 [*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
 [*]l : la limite de découpage en partant du bas (de 0 à 129, 0 = auto, la moitié du smiley)
 [b]Bouton :[/b]
-[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+[*]random : choisit un smiley au hasard et remet les autres paramètres par défaut
 
 
 
@@ -159,13 +159,14 @@ https://generateurs.super-h.fr/
 [*]frames : le nombre de frames avant que la sequence d'étoiles ne reboucle (de 1 à 100)
 [*]v : la vitesse (de 1 à 10)
 [b]Bouton :[/b]
-[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+[*]random : choisit un smiley au hasard et remet les autres paramètres par défaut
 
 
 
 [b]UMP[/b] [img]https://reho.st/https://generateurs.super-h.fr/ump/?t=Travail%20Forc%C3%A9[/img]
 [b]Paramètres :[/b]
 [*]t : le texte sous le logo
+[*]taille : la taille de la police (de 1 à 4)
 [*]s (sans valeur) : met l'image en taille smiley
 
 
@@ -209,7 +210,7 @@ https://generateurs.super-h.fr/
 [*]center (sans valeur) : rajoute un smiley au centre
 [*]v : la vitesse (de 1 à 10)
 [b]Bouton :[/b]
-[*]random : choisit un smiley au hazard et remet les autres paramètres par défaut
+[*]random : choisit un smiley au hasard et remet les autres paramètres par défaut
 
 
 
@@ -237,6 +238,7 @@ https://generateurs.super-h.fr/
 
 
 [b]Changelog :[/b]
+[*]18/02/2026 : petites corrections (php/css, javascript et fp), normalisation (NFKC) de tous les textes, désaccentuation de la lettre pour nazi (non gérés par la police), désaturation et optimisation de l'image pour seagal (couleurs parasites), passage en image de largeur variable pour ump et ajout d'un champ de sélection de la taille de la police pour ump
 [*]06/01/2025 : passage à php 8.3 pour smiley, avatar et générateurs, support complet du avif pour smiley et avatar
 [*]10/08/2024 : correction du code de gestion des erreurs mysql des aq pour le passage à php 8.1
 [*]16/06/2024 : correction des entêtes de récupération des images pour Avatar Helper et Smiley Helper pour éviter que imgur (ou autre) ne serve une page web plutôt qu'une image

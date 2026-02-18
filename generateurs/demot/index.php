@@ -35,13 +35,6 @@ if($pseudal !== ""){
   $wa=imagesx($avatar); // largeur de l'avatar
   $ha=imagesy($avatar); // hauteur de l'avatar
 
-  // normalise
-  $texte=normalizer_normalize($texte, Normalizer::NFKC);
-  if($texte === false){
-    trigger_error(__DIR__."/index.php died on normalizer_normalize $texte");
-    die();
-  }
-
   // dimensions
   $policetitre="./times.ttf";
   $tailletitre=20;
@@ -63,6 +56,19 @@ if($pseudal !== ""){
     trigger_error(__DIR__."/index.php died on imagecolorallocate test blanc");
     die();
   }
+
+  // normalise
+  $titre=normalizer_normalize($titre, Normalizer::NFKC);
+  if($titre === false){
+    trigger_error(__DIR__."/index.php died on normalizer_normalize titre $titre");
+    die();
+  }
+  $texte=normalizer_normalize($texte, Normalizer::NFKC);
+  if($texte === false){
+    trigger_error(__DIR__."/index.php died on normalizer_normalize texte $texte");
+    die();
+  }
+
   // titre
   if($titre !== ""){
     $pos=imagefttext($test, $tailletitre, 0, 0, 0, $blanc, $policetitre, $titre);
@@ -72,6 +78,7 @@ if($pseudal !== ""){
     }
     $wt=$pos[4] - $pos[0];
   }
+
   // texte
   if($texte !== ""){
     $lines=preg_split("/\r?\n/", $texte);
@@ -112,6 +119,7 @@ if($pseudal !== ""){
     trigger_error(__DIR__."/index.php died on imagerectangle im blanc");
     die();
   }
+
   // fond blanc derière l'avatar ... meh
   /*
     $r=imagefilledrectangle($im, $xa, $ya, $xa + $wa - 1, $ya + $ha - 1, $blanc);
@@ -120,6 +128,7 @@ if($pseudal !== ""){
     die();
     }
   */
+
   // avatar
   $r=imagecopy($im, $avatar, $xa, $ya, 0, 0, $wa, $ha);
   if($r === false){

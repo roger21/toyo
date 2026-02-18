@@ -1,6 +1,7 @@
 <?php
 
 require_once "../_include/errors.php";
+require_once "../_include/wp_normalize.php";
 
 //trigger_error(__DIR__."/index.php ".var_export($_REQUEST, true));
 
@@ -65,15 +66,23 @@ if($r === false){
   die();
 }
 
+// normalise
+$text=normalizer_normalize($text, Normalizer::NFKC);
+if($text === false){
+  trigger_error(__DIR__."/index.php died on normalizer_normalize $text");
+  die();
+}
+
 // lettre
-$pos=imagefttext($test, $l, $a, 0, 0, $noir, "./imagine.ttf", substr($text, 0, 1));
+$lettre=substr(remove_accents($text), 0, 1);
+$pos=imagefttext($test, $l, $a, 0, 0, $noir, "./imagine.ttf", $lettre);
 if($pos === false){
   trigger_error(__DIR__."/index.php died on imagefttext test lettre");
   die();
 }
 $x=floor(($w - $pos[4]) / 2) + $cx;
 $y=floor(($c - $pos[5]) / 2) + $cy;
-$r=imagefttext($im, $l, $a, $x, $y, $noir, "./imagine.ttf", substr($text, 0, 1));
+$r=imagefttext($im, $l, $a, $x, $y, $noir, "./imagine.ttf", $lettre);
 if($r === false){
   trigger_error(__DIR__."/index.php died on imagefttext lettre");
   die();

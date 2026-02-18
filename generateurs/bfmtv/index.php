@@ -40,6 +40,18 @@ if($noir === false){
   die();
 }
 
+// normalise
+$text1=normalizer_normalize($text1, Normalizer::NFKC);
+if($text1 === false){
+  trigger_error(__DIR__."/index.php died on normalizer_normalize text1 $text1");
+  die();
+}
+$text2=normalizer_normalize($text2, Normalizer::NFKC);
+if($text2 === false){
+  trigger_error(__DIR__."/index.php died on normalizer_normalize text2 $text2");
+  die();
+}
+
 // taille
 $pos1=imagefttext($test, $t, 0, 0, 0, $noir, "./unvr57x.ttf", $text1);
 if($pos1 === false){
