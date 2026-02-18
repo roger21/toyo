@@ -16,6 +16,7 @@
 - (je voulais faire le tour de tous les topics dans les stats mais c'est trop chiant)
 - globalement (mais pas entièrement) décontextualisés (thèmes et pseudals impliqués principalement)
 - modifiés pour s'adapter à la forme du générateur
+- en remplaçant certains smileys animés par des équivalents statiques
 - légèrement corrigés (syntaxe, grammaire, ponctuation, typo, ...)
 
 ### _[names.txt](names.txt)_ est un assemblage sélectif de différentes sources :
@@ -31,7 +32,7 @@
 - existant et ayant un avatar, une « citation personnelle associée au pseudo » et au moins 10 000 posts au lundi 13 juillet 2020
 - n'ayant **PAS** posté depuis plus d'un an au 11 décembre 2025 (en gros)
 - et dont la « citation personnelle associée au pseudo » ne contient pas de caractère non géré par la police d'écriture du générateur
-- ou éventuellement avec la « citation personnelle associée au pseudo » nétoyée de ces caractères non gérés
+- ou éventuellement avec la « citation personnelle associée au pseudo » nettoyée de ces caractères non gérés
 ```sql
 WITH old AS (
   SELECT
