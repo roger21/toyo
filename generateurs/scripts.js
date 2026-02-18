@@ -1515,6 +1515,7 @@ let generateurs = {
       },
 
       addHandler: function(generateur) {
+        generateurs.defaultAddHandler(generateur);
         $(generateur.id + "_taille").addEventListener("change", function() {
           generateurs.generateImgTimer(generateur);
         }, false);
@@ -1524,7 +1525,6 @@ let generateurs = {
         $(generateur.id + "_ltaille").addEventListener("wheel", function(event) {
           wheelEvent(event, "select", $(generateur.id + "_taille"), generateur);
         }, false);
-        generateurs.defaultAddHandler(generateur);
         $(generateur.id + "_random").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur, function(generateur) {
             getRandom(generateur, "ump").then(function(ump) {
