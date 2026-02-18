@@ -60,8 +60,6 @@ let bases = {
   ":whistle:": "smilies/whistle.gif"
 };
 
-let static_modo_random = 786;
-
 let timerGen = null;
 let genTime = 250;
 let genLast = 0;
@@ -1272,12 +1270,8 @@ let generateurs = {
         $(generateur.id + "_random").addEventListener("click", function() {
           generateurs.generateImgTimer(generateur, function(generateur) {
             getRandom(generateur, "modals").then(function(modals) {
-              //let i = Math.floor(Math.random() * modals.length);
-              //let modal = modals[i];
-
-              console.log("modo", static_modo_random);
-              let modal = modals[static_modo_random++];
-
+              let i = Math.floor(Math.random() * modals.length);
+              let modal = modals[i];
               let index = modal.indexOf(";");
               let text = index === -1 ? modal : modal.substring(0, index);
               let smiley = index === -1 ? "" : modal.substring(index + 1).trim();
