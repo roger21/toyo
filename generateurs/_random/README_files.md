@@ -12,7 +12,8 @@
 - <https://apprendreaeduquer.fr/tableau-des-nuances-des-emotions-un-outil-pour-developper-le-vocabulaire-des-enfants-autour-des-emotions/>
 
 ### _[modals.txt](modals.txt)_ est un assemblage sélectif :
-- de posts roses issus des topics :  bli, cha, cim, cov, cul, dem, eur, exg, foo, for, gif, gil, gsn, hdl, img, inf, ins, jop, lfi, lib, lrm, lux, med, met, moy, nat, noe, pho, que, rep, scr, soc, sor, sub, ter, ukr, upr, usp, vrt et zem (voir <https://roger21.github.io/stats/>)
+- de posts roses issus des topics :  cha, cim, cov, med, sor et zem (voir <https://roger21.github.io/stats/>)
+- (je voulais faire le tour de tous les topics dans les stats mais c'est trop chiant)
 - globalement (mais pas entièrement) décontextualisés (thèmes et pseudals impliqués principalement)
 - modifiés pour s'adapter à la forme du générateur
 - légèrement corrigés (syntaxe, grammaire, ponctuation, typo, ...)
