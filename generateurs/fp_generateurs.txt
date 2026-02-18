@@ -13,7 +13,7 @@ https://generateurs.super-h.fr/
 [*]t : le texte de l'alerte
 [*]s (sans valeur) : met l'image en taille smiley
 [b]Bouton :[/b]
-[*]random : choisit un mot au hasard et remet l'autre paramètre par défaut
+[*]random : choisit un nom au hasard et remet l'autre paramètre par défaut
 
 
 
@@ -21,7 +21,7 @@ https://generateurs.super-h.fr/
 [b]Paramètres :[/b]
 [*]t : le texte avant le "nazi"
 [b]Bouton :[/b]
-[*]random : choisit un mot au hasard
+[*]random : choisit un nom au hasard
 
 
 
@@ -56,7 +56,7 @@ https://generateurs.super-h.fr/
 [*]s (facultatif) : le code du smiley, annule l'effet du paramètre delta
 [*]r (facultatif) : le rang du smiley si nécessaire (de 0 à 10)
 [b]Bouton :[/b]
-[*]random : choisit une citation au hasard, la police Carter One et la taille 3 et remet les autres paramètres par défaut
+[*]random : choisit une citation (issue des signatures des forumeurs) au hasard, un smiley au hasard, la police Carter One et la taille 3 et remet les autres paramètres par défaut
 
 
 
@@ -183,7 +183,7 @@ https://generateurs.super-h.fr/
 [*]taille : la taille de la police (de 1 à 4)
 [*]s (sans valeur) : met l'image en taille smiley
 [b]Bouton :[/b]
-[*]random : choisit un texte au hasard et remet les autres paramètres par défaut
+[*]random : choisit une phrase de droite au hasard et remet les autres paramètres par défaut
 
 
 
@@ -193,7 +193,7 @@ https://generateurs.super-h.fr/
 [*]t2 : le texte de la deuxième ligne
 [*]s (sans valeur) : met l'image en taille smiley
 [b]Bouton :[/b]
-[*]random : choisit un titre au hasard et remet l'autre paramètre par défaut
+[*]random : choisit deux éléments de titre à la BFMTV au hasard et remet l'autre paramètre par défaut
 
 
 
@@ -203,7 +203,7 @@ https://generateurs.super-h.fr/
 [*]t : le titre
 [*]c (facultatif) : le texte
 [b]Bouton :[/b]
-[*]random : TODO
+[*]random : choisit un pseudo et sa « citation personnelle associée au pseudo » au hasard parmis les forumeurs n'ayant pas posté depuis plus d'un an
 
 
 
@@ -212,7 +212,7 @@ https://generateurs.super-h.fr/
 [*]t : le texte
 [*]s (sans valeur) : met l'image en taille smiley
 [b]Bouton :[/b]
-[*]random : TODO
+[*]random : choisit une citation ou un tweet de trump au hasard et remet l'autre paramètre par défaut
 
 
 
