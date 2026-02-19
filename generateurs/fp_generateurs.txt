@@ -260,7 +260,7 @@ https://generateurs.super-h.fr/
 
 
 [b]Changelog :[/b]
-[*]19/02/2026 : ajout d'un bouton random sur les générateurs qui n'en avaient pas (branche random sur github)
+[*]19/02/2026 : ajout d'un bouton random sur les générateurs qui n'en avaient pas (branche [url=https://github.com/roger21/toyo/tree/random]random[/url] sur github)
 [*]18/02/2026 : petites corrections (php/css, javascript et fp), normalisation (NFKC) de tous les textes, désaccentuation de la lettre pour nazi (non gérés par la police), désaturation et optimisation de l'image pour seagal (couleurs parasites), passage en image de largeur variable pour ump et ajout d'un champ de sélection de la taille de la police pour ump
 [*]06/01/2025 : passage à php 8.3 pour smiley, avatar et générateurs, support complet du avif pour smiley et avatar
 [*]10/08/2024 : correction du code de gestion des erreurs mysql des aq pour le passage à php 8.1
