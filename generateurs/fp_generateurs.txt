@@ -13,7 +13,7 @@ https://generateurs.super-h.fr/
 [*]t : le texte de l'alerte
 [*]s (sans valeur) : met l'image en taille smiley
 [b]Bouton :[/b]
-[*]random : choisit un nom au hasard et remet l'autre paramètre par défaut
+[*]random : choisit un substantif au hasard et remet l'autre paramètre par défaut
 
 
 
@@ -21,7 +21,7 @@ https://generateurs.super-h.fr/
 [b]Paramètres :[/b]
 [*]t : le texte avant le "nazi"
 [b]Bouton :[/b]
-[*]random : choisit un nom au hasard
+[*]random : choisit un substantif au hasard
 
 
 
