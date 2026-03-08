@@ -10710,6 +10710,8 @@ formule1_smileys_1
 forsale
 forsure
 forsure:1
+forsure:2
+forsure:3
 fortesque
 forummp3
 forwam
@@ -18816,6 +18818,9 @@ m1sh3ll:4
 m1sh3ll:5
 m1sh3ll:6
 m1sh3ll:7
+m1sh3ll:8
+m1sh3ll:9
+m1sh3ll:10
 m300a
 m300a:1
 m300a:2
