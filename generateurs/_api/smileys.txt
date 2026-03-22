@@ -6772,6 +6772,8 @@ csvop:1
 ctrl f5
 ctrl_alt_suppr
 ctro_oupa
+ctro_oupa:1
+ctro_oupa:2
 cu chulainn
 cu chulainn:1
 cubitus91
@@ -13164,6 +13166,14 @@ hfr+
 hfr+:1
 hfr+:2
 hfr-woodoo
+hfr_icons
+hfr_icons:1
+hfr_icons:2
+hfr_icons:3
+hfr_icons:4
+hfr_icons:5
+hfr_icons:6
+hfr_icons:7
 hfrbaxter
 hfrpico
 hfrspaceprogram
