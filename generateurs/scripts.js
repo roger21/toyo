@@ -57,7 +57,7 @@ let bases = {
   ":sweat:": "smilies/sweat.gif",
   ":vomi:": "smilies/vomi.gif",
   ":wahoo:": "smilies/wahoo.gif",
-  ":whistle:": "smilies/whistle.gif"
+  ":whistle:": "smilies/whistle.gif",
 };
 
 let timerGen = null;
