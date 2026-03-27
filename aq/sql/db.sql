@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le : dim. 25 jan. 2026 à 21:16
--- Version du serveur : 11.4.9-MariaDB
--- Version de PHP : 7.4.33
+-- Hôte : localhost:3306
+-- Généré le : ven. 27 mars 2026 à 11:52
+-- Version du serveur : 11.4.10-MariaDB-deb12
+-- Version de PHP : 8.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `alerte_qualitay` (
   `topic_id` int(11) NOT NULL,
   `topic_titre` varchar(512) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13628 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=13632 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Déchargement des données de la table `alerte_qualitay`
@@ -1549,7 +1549,9 @@ INSERT INTO `alerte_qualitay` (`id`, `nom`, `topic_id`, `topic_titre`) VALUES
 (13623, 'Guacamole ', 55667, 'Le topic de toutes les Questions (AVFFUO)'),
 (13624, 'CDP Leboncoin', 90962, 'Le topic des très sales coups (demande de CDP = TT)'),
 (13625, 'conseil aux peureux et emotifs ', 66515, '[POGNON] Épargne / Placements - Thune sur le compte courant'),
-(13627, 'zguegologue', 8680, 'Topic Hontes - \"La vraie honte c\'est...\" = sanction');
+(13627, 'zguegologue', 8680, 'Topic Hontes - \"La vraie honte c\'est...\" = sanction'),
+(13628, 'Soiree pizza @HFR', 28563, 'Topic pizza maison'),
+(13629, 'parfait pour le petit déj \'', 107680, 'Clients, des attitudes incompréhensibles?');
 
 -- --------------------------------------------------------
 
@@ -1571,7 +1573,7 @@ CREATE TABLE IF NOT EXISTS `rapporteur` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `alerte_qualitay_id` (`alerte_qualitay_id`,`pseudo`),
   UNIQUE KEY `pseudo` (`pseudo`,`post_url`)
-) ENGINE=InnoDB AUTO_INCREMENT=14314 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=14318 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Déchargement des données de la table `rapporteur`
@@ -3807,7 +3809,9 @@ INSERT INTO `rapporteur` (`id`, `alerte_qualitay_id`, `pseudo`, `post_id`, `post
 (14309, 13623, 'ezzz', 73467285, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=55667&page=14634&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t73467285', '2025-09-05 06:20:32', 1, 'post de moonblood', '94.239.38.152'),
 (14310, 13624, 'pascal_974', 73552970, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=90962&page=1219&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t73552970', '2025-09-20 05:44:48', 1, 'post de sinclair_w​ilde', '93.10.108.93'),
 (14311, 13625, 'silicium', 73610005, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=66515&page=12331&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t73610005', '2025-10-01 13:59:42', 1, 'post de boisse', '88.172.254.22'),
-(14313, 13627, 'ezzz', 74105885, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=434&post=8680&page=4045&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t74105885', '2026-01-18 07:37:22', 1, 'post de salsifi34', '94.239.38.152');
+(14313, 13627, 'ezzz', 74105885, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=434&post=8680&page=4045&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t74105885', '2026-01-18 07:37:22', 1, 'post de salsifi34', '94.239.38.152'),
+(14314, 13628, 'ezzz', 74216432, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=433&post=28563&page=2143&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t74216432', '2026-02-10 14:50:21', 1, 'post de eamesimpor​t', '92.184.116.113'),
+(14315, 13629, 'narm', 74314778, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=423&post=107680&page=522&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t74314778', '2026-02-27 07:20:31', 1, 'post de philibear', '82.64.174.188');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
