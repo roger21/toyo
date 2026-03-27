@@ -1,6 +1,6 @@
 #### les aq de toyo
 
-la dernière base est dans sql/db.sql (maj 25 janvier 2026)
+la dernière base est dans sql/db.sql (maj 27 mars 2026)
 
 les erreurs sont loggées dans errors/errors.log (le repertoire errors doit autoriser l'écriture pour le serveur web)
 
