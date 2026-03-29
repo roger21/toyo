@@ -6774,6 +6774,8 @@ ctrl_alt_suppr
 ctro_oupa
 ctro_oupa:1
 ctro_oupa:2
+ctro_oupa:3
+ctro_oupa:4
 cu chulainn
 cu chulainn:1
 cubitus91
@@ -30194,6 +30196,7 @@ tartragnan:4
 tartragnan:5
 tartragnan:6
 tartragnan:7
+tartragnan:8
 tarzan-la-banane
 tarzan-la-banane:1
 tarzan-la-banane:2
