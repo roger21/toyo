@@ -181,9 +181,14 @@ if($sharpen){
   }
 }
 
+function timestamp_tag(){
+  $timestamp_tag=explode(" ", microtime());
+  return $timestamp_tag[1].substr($timestamp_tag[0], 2);
+}
+
 switch($type){
 case "png":
-  $fileName.=".avatar.png";
+  $fileName.=".".timestamp_tag().".avatar.png";
   $result=imagepng($newImg, $fileName, 9);
   if($result === false){
     trigger_error("generateAvatar.php died on imagepng");
@@ -191,7 +196,7 @@ case "png":
   }
   break;
 case "jpg":
-  $fileName.=".avatar.jpg";
+  $fileName.=".".timestamp_tag().".avatar.jpg";
   $result=imagejpeg($newImg, $fileName, 92);
   if($result === false){
     trigger_error("generateAvatar.php died on imagejpeg");
