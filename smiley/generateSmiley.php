@@ -181,9 +181,14 @@ if($sharpen){
   }
 }
 
+function timestamp_tag(){
+  $timestamp_tag=explode(" ", microtime());
+  return $timestamp_tag[1].substr($timestamp_tag[0], 2);
+}
+
 switch($type){
 case "png":
-  $fileName.=".smiley.png";
+  $fileName.=".".timestamp_tag().".smiley.png";
   $result=imagepng($newImg, $fileName, 9);
   if($result === false){
     trigger_error("generateSmiley.php died on imagepng");
@@ -191,7 +196,7 @@ case "png":
   }
   break;
 case "jpg":
-  $fileName.=".smiley.jpg";
+  $fileName.=".".timestamp_tag().".smiley.jpg";
   $result=imagejpeg($newImg, $fileName, 92);
   if($result === false){
     trigger_error("generateSmiley.php died on imagejpeg");
