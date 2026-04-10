@@ -238,6 +238,7 @@ https://generateurs.super-h.fr/
 
 
 [b]Changelog :[/b]
+[*]10-11/04/2026 : nouvelle gestion de la création des images pour smiley et avatar pour ne pas être gêné par le cache proxy de nginx
 [*]26-30/03/2026 : migration des services de ToYonos sur une nouvelle infrastructure par LibreArbit​re (pas de changement de version des php)
 [*]18/02/2026 : petites corrections (php/css, javascript et fp), normalisation (NFKC) de tous les textes, désaccentuation de la lettre pour nazi (non gérés par la police), désaturation et optimisation de l'image pour seagal (couleurs parasites), passage en image de largeur variable pour ump et ajout d'un champ de sélection de la taille de la police pour ump
 [*]06/01/2025 : passage à php 8.3 pour smiley, avatar et générateurs, support complet du avif pour smiley et avatar
