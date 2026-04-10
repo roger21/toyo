@@ -13,6 +13,7 @@ ini_set("log_errors_max_len", "0");
 
 // Nettoyage des vieilles images de plus d'une heure
 $dir="./temp/";
+$cleaner_cpt=0;
 if($dh=opendir($dir))
 {
   while(($file=readdir($dh)) !== false)
@@ -23,11 +24,15 @@ if($dh=opendir($dir))
       if((date("U") - date("U", filemtime($filepath))) > 3600){
         //trigger_error("nettoyage ".$filepath);
         @unlink($filepath);
+        ++$cleaner_cpt;
       }
     }
   }
 }
 closedir($dh);
+if($cleaner_cpt){
+  trigger_error("index.php nettoyage ".$cleaner_cpt);
+}
 
 ?><!DOCTYPE html>
 <html lang="fr">
