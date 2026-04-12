@@ -8,7 +8,7 @@ on:
     - cron:  '43 7 * * 0' # UTC
 
 env:
-  THIS_IS_A_TEST_STH: 'FALSE'
+  THIS_IS_A_TEST_STH: 'TRUE'
   HFR_COOKIES: ${{ secrets.HFR_COOKIES }}
   HFR_COOKIES_TEST: ${{ secrets.HFR_COOKIES_TEST }}
 
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: 'main'
           fetch-depth: '0'
