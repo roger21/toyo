@@ -10,9 +10,9 @@ class DaoAlerteQualitayMySql implements DaoAlerteQualitay
   public function connect()
   {
     mysqli_report(MYSQLI_REPORT_OFF);
-    $this->link = mysqli_connect("host", "user", 'passwd')
-                or die("Impossible de se connecter : " . mysqli_error($this->link));
-    mysqli_select_db($this->link, "db")
+    $this->link = mysqli_connect(AQ_DB_HOST, AQ_DB_USER, AQ_DB_PASS)
+                or die("mysqli_connect : Impossible de se connecter à la base");
+    mysqli_select_db($this->link, AQ_DB_BASE)
       or die("Impossible selectionner la base : " . mysqli_error($this->link));
     mysqli_query($this->link, "SET NAMES 'utf8'");
   }
@@ -113,12 +113,12 @@ class DaoAlerteQualitayMySql implements DaoAlerteQualitay
 
   public function getAlertesByIpDuringLastMinute($ip)
   {
-    $conditiopn = "TIMESTAMPDIFF(SECOND, r1.date, now()) < 60 and r1.ip = '".
-                mysqli_real_escape_string($this->link, $ip)."'";
-    return $this->innerGetAlertes(null, null, $conditiopn);
+    $condition = "TIMESTAMPDIFF(SECOND, r1.date, now()) < 60 and r1.ip = '".
+               mysqli_real_escape_string($this->link, $ip)."'";
+    return $this->innerGetAlertes(null, null, $condition);
   }
 
-  public function addAlerte(Alerte $alerte)
+  public function addAlerte(Alerte $alerte, $ip)
   {
     $alerteId = $alerte->getId();
     if($alerte->getId() == -1)
@@ -139,9 +139,7 @@ class DaoAlerteQualitayMySql implements DaoAlerteQualitay
         $alerteId = mysqli_insert_id($this->link);
       }
     }
-
     $rapporteurs = $alerte->getRapporteurs();
-    $rapporteurs = array_pop($rapporteurs);
     $rapporteur = array_pop($rapporteurs);
     $query = <<<"SQL"
       INSERT INTO rapporteur(alerte_qualitay_id, pseudo, post_id, post_url, date, initiateur
@@ -158,7 +156,7 @@ class DaoAlerteQualitayMySql implements DaoAlerteQualitay
     $query .= $rapporteur->getCommentaire() != null ?
            "'".mysqli_real_escape_string($this->link, $rapporteur->getCommentaire())."', " :
            "";
-    $query .= "'".mysqli_real_escape_string($this->link, $_SERVER["REMOTE_ADDR"])."')";
+    $query .= "'".mysqli_real_escape_string($this->link, $ip)."')";
     //trigger_error($query);
     $result = mysqli_query($this->link, $query);
     if($result === FALSE)
@@ -174,7 +172,6 @@ class DaoAlerteQualitayMySql implements DaoAlerteQualitay
         return CODE_FAIL_INSERT_DEFAULT;
       };
     }
-
     return CODE_SUCCESS_INSERT;
   }
 

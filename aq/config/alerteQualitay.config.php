@@ -6,6 +6,16 @@ DEFINE("MAIL_ADDRESS", "");
 
 DEFINE("MAIL_LINKS", "");
 
+DEFINE("AQ_DB_HOST", "");
+
+DEFINE("AQ_DB_USER", "");
+
+DEFINE("AQ_DB_PASS", "");
+
+DEFINE("AQ_DB_BASE", "");
+
+DEFINE("PROJECT_PUBLIC_HASH_KEY", "ToYonos#10/03/1981#Nantes#Ingénieur info (pour faire original)#Informatique, jeux vidéo, cinéma/série#18/02/2002#Ready to code");
+
 DEFINE("PARAM_RSS_ENTRIES", "entries");
 DEFINE("PARAM_RSS_ENABLE_SMILIES", "enable_smilies");
 DEFINE("PARAM_RSS_MINIMAL_VOTES", "minimal_votes");

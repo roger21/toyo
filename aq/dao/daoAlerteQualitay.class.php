@@ -11,7 +11,7 @@ interface DaoAlerteQualitay
 
   public function getAlertesByIpDuringLastMinute($ip);
 
-  public function addAlerte(Alerte $alerte);
+  public function addAlerte(Alerte $alerte, $ip);
 
   public function deleteAlerte(Alerte $alerte);
 
