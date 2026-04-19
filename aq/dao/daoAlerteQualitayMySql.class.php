@@ -131,7 +131,7 @@ class DaoAlerteQualitayMySql implements DaoAlerteQualitay
       $result = mysqli_query($this->link, $query);
       if($result === FALSE)
       {
-        trigger_error("daoAlerteQualitayMySql CODE_FAIL_INSERT_DEFAULT alerte");
+        trigger_error("daoAlerteQualitayMySql erreur insert alerte code : ".CODE_FAIL_INSERT_DEFAULT);
         return CODE_FAIL_INSERT_DEFAULT;
       }
       else
@@ -140,6 +140,7 @@ class DaoAlerteQualitayMySql implements DaoAlerteQualitay
       }
     }
     $rapporteurs = $alerte->getRapporteurs();
+    $rapporteurs = array_pop($rapporteurs);
     $rapporteur = array_pop($rapporteurs);
     $query = <<<"SQL"
       INSERT INTO rapporteur(alerte_qualitay_id, pseudo, post_id, post_url, date, initiateur
@@ -164,11 +165,11 @@ class DaoAlerteQualitayMySql implements DaoAlerteQualitay
       switch(mysqli_errno($this->link))
       {
       case 1062:
-        trigger_error("daoAlerteQualitayMySql CODE_FAIL_INSERT_DUPLICATE_ALERT");
+        trigger_error("daoAlerteQualitayMySql erreur duplicate alert code : ".CODE_FAIL_INSERT_DUPLICATE_ALERT);
         return CODE_FAIL_INSERT_DUPLICATE_ALERT;
         break;
       default :
-        trigger_error("daoAlerteQualitayMySql CODE_FAIL_INSERT_DEFAULT rapporteur");
+        trigger_error("daoAlerteQualitayMySql erreur insert rapporteur code : ".CODE_FAIL_INSERT_DEFAULT);
         return CODE_FAIL_INSERT_DEFAULT;
       };
     }
