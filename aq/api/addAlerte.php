@@ -37,7 +37,7 @@ function safe($string)
   return htmlspecialchars($string, ENT_NOQUOTES | ENT_SUBSTITUTE, "UTF-8", true);
 }
 
-$ip = $_SERVER["REMOTE_ADDR"];
+$ip = hash_hmac("sha3-256", strtolower(trim($_SERVER["REMOTE_ADDR"])), PROJECT_PUBLIC_HASH_KEY);
 $args = & $_POST;
 $alerteMandatoryParameters = array("nom", "topic_id", "topic_titre");
 $rapporteurMandatoryParameters = array("pseudo", "post_id", "post_url");
@@ -46,8 +46,8 @@ $from_mail = empty($args["from"]) ? "" : "\r\n\r\nfrom : ".safe($args["from"]);
 
 if(in_array($ip, $blackList))
 {
-  trigger_error("[AQ] Nouvelle tentative ip : ".$ip.$from);
-  mail(MAIL_ADDRESS, "[AQ] Nouvelle tentative ip",
+  trigger_error("[AQ] Nouvelle tentative blacklist ip : ".$ip.$from);
+  mail(MAIL_ADDRESS, "[AQ] Nouvelle tentative blacklist ip",
        "ip : ".safe($ip).$from_mail.MAIL_LINKS);
   header("HTTP/1.1 403 Forbidden");
   header("Content-Length: 0");
@@ -84,7 +84,7 @@ if(!empty($args["alerte_qualitay_id"]) && $args["alerte_qualitay_id"] != -1)
   $currentAlerte = $dao->getAlerte($args["alerte_qualitay_id"]);
   if(is_null($currentAlerte))
   {
-    trigger_error("[AQ] CODE_FAIL_INSERT_INVALID_ALERT ip : ".$ip.$from);
+    trigger_error("[AQ] Nouvelle tentative invalid alert id code : ".CODE_FAIL_INSERT_INVALID_ALERT." ip : ".$ip.$from);
     fail(CODE_FAIL_INSERT_INVALID_ALERT);
   }
   $newAlerte = new Alerte($currentAlerte->getId(),
@@ -98,7 +98,7 @@ else
   {
     if(empty($args[$param]))
     {
-      trigger_error("[AQ] CODE_FAIL_INSERT_MISSING_PARAMETER alerte ip : ".$ip.$from);
+      trigger_error("[AQ] Nouvelle tentative missing parameter alerte code : ".CODE_FAIL_INSERT_MISSING_PARAMETER." ip : ".$ip.$from);
       fail(CODE_FAIL_INSERT_MISSING_PARAMETER);
     }
   }
@@ -109,7 +109,7 @@ foreach($rapporteurMandatoryParameters as $param)
 {
   if(empty($args[$param]))
   {
-    trigger_error("[AQ] CODE_FAIL_INSERT_MISSING_PARAMETER rapporteur ip : ".$ip.$from);
+    trigger_error("[AQ] Nouvelle tentative missing parameter rapporteur code : ".CODE_FAIL_INSERT_MISSING_PARAMETER." ip : ".$ip.$from);
     fail(CODE_FAIL_INSERT_MISSING_PARAMETER);
   }
 }
@@ -130,7 +130,7 @@ $newRapporteur = new Rapporteur(-1,
                                 $newAlerte->getId() == -1 ? 1 : 0,
                                 isset($args["commentaire"]) ? $args["commentaire"] : null);
 $newAlerte->addRapporteur($newRapporteur);
-$code = $dao->addAlerte($newAlerte);
+$code = $dao->addAlerte($newAlerte, $ip);
 
 $dao->disconnect();
 
