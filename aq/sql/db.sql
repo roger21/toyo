@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : dim. 19 avr. 2026 à 18:56
+-- Généré le : dim. 19 avr. 2026 à 20:13
 -- Version du serveur : 11.4.10-MariaDB-deb12
 -- Version de PHP : 8.3.30
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `alerte_qualitay` (
   `topic_id` int(11) NOT NULL,
   `topic_titre` varchar(512) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13633 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=13636 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Déchargement des données de la table `alerte_qualitay`
@@ -1574,7 +1574,7 @@ CREATE TABLE IF NOT EXISTS `rapporteur` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `alerte_qualitay_id` (`alerte_qualitay_id`,`pseudo`),
   UNIQUE KEY `pseudo` (`pseudo`,`post_url`)
-) ENGINE=InnoDB AUTO_INCREMENT=14325 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=14337 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Déchargement des données de la table `rapporteur`
