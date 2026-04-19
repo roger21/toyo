@@ -238,7 +238,7 @@ https://generateurs.super-h.fr/
 
 
 [b]Changelog :[/b]
-[*]19/04/2026 : anonymisation des adresses ip (base, logs et blacklist) avec hash et clé projet publique, correction de la gestion de l'erreur de connexion à la base et petites corrections et réorganisations diverses pour aq
+[*]19/04/2026 : anonymisation des adresses ip (base, logs et blacklist) avec hash et clé projet publique, correction de la gestion de l'erreur de connexion à la base de données et petites corrections et réorganisations diverses pour aq
 [*]10-11/04/2026 : nouvelle gestion de la création des images pour smiley et avatar pour ne pas être gêné par le cache proxy de nginx
 [*]26-30/03/2026 : migration des services de ToYonos sur une nouvelle infrastructure par LibreArbit​re (pas de changement de version des php)
 [*]18/02/2026 : petites corrections (php/css, javascript et fp), normalisation (NFKC) de tous les textes, désaccentuation de la lettre pour nazi (non gérés par la police), désaturation et optimisation de l'image pour seagal (couleurs parasites), passage en image de largeur variable pour ump et ajout d'un champ de sélection de la taille de la police pour ump
