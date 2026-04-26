@@ -125,9 +125,15 @@ function get_all(){
   $exists=[];
   $smileys=[[], []];
   foreach($lettres as $lettre){
+
+    trigger_error("get_all() lettre $lettre", E_USER_NOTICE);
+
     $lettre_url=str_replace("ALPHA", $lettre, $wiki_url);
     $page_number=1;
     while($page_number === 1 || count($matches[1]) > 0){
+
+      trigger_error("get_all() lettre $lettre page $page_number", E_USER_NOTICE);
+
       $page_url=$lettre_url.$page_number++;
       $page=file_get_contents($page_url);
       preg_match_all($regexp_smiley, $page, $matches);
