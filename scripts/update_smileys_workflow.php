@@ -65,8 +65,6 @@ if($this_is_a_test_sth){
 
 get_all();
 
-trigger_error("get_all ok", E_USER_NOTICE);
-
 
 // les dates
 

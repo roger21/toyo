@@ -91,6 +91,9 @@ function post_message($message, $cookies, $cat, $topic, $post=null){
 
 
 function get_all(){
+
+  trigger_error("get_all() STARTED", E_USER_NOTICE);
+
   $wiki_url="https://forum.hardware.fr/wikismilies.php?config=hfr.inc&alpha=ALPHA&page=";
   $lettres=[
     "a",
@@ -126,18 +129,24 @@ function get_all(){
   $smileys=[[], []];
   foreach($lettres as $lettre){
 
-    trigger_error("get_all() lettre $lettre", E_USER_NOTICE);
+    trigger_error("get_all() $lettre", E_USER_NOTICE);
 
     $lettre_url=str_replace("ALPHA", $lettre, $wiki_url);
     $page_number=1;
     while($page_number === 1 || count($matches[1]) > 0){
 
-      trigger_error("get_all() lettre $lettre page $page_number", E_USER_NOTICE);
+      //trigger_error("get_all() $lettre $page_number", E_USER_NOTICE);
 
       $page_url=$lettre_url.$page_number++;
+
+      //trigger_error("get_all() $page_url", E_USER_NOTICE);
+
       $page=file_get_contents($page_url);
       preg_match_all($regexp_smiley, $page, $matches);
       foreach($matches[1] as $smiley){
+
+        //trigger_error("get_all() $lettre $page_number $smiley", E_USER_NOTICE);
+
         $smiley=html_entity_decode($smiley, ENT_QUOTES | ENT_SUBSTITUTE | ENT_XML1,
                                    "UTF-8");
         if(!in_array($smiley, $exists, true)){
@@ -157,6 +166,9 @@ function get_all(){
     $list.=$smiley.($smileys[1][$i] !== 0 ? ":".$smileys[1][$i] : "")."\n";
   }
   file_put_contents("../generateurs/_api/smileys.txt", trim($list));
+
+  trigger_error("get_all() ENDED", E_USER_NOTICE);
+
 };
 
 

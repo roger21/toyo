@@ -147,8 +147,8 @@ trigger_error("message\n$message", E_USER_NOTICE);
 
 // postage du message
 
-//$result=post_message($message, $cookies_test, $cat_test, $topic_test, $post_test);
-$result=post_message($message, $cookies, $cat, $topic);
+$result=post_message($message, $cookies_test, $cat_test, $topic_test, $post_test);
+//$result=post_message($message, $cookies, $cat, $topic);
 
 trigger_error("result\n$result", E_USER_NOTICE);
 

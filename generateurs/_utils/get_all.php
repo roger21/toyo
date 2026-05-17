@@ -3,7 +3,7 @@
 
 require_once "../_include/errors.php";
 
-trigger_error("get_all.php");
+//trigger_error("get_all.php STARTED", E_USER_NOTICE);
 
 $wiki_url="https://forum.hardware.fr/wikismilies.php?config=hfr.inc&alpha=ALPHA&page=";
 
@@ -44,15 +44,25 @@ $smileys=[[], []];
 
 foreach($lettres as $lettre){
 
+  //echo "get_all.php $lettre \n";
+
+  //trigger_error("get_all.php $lettre", E_USER_NOTICE);
+
   $lettre_url=str_replace("ALPHA", $lettre, $wiki_url);
 
   $page_number=1;
 
   while($page_number === 1 || count($matches[1]) > 0){
 
+    //echo "get_all.php $lettre $page_number \n";
+
+    //trigger_error("get_all.php $lettre $page_number", E_USER_NOTICE);
+
     $page_url=$lettre_url.$page_number++;
 
-    //echo $page_url."\n";
+    //echo "get_all.php $page_url \n";
+
+    //trigger_error("get_all.php $page_url", E_USER_NOTICE);
 
     $page=file_get_contents($page_url);
 
@@ -60,9 +70,12 @@ foreach($lettres as $lettre){
 
     foreach($matches[1] as $smiley){
 
-      //echo $smiley."\n";
+      //echo "get_all.php $lettre $page_number $smiley \n";
 
-      $smiley=html_entity_decode($smiley, ENT_QUOTES | ENT_SUBSTITUTE | ENT_XML1, "UTF-8");
+      //trigger_error("get_all.php $lettre $page_number $smiley", E_USER_NOTICE);
+
+      $smiley=html_entity_decode($smiley, ENT_QUOTES | ENT_SUBSTITUTE | ENT_XML1,
+                                 "UTF-8");
       if(!in_array($smiley, $exists, true)){
         $exists[]=$smiley;
         $split=explode(":", $smiley, 2);
@@ -84,4 +97,7 @@ foreach($smileys[0] as $i => $smiley){
   $list.=$smiley.($smileys[1][$i] !== 0 ? ":".$smileys[1][$i] : "")."\n";
 }
 file_put_contents("../_api/smileys.txt", trim($list));
+
+//trigger_error("get_all.php ENDED", E_USER_NOTICE);
+
 
