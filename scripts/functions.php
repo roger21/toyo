@@ -129,7 +129,7 @@ function get_all(){
   $smileys=[[], []];
   foreach($lettres as $lettre){
 
-    trigger_error("get_all() $lettre", E_USER_NOTICE);
+    //trigger_error("get_all() $lettre", E_USER_NOTICE);
 
     $lettre_url=str_replace("ALPHA", $lettre, $wiki_url);
     $page_number=1;
