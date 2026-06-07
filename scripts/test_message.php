@@ -24,7 +24,7 @@ $command="git log -2 --format=%aI -- ../generateurs/_api/smileys.txt";
 
 $dates=exec_command($command);
 
-if(!$short) trigger_error("date\n".print_r($dates, true), E_USER_NOTICE);
+if(!$short) trigger_error("dates\n".print_r($dates, true), E_USER_NOTICE);
 
 $last_date=french_date_from_iso($dates[0]);
 
@@ -41,7 +41,8 @@ if(!$short) trigger_error("message\n$message", E_USER_NOTICE);
 
 // les changements dans les smileys
 
-$command="git log --format=\"\" -p -1 -U0 --no-color -- ../generateurs/_api/smileys.txt | grep -v \"^@@\" | tail -n +5";
+$command="git log --format=\"\" -p -1 -U0 --no-color -- ../generateurs/_api/smileys.txt".
+        " | grep -v \"^@@\" | tail -n +5";
 
 $smileys=exec_command($command);
 
@@ -99,7 +100,7 @@ if($changes){
     }
     $cpt=0;
     foreach($add as $s => $u){
-      $message.="$s [url=$u]details[/url]        ";
+      $message.="$s [url=$u]Détail[/url]        ";
       if((++$cpt % $max_line) === 0){
         $message=trim($message)."\n\n";
       }
@@ -109,7 +110,7 @@ if($changes){
 
 }else{
 
-  $message.="Aucun changement [:osweat]\n";
+  $message.="Aucun changement [:osweat]\n\n";
 
 }
 
