@@ -31,6 +31,9 @@
   $cat="13";
   $topic="54724";
 
+  $cat="10";
+  $topic="148758";
+
   $cat_test="10";
   $topic_test="44688";
   $post_test="2465634";
