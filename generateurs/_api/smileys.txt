@@ -10547,6 +10547,7 @@ fl00daj_progressiv:2
 fl00daj_progressiv:3
 fl00daj_progressiv:4
 fl00daj_progressiv:5
+fl00daj_progressiv:6
 fl0odaj_progressiv
 fl0odaj_progressiv:1
 fl0odaj_progressiv:2
@@ -12332,6 +12333,7 @@ grosbill:3
 grosbill:4
 grosbill:5
 grosbin
+grosbordel
 groscul
 grosfelix
 grosgicleur
@@ -18504,6 +18506,13 @@ lord sauron:1
 lord sauron:2
 lord666
 lord666:1
+lord_kaku
+lord_kaku:1
+lord_kaku:2
+lord_kaku:3
+lord_kaku:4
+lord_kaku:5
+lord_kaku:6
 lord_kuk:5
 lord_of_the_abyss
 lordaj7692
@@ -24005,6 +24014,7 @@ patrick_truelle:6
 patrick_truelle:7
 patrick_truelle:8
 patrick_truelle:9
+patrick_truelle:10
 patricklovefrog
 patricklovefrog:1
 patricklovefrog:2
@@ -29456,6 +29466,7 @@ stadiste
 stadiste:1
 staline
 stancw
+stancw:1
 stanley_goodspeed
 stanleypetersen
 stant
