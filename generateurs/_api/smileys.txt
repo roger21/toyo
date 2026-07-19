@@ -4839,6 +4839,7 @@ cajap00l:2
 cajap00l:3
 cajap00l:4
 cajap00l:5
+cajap00l:6
 cajoline
 calahad
 calamity11
@@ -13410,6 +13411,7 @@ hooland
 hooland:1
 hooland:2
 hooland:3
+hooland:4
 hop le fou
 hop le fou:1
 hope for a new love
@@ -19196,6 +19198,7 @@ magnets:4
 magnets:5
 magnum
 magnum gts
+magnumfr
 mahir
 maho-kun
 maiar
