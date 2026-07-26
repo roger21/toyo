@@ -2505,6 +2505,7 @@ augmented:2
 augmented:3
 augmented:4
 augmented:5
+augmented:6
 augur6
 augustus citronus
 augustus citronus:1
@@ -12063,6 +12064,8 @@ gordon shumway:5
 gordon shumway:6
 gordon shumway:7
 gordon shumway:8
+gordon shumway:9
+gordon shumway:10
 gordonf_69:5
 gordoter
 gordotof
@@ -19199,6 +19202,7 @@ magnets:5
 magnum
 magnum gts
 magnumfr
+magnumfr:1
 mahir
 maho-kun
 maiar
@@ -19731,6 +19735,7 @@ massypalaiseau:2
 massypalaiseau:3
 massypalaiseau:4
 massypalaiseau:5
+massypalaiseau:6
 massys
 massys:1
 massys:2
@@ -20146,6 +20151,7 @@ memaster
 memaster:1
 memaster:2
 memnoch1
+memnoch1:1
 memoryjar
 menarebrave
 menarebrave:1
