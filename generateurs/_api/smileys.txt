@@ -2214,6 +2214,7 @@ arthoung:4
 arthoung:5
 arthoung:6
 arthoung:7
+arthoung:8
 arthoung31
 arthoung31:1
 arthoung31:2
@@ -17098,6 +17099,7 @@ la_rem:1
 la_rem:2
 la_rem:3
 la_rem:4
+la_rem:5
 la_salace
 la_salace:1
 la_salace:2
@@ -18727,6 +18729,10 @@ ltail:1
 ltgreg
 lth
 lubanulle
+luc r4ydm0n
+luc r4ydm0n:1
+luc r4ydm0n:2
+luc r4ydm0n:3
 luc@s
 luc@s:1
 luc@s:2
