@@ -12044,6 +12044,11 @@ goldos:2
 goldos:3
 goldos:4
 goldos:5
+golemini
+golemini:1
+golemini:2
+golemini:3
+golemini:4
 goliath_hardcore
 gollmord
 gollum
