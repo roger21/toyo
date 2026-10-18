@@ -1,7 +1,13 @@
-#### les aq de toyo
+#### les alertes qualitaÿ https://aq.super-h.fr/rss.php
 
-la dernière base est dans sql/db.sql (maj 19 avril 2026)
+les erreurs sont loggées dans le fichier `errors/errors.log`
 
-les erreurs sont loggées dans errors/errors.log (le repertoire errors doit autoriser l'écriture pour le serveur web)
+(le serveur web doit avoir les droits d'écriture sur le répertoire `errors`)
 
-dans le fichier config/alerteQualitay.config.php il faut mettre à jour URL_BASE (l'url de base du serveur pour le rss), MAIL_ADDRESS (l'adresse mail pour envoyer des mails d'alerte et d'information), MAIL_LINKS (pour rajouter des liens ou du contenu dans les mails) et les paramètres AQ_DB_* pour la connexion à la base de données
+le fichier `config/alerteQualitay.config.php` doit être configuré :
+- `URL_BASE` : l'url de base du serveur, utilisée par le rss
+- `MAIL_ADDRESS` : l'adresse mail où envoyer les notifications
+- `MAIL_LINKS` : du contenu complémentaire pour les notifications
+- les paramètres `AQ_DB_*` : pour la connexion à la base de données
+
+le dernier dump de la base de données est dans `sql/db.sql` (19 avril 2026)
