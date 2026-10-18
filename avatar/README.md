@@ -1,5 +1,7 @@
-#### le générateur d'avatar
+#### l'avatar helper https://avatar.super-h.fr/
 
-les erreurs sont loggées dans errors/errors.log (le repertoire errors doit autoriser l'écriture pour le serveur web)
+les erreurs sont loggées dans le fichier `errors/errors.log`
 
-les fichiers (images et avatars) sont stockées dans le répertoire temp (qui doit autoriser l'écriture pour le serveur web)
+les fichiers (images et avatars) sont stockées dans le répertoire `temp`
+
+(le serveur web doit avoir les droits d'écriture sur les répertoires `errors` et `temp`)

@@ -1,3 +1,5 @@
-#### les générateurs de smiley
+#### les générateurs https://generateurs.super-h.fr/
 
-les erreurs sont loggées dans _errors/errors.log (le repertoire _errors et/ou le fichier errors.log doivent permettre l'écriture pour le serveur web)
+les erreurs sont loggées dans le fichier `errors/errors.log`
+
+(le serveur web doit avoir les droits d'écriture sur le répertoire `errors`)
