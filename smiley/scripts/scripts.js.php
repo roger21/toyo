@@ -200,6 +200,7 @@ $(document).ready(function() {
   new AjaxUpload($("#upload_button"), {
     action: "uploadImg.php",
     name: "tmpImg",
+    responseType: "json",
     onSubmit: function(file, ext) {
       if(!ext || /^(jpg|png|jpeg|gif|bmp|webp|avif)$/i.test(ext) === false) {
         alert("Ce n'est pas une image !");
@@ -210,8 +211,12 @@ $(document).ready(function() {
       }
     },
     onComplete: function(file, response) {
-      if(response === "")
+      if(response === ""){
+        $("#input_area_div").css("display", "flex");
+        $("#wait_upload_div").css("display", "none");
+        alert("L'envoi de l'image a échoué.");
         return;
+      }
       fileName = response;
       $("#input_area").css("display", "none");
       $("#image_area").css("display", "block");

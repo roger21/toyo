@@ -11,6 +11,8 @@ ini_set("log_errors_max_len", "0");
 
 //trigger_error("uploadImg.php ".var_export($_REQUEST, true));
 
+header("Content-Type: application/json");
+
 function image_upload($name, $path){
   if(!isset($_FILES[$name])){
     trigger_error("uploadImg.php false on name");
@@ -52,6 +54,6 @@ function image_upload($name, $path){
   return $filepath;
 }
 
-echo ($path=image_upload("tmpImg", "./temp/")) ? $path : "";
+echo ($path=image_upload("tmpImg", "./temp/")) ? "\"".$path."\"" : "\"\"";
 
 ?>
