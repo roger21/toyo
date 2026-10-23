@@ -50,10 +50,13 @@ $mail_headers=["From" => MAIL_FROM,
 if(in_array($ip, $blackList))
 {
   trigger_error("[AQ] Nouvelle tentative blacklist ip : ".$ip.$from);
-  mail(MAIL_ADDRESS,
-       "[AQ] Nouvelle tentative blacklist ip",
-       "ip : ".safe($ip).$from_mail.MAIL_LINKS,
-       $mail_headers);
+  $mail_sent=mail(MAIL_ADDRESS,
+                  "[AQ] Nouvelle tentative blacklist ip",
+                  "ip : ".safe($ip).$from_mail.MAIL_LINKS,
+                  $mail_headers);
+  if($mail_sent === false){
+    trigger_error("ERROR mail_sent : ".print_r(error_get_last(), true));
+  }
   header("HTTP/1.1 403 Forbidden");
   header("Content-Length: 0");
   return;
@@ -72,10 +75,13 @@ if(count($alertes) >= 3)
     $dao->deleteAlerte($alerte);
   }
   trigger_error("[AQ] Nouveau blocage ip : ".$ip.$from);
-  mail(MAIL_ADDRESS,
-       "[AQ] Nouveau blocage ip",
-       "ip : ".safe($ip).$from_mail.MAIL_LINKS,
-       $mail_headers);
+  $mail_sent=mail(MAIL_ADDRESS,
+                  "[AQ] Nouveau blocage ip",
+                  "ip : ".safe($ip).$from_mail.MAIL_LINKS,
+                  $mail_headers);
+  if($mail_sent === false){
+    trigger_error("ERROR mail_sent : ".print_r(error_get_last(), true));
+  }
   $blackList[count($blackList)] = $ip;
   $filename = "../config/blackList.config.php";
   $file = fopen($filename, "w");
@@ -145,10 +151,13 @@ $code = $dao->addAlerte($newAlerte, $ip);
 $dao->disconnect();
 
 trigger_error("[AQ] Nouvelle AQ code : ".$code." ip : ".$ip.$from);
-mail(MAIL_ADDRESS,
-     "[AQ] Nouvelle AQ",
-     "code : ".safe($code)."\r\n\r\nip : ".safe($ip).$from_mail.MAIL_LINKS,
-     $mail_headers);
+$mail_sent=mail(MAIL_ADDRESS,
+                "[AQ] Nouvelle AQ",
+                "code : ".safe($code)."\r\n\r\nip : ".safe($ip).$from_mail.MAIL_LINKS,
+                $mail_headers);
+if($mail_sent === false){
+  trigger_error("ERROR mail_sent : ".print_r(error_get_last(), true));
+}
 header("Content-Type: text/plain");
 header("Cache-Control: no-store, no-cache, must-revalidate");
 header("Pragma: no-cache");
