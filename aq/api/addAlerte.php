@@ -37,18 +37,23 @@ function safe($string)
   return htmlspecialchars($string, ENT_NOQUOTES | ENT_SUBSTITUTE, "UTF-8", true);
 }
 
-$ip = hash_hmac("sha3-256", strtolower(trim($_SERVER["REMOTE_ADDR"])), PROJECT_PUBLIC_HASH_KEY);
+$ip = hash_hmac("sha3-256", strtolower(trim($_SERVER["REMOTE_ADDR"])),
+                PROJECT_PUBLIC_HASH_KEY);
 $args = & $_POST;
 $alerteMandatoryParameters = array("nom", "topic_id", "topic_titre");
 $rapporteurMandatoryParameters = array("pseudo", "post_id", "post_url");
 $from = empty($args["from"]) ? "" : " from : ".$args["from"];
 $from_mail = empty($args["from"]) ? "" : "\r\n\r\nfrom : ".safe($args["from"]);
+$mail_headers=["From" => MAIL_FROM,
+               "Content-Type" => "text/plain; charset=UTF-8"];
 
 if(in_array($ip, $blackList))
 {
   trigger_error("[AQ] Nouvelle tentative blacklist ip : ".$ip.$from);
-  mail(MAIL_ADDRESS, "[AQ] Nouvelle tentative blacklist ip",
-       "ip : ".safe($ip).$from_mail.MAIL_LINKS);
+  mail(MAIL_ADDRESS,
+       "[AQ] Nouvelle tentative blacklist ip",
+       "ip : ".safe($ip).$from_mail.MAIL_LINKS,
+       $mail_headers);
   header("HTTP/1.1 403 Forbidden");
   header("Content-Length: 0");
   return;
@@ -67,8 +72,10 @@ if(count($alertes) >= 3)
     $dao->deleteAlerte($alerte);
   }
   trigger_error("[AQ] Nouveau blocage ip : ".$ip.$from);
-  mail(MAIL_ADDRESS, "[AQ] Nouveau blocage ip",
-       "ip : ".safe($ip).$from_mail.MAIL_LINKS);
+  mail(MAIL_ADDRESS,
+       "[AQ] Nouveau blocage ip",
+       "ip : ".safe($ip).$from_mail.MAIL_LINKS,
+       $mail_headers);
   $blackList[count($blackList)] = $ip;
   $filename = "../config/blackList.config.php";
   $file = fopen($filename, "w");
@@ -84,7 +91,8 @@ if(!empty($args["alerte_qualitay_id"]) && $args["alerte_qualitay_id"] != -1)
   $currentAlerte = $dao->getAlerte($args["alerte_qualitay_id"]);
   if(is_null($currentAlerte))
   {
-    trigger_error("[AQ] Nouvelle tentative invalid alert id code : ".CODE_FAIL_INSERT_INVALID_ALERT." ip : ".$ip.$from);
+    trigger_error("[AQ] Nouvelle tentative invalid alert id code : ".
+                  CODE_FAIL_INSERT_INVALID_ALERT." ip : ".$ip.$from);
     fail(CODE_FAIL_INSERT_INVALID_ALERT);
   }
   $newAlerte = new Alerte($currentAlerte->getId(),
@@ -98,7 +106,8 @@ else
   {
     if(empty($args[$param]))
     {
-      trigger_error("[AQ] Nouvelle tentative missing parameter alerte code : ".CODE_FAIL_INSERT_MISSING_PARAMETER." ip : ".$ip.$from);
+      trigger_error("[AQ] Nouvelle tentative missing parameter alerte code : ".
+                    CODE_FAIL_INSERT_MISSING_PARAMETER." ip : ".$ip.$from);
       fail(CODE_FAIL_INSERT_MISSING_PARAMETER);
     }
   }
@@ -109,7 +118,8 @@ foreach($rapporteurMandatoryParameters as $param)
 {
   if(empty($args[$param]))
   {
-    trigger_error("[AQ] Nouvelle tentative missing parameter rapporteur code : ".CODE_FAIL_INSERT_MISSING_PARAMETER." ip : ".$ip.$from);
+    trigger_error("[AQ] Nouvelle tentative missing parameter rapporteur code : ".
+                  CODE_FAIL_INSERT_MISSING_PARAMETER." ip : ".$ip.$from);
     fail(CODE_FAIL_INSERT_MISSING_PARAMETER);
   }
 }
@@ -135,9 +145,10 @@ $code = $dao->addAlerte($newAlerte, $ip);
 $dao->disconnect();
 
 trigger_error("[AQ] Nouvelle AQ code : ".$code." ip : ".$ip.$from);
-mail(MAIL_ADDRESS, "[AQ] Nouvelle AQ",
-     "code : ".safe($code).
-     "\r\n\r\nip : ".safe($ip).$from_mail.MAIL_LINKS);
+mail(MAIL_ADDRESS,
+     "[AQ] Nouvelle AQ",
+     "code : ".safe($code)."\r\n\r\nip : ".safe($ip).$from_mail.MAIL_LINKS,
+     $mail_headers);
 header("Content-Type: text/plain");
 header("Cache-Control: no-store, no-cache, must-revalidate");
 header("Pragma: no-cache");
