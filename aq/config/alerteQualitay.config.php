@@ -4,6 +4,8 @@ DEFINE("URL_BASE", "");
 
 DEFINE("MAIL_ADDRESS", "");
 
+DEFINE("MAIL_FROM", "");
+
 DEFINE("MAIL_LINKS", "");
 
 DEFINE("AQ_DB_HOST", "");
