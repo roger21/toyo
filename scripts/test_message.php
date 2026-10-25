@@ -48,6 +48,8 @@ $smileys=exec_command($command);
 
 if(!$short) trigger_error("smileys\n".print_r($smileys, true), E_USER_NOTICE);
 
+if(!$short) trigger_error("smileys count\n".print_r(count($smileys), true), E_USER_NOTICE);
+
 
 // changements ou pas ?
 
