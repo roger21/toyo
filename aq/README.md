@@ -11,4 +11,4 @@ le fichier `config/alerteQualitay.config.php` doit être configuré :
 - `MAIL_LINKS` : du contenu complémentaire pour les notifications
 - les paramètres `AQ_DB_*` : pour la connexion à la base de données
 
-le dernier dump de la base de données est dans `sql/db.sql` (19 avril 2026)
+le dernier dump de la base de données est dans `sql/db.sql` (8 novembre 2026)

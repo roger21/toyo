@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.2
+-- version 5.2.3
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : dim. 19 avr. 2026 à 20:13
--- Version du serveur : 11.4.10-MariaDB-deb12
--- Version de PHP : 8.3.30
+-- Généré le : dim. 08 nov. 2026 à 08:35
+-- Version du serveur : 11.4.13-MariaDB-deb12
+-- Version de PHP : 8.3.36
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `alerte_qualitay` (
   `topic_id` int(11) NOT NULL,
   `topic_titre` varchar(512) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13636 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=13644 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Déchargement des données de la table `alerte_qualitay`
@@ -1552,7 +1552,13 @@ INSERT INTO `alerte_qualitay` (`id`, `nom`, `topic_id`, `topic_titre`) VALUES
 (13627, 'zguegologue', 8680, 'Topic Hontes - \"La vraie honte c\'est...\" = sanction'),
 (13628, 'Soiree pizza @HFR', 28563, 'Topic pizza maison'),
 (13629, 'parfait pour le petit déj \'', 107680, 'Clients, des attitudes incompréhensibles?'),
-(13632, 'Règles d\'or Leboncoin', 104739, '[TU] Leboncoin - pas leboncon, hein !');
+(13632, 'Règles d\'or Leboncoin', 104739, '[TU] Leboncoin - pas leboncon, hein !'),
+(13636, 'waou', 32554, '[TU] Lyon - The STRONGEST CANICULE EVER'),
+(13637, 'Crème glacée', 93256, 'Le topic de la fabrication de glace maison'),
+(13638, '14 juillet', 26595, 'Topic Aviation'),
+(13640, 'Sorbetière, turbine ou creamy deluxe', 93256, 'Le topic de la fabrication de glace maison'),
+(13641, 'Marathon pour tous', 21633, '◄ HFR Running Club ! ► Élite auto proclamée'),
+(13642, 'SPPLOAAAARCHH près du camping', 8680, 'Topic Hontes - \"La vraie honte c\'est...\" = sanction');
 
 -- --------------------------------------------------------
 
@@ -1574,7 +1580,7 @@ CREATE TABLE IF NOT EXISTS `rapporteur` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `alerte_qualitay_id` (`alerte_qualitay_id`,`pseudo`),
   UNIQUE KEY `pseudo` (`pseudo`,`post_url`)
-) ENGINE=InnoDB AUTO_INCREMENT=14337 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=14351 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Déchargement des données de la table `rapporteur`
@@ -3816,7 +3822,13 @@ INSERT INTO `rapporteur` (`id`, `alerte_qualitay_id`, `pseudo`, `post_id`, `post
 (14313, 13627, 'ezzz', 74105885, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=434&post=8680&page=4045&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t74105885', '2026-01-18 07:37:22', 1, 'post de salsifi34', '1676655fb429ccb120fb1d40ae1953d1a0dbd04817af6a77672460b0d1387be2'),
 (14314, 13628, 'ezzz', 74216432, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=433&post=28563&page=2143&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t74216432', '2026-02-10 14:50:21', 1, 'post de eamesimpor​t', '20e424ddff62d5bd5279b16d83a78de4e5f0606f0dc6a2db9dd27a2ae167efd2'),
 (14315, 13629, 'narm', 74314778, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=423&post=107680&page=522&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t74314778', '2026-02-27 07:20:31', 1, 'post de philibear', 'ab1b35ff243669a22aab2ed9286b36ea3b79366b93a818982af9c963c1f3aff2'),
-(14324, 13632, 'pascal_974', 74554162, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=104739&page=1272&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t74554162', '2026-04-18 06:49:29', 1, 'post de Civilise', '3e136aad2b57ff5a60c5b0a16ddfbb302be66444faee9df41340f68d73775ca7');
+(14324, 13632, 'pascal_974', 74554162, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=104739&page=1272&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t74554162', '2026-04-18 06:49:29', 1, 'post de Civilise', '3e136aad2b57ff5a60c5b0a16ddfbb302be66444faee9df41340f68d73775ca7'),
+(14337, 13636, 'jambonherta', 74882054, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=432&post=32554&page=5970&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t74882054', '2026-06-24 14:13:45', 1, 'post de garath_', 'f6267620f0c607dddd6cbb594cf216438e4e6a79957059fd86bdba8d438d95a9'),
+(14338, 13637, 'ezzz', 74894333, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=433&post=93256&page=91&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t74894333', '2026-06-26 09:09:42', 1, 'post de eldritchho​rror', '8baf9d3f5337c5deac7750b3e3081f057dc2f9148659f2ccc3a94a21bac43d5e'),
+(14339, 13638, 'ezzz', 74989065, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=422&post=26595&page=4537&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t74989065', '2026-07-10 16:41:47', 1, 'post de Zesheriff', 'c26943e14b1cba5350ee1338ddee022ff8ca9f5b28b44f6a757014c81ca37817'),
+(14341, 13640, 'ezzz', 75065729, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=433&post=93256&page=92&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t75065729', '2026-07-22 09:37:43', 1, 'post de eldritchho​rror', 'c314100f1908b013a44a88735d4f26aa16ca75fa14e7c2a57d935aec71b0330f'),
+(14343, 13641, 'eviltyler', 75365487, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=430&post=21633&page=10341&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t75365487', '2026-10-01 17:15:46', 1, 'post de zendb', 'be9054a5ef01a1c5bccee9d44e72b2f8b98d31cfcd05dc894205ad0a185ef01e'),
+(14344, 13642, 'fred warrah', 75396914, 'https://forum.hardware.fr/forum2.php?config=hfr.inc&cat=13&subcat=434&post=8680&page=4078&p=1&sondage=0&owntopic=1&trash=0&trash_post=0&print=0&numreponse=0&quote_only=0&new=0&nojs=0#t75396914', '2026-10-11 10:31:57', 1, 'post de Sgt-D', '1c276dd26a2948a0d61d7f47a049f168eb2f3ca75a8821434ac03f6291ed9f82');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
